@@ -1,0 +1,4 @@
+/* Clean slate for Tailwind */
+nav a {
+  @apply no-underline relative;
+}
