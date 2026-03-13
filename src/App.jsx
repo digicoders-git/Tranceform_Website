@@ -14,6 +14,7 @@ import ContactPage from './pages/ContactPage'
 import PrivacyPage from './pages/PrivacyPage'
 import ScrollToTop from './components/ScrollToTop'
 import BackToTop from './components/BackToTop'
+import WhatsAppButton from './components/WhatsAppButton'
 import './App.css'
 
 function App() {
@@ -138,8 +139,9 @@ function App() {
           </div>
         </footer>
 
-        {/* Global Back to Top Button */}
+        {/* Global Floating Buttons */}
         <BackToTop />
+        <WhatsAppButton />
       </div>
     </Router>
   )
