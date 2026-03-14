@@ -5,27 +5,27 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const services = [
   {
     title: "Stress Management",
-    image: "/service-1.jpg",
+    image: "/images/image.png",
     desc: "Release tension and find lasting inner calm by accessing the transformative power of your subconscious mind through guided relaxation."
   },
   {
     title: "Anxiety Treatment",
-    image: "/service-2.jpg",
+    image: "/images/image2.png",
     desc: "Rewire your brain's response to fear and panic with clinical hypnotherapy designed to restore control and confidence in every situation."
   },
   {
     title: "Individual Therapy",
-    image: "/service-4.jpg",
+    image: "/images/image3.png",
     desc: "Deeply personalized hypnotherapy sessions that uncover and resolve the root causes of internal barriers to help you thrive."
   },
   {
     title: "Couples Counseling",
-    image: "/service-5.jpg",
+    image: "/images/image4.png",
     desc: "Strengthen emotional bonds and heal relationship patterns by exploring shared subconscious dynamics in a safe, therapeutic environment."
   },
   {
     title: "Depression Support",
-    image: "/service-pg-6-1.jpg",
+    image: "/images/image8.png",
     desc: "Lift the weight of persistent sadness by utilizing direct suggestion and visualization to rebuild hope and emotional resilience from within."
   }
 ];
@@ -45,11 +45,11 @@ const ServicesSlider = () => {
     <section className="bg-[#B97758] py-24 overflow-hidden relative">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl mb-16">
         <div className="text-center md:text-left">
-          <span className="text-white/80 text-[13px] font-bold tracking-[0.2em] uppercase">
+          <span className="text-white/80 text-[13px] font-semibold tracking-[0.3em] uppercase">
             ( OUR SERVICES )
           </span>
-          <h2 className="text-5xl md:text-6xl font-serif leading-tight text-white mt-4 italic">
-            Let's all fight <span className="font-bold not-italic">mental illness</span>
+          <h2 className="text-4xl md:text-5xl font-serif leading-tight text-white mt-4 italic">
+            Let's all fight <span className="font-semibold not-italic">mental illness</span>
           </h2>
         </div>
       </div>

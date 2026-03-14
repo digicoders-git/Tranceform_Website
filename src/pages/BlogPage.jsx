@@ -37,7 +37,7 @@ const BlogPage = () => {
             transition={{ duration: 0.9 }}
             className="max-w-3xl space-y-5"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-semibold tracking-[0.3em] uppercase px-4 py-2 rounded-full">
               Our Blog
             </div>
             <h1 className="text-white text-5xl md:text-7xl font-serif italic leading-tight">
@@ -72,7 +72,7 @@ const BlogPage = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`shrink-0 px-4 py-2 rounded-full text-xs font-bold tracking-wide transition-all duration-300 ${
+                  className={`shrink-0 px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
                     activeCategory === cat
                       ? 'bg-brand-orange text-white shadow-md shadow-orange-200'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
@@ -90,7 +90,7 @@ const BlogPage = () => {
       {activeCategory === 'All' && !searchQuery && (
         <section className="py-16 bg-[#FAFAFA]">
           <div className="container mx-auto px-6 md:px-16 max-w-7xl">
-            <span className="text-brand-orange text-[12px] font-bold tracking-[0.2em] uppercase block mb-8">
+            <span className="text-brand-orange text-[12px] font-semibold tracking-[0.3em] uppercase block mb-8">
               ( FEATURED ARTICLE )
             </span>
             <motion.div
@@ -112,7 +112,7 @@ const BlogPage = () => {
               {/* Content */}
               <div className="bg-white p-10 md:p-14 flex flex-col justify-center space-y-6">
                 <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-bold rounded-full">
+                  <span className="px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-semibold rounded-full">
                     {featuredPost.category}
                   </span>
                   <span className="flex items-center gap-1 text-gray-400 text-xs">
@@ -125,7 +125,7 @@ const BlogPage = () => {
                 <p className="text-gray-500 font-light leading-relaxed line-clamp-3">
                   {featuredPost.excerpt}
                 </p>
-                <div className="flex items-center gap-2 text-brand-orange font-bold text-sm">
+                <div className="flex items-center gap-2 text-brand-orange font-semibold text-sm">
                   Read Full Article <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -145,7 +145,7 @@ const BlogPage = () => {
           ) : (
             <>
               <div className="flex items-center justify-between mb-12">
-                <span className="text-brand-orange text-[12px] font-bold tracking-[0.2em] uppercase">
+                <span className="text-brand-orange text-[12px] font-semibold tracking-[0.3em] uppercase">
                   ( {filtered.length} ARTICLES )
                 </span>
               </div>
@@ -168,7 +168,7 @@ const BlogPage = () => {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-black/60 backdrop-blur-sm text-white text-xs font-bold rounded-full flex items-center gap-1">
+                        <span className="px-3 py-1 bg-black/60 backdrop-blur-sm text-white text-xs font-semibold rounded-full flex items-center gap-1">
                           <Tag className="w-3 h-3" /> {post.category}
                         </span>
                       </div>
@@ -189,7 +189,7 @@ const BlogPage = () => {
                       <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 font-light">
                         {post.excerpt}
                       </p>
-                      <div className="flex items-center gap-2 text-brand-orange font-bold text-sm pt-2">
+                      <div className="flex items-center gap-2 text-brand-orange font-semibold text-sm pt-2">
                         Read More <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
@@ -210,17 +210,17 @@ const BlogPage = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <span className="text-white/60 text-[12px] font-bold tracking-[0.2em] uppercase block">
+            <span className="text-white/60 text-[12px] font-semibold tracking-[0.3em] uppercase block">
               ( START YOUR JOURNEY )
             </span>
-            <h2 className="text-4xl md:text-6xl font-serif text-white italic leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif text-white italic leading-tight">
               Ready to transform your mind?
             </h2>
             <p className="text-white/70 text-lg font-light max-w-xl mx-auto">
               Book a consultation with our certified hypnotherapists and take the first step towards lasting change.
             </p>
           </motion.div>
-          <button className="px-10 py-4 bg-white text-brand-orange rounded-full font-bold text-base hover:bg-[#15202B] hover:text-white transition-all duration-300 shadow-lg">
+          <button className="px-10 py-4 bg-white text-brand-orange rounded-full font-semibold text-base hover:bg-[#15202B] hover:text-white transition-all duration-300 shadow-lg">
             BOOK A SESSION
           </button>
         </div>

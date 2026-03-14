@@ -38,7 +38,7 @@ const BlogDetailPage = () => {
           </button>
 
           <div className="flex items-center gap-3">
-            <span className="px-3 py-1 bg-brand-orange/80 text-white text-xs font-bold rounded-full flex items-center gap-1">
+            <span className="px-3 py-1 bg-brand-orange/80 text-white text-xs font-semibold rounded-full flex items-center gap-1">
               <Tag className="w-3 h-3" /> {post.category}
             </span>
             <span className="text-white/60 text-xs flex items-center gap-1">
@@ -51,7 +51,7 @@ const BlogDetailPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white text-4xl md:text-6xl font-serif italic leading-tight max-w-3xl"
+            className="text-white text-3xl md:text-5xl font-serif italic leading-tight max-w-3xl"
           >
             {post.title}
           </motion.h1>
@@ -83,7 +83,7 @@ const BlogDetailPage = () => {
       <section className="py-20 bg-[#FAFAFA]">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
           <div className="mb-12 space-y-2">
-            <span className="text-brand-orange text-[12px] font-bold tracking-[0.2em] uppercase block">
+            <span className="text-brand-orange text-[12px] font-semibold tracking-[0.3em] uppercase block">
               ( KEEP READING )
             </span>
             <h2 className="text-4xl font-serif text-brand-blue italic">Related Articles</h2>
@@ -107,11 +107,11 @@ const BlogDetailPage = () => {
                   />
                 </div>
                 <div className="p-6 space-y-3">
-                  <span className="text-brand-orange text-xs font-bold">{related.category}</span>
+                  <span className="text-brand-orange text-xs font-semibold">{related.category}</span>
                   <h3 className="text-lg font-serif text-brand-blue leading-snug group-hover:text-brand-orange transition-colors line-clamp-2">
                     {related.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-brand-orange font-bold text-xs pt-1">
+                  <div className="flex items-center gap-2 text-brand-orange font-semibold text-xs pt-1">
                     Read Article <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>

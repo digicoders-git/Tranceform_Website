@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 
@@ -27,10 +26,10 @@ const PricingSection = () => {
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
-          <span className="text-[#FF9933] text-[13px] font-bold tracking-[0.2em] uppercase">
+          <span className="text-[#FF9933] text-[13px] font-medium tracking-[0.3em] uppercase">
             ( PRICING PLAN )
           </span>
-          <h2 className="text-4xl md:text-6xl font-serif text-brand-blue leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif text-brand-blue leading-tight">
             Affordable <span className="text-[#FF9933] italic">pricing packages</span> for everyone
           </h2>
         </div>
@@ -46,7 +45,7 @@ const PricingSection = () => {
           >
              {/* Icon/Logo Background */}
              <div className="w-16 h-16 bg-[#333] rounded-full flex items-center justify-center mb-8 shrink-0">
-               <span className="text-white text-2xl font-bold italic">X</span>
+               <span className="text-white text-2xl font-medium italic">X</span>
              </div>
 
              <div className="space-y-4 mb-10">
@@ -60,14 +59,14 @@ const PricingSection = () => {
 
              <div className="mb-10">
                <div className="flex items-baseline gap-2">
-                 <span className="text-5xl md:text-6xl font-bold text-brand-blue">$150</span>
+                 <span className="text-4xl md:text-5xl font-medium text-brand-blue">$150</span>
                  <span className="text-gray-500 font-medium tracking-tight">/ session</span>
                </div>
                <p className="text-gray-400 text-xs mt-3 italic">*Terms and Conditions apply</p>
              </div>
 
-             <button className="w-full py-5 bg-[#B97758] hover:bg-[#A6664B] text-white rounded-[20px] font-bold text-[16px] transition-all duration-300 transform active:scale-95 shadow-lg shadow-[#B97758]/20">
-               Get Started
+             <button className="w-full py-5 bg-[#B97758] hover:bg-[#A6664B] text-white rounded-[20px] font-medium text-[16px] transition-all duration-300 transform active:scale-95 shadow-lg shadow-[#B97758]/20">
+               Book a Session
              </button>
           </motion.div>
 
@@ -98,7 +97,7 @@ const PricingSection = () => {
             </div>
 
             <div className="pt-4">
-              <button className="px-10 py-4 bg-[#333] hover:bg-[#15202B] text-white rounded-full font-bold text-[14px] transition-all duration-300 shadow-xl">
+              <button className="px-10 py-4 bg-[#333] hover:bg-[#15202B] text-white rounded-full font-medium text-[14px] transition-all duration-300 shadow-xl">
                 View All Pricing
               </button>
             </div>

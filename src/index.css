@@ -22,8 +22,21 @@
 
 @layer base {
   body {
-    @apply text-brand-blue bg-white;
+    @apply text-gray-700 bg-white font-light;
     font-family: var(--font-sans);
+    line-height: 1.8;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium text-brand-blue tracking-tight;
+  }
+
+  p {
+    @apply tracking-wide;
+  }
+
+  ::selection {
+    @apply bg-brand-orange/20 text-brand-blue;
   }
 }
 

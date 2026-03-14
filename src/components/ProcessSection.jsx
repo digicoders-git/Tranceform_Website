@@ -31,10 +31,10 @@ const ProcessSection = () => {
           viewport={{ once: true }}
           className="space-y-4 mb-20"
         >
-          <span className="text-white/60 text-[13px] font-bold tracking-[0.2em] uppercase block">
+          <span className="text-white/60 text-[13px] font-medium tracking-[0.3em] uppercase block">
             ( OUR PROCESS )
           </span>
-          <h2 className="text-4xl md:text-6xl font-serif leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif leading-tight">
             Mental <span className="italic">health</span> starts with you
           </h2>
         </motion.div>
@@ -53,7 +53,7 @@ const ProcessSection = () => {
               }`}
             >
               {/* Number Box */}
-              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#B97758] font-bold text-xl shadow-lg">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#B97758] font-medium text-xl shadow-lg">
                 {step.id}
               </div>
 

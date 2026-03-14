@@ -15,10 +15,10 @@ const HowItWorks = () => {
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
-          <span className="text-brand-orange text-[13px] font-bold tracking-[0.2em] uppercase">
+          <span className="text-brand-orange text-[13px] font-medium tracking-[0.3em] uppercase">
             ( HOW IT WORKS )
           </span>
-          <h2 className="text-5xl md:text-6xl font-serif text-brand-blue leading-tight">
+          <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight">
             Everyone deserves our <span className="text-brand-orange italic">special care</span>
           </h2>
         </div>
@@ -40,7 +40,7 @@ const HowItWorks = () => {
             >
               <div className="rounded-[40px] overflow-hidden shadow-[30px_30px_60px_rgba(0,0,0,0.15)] w-full max-w-[500px] h-[550px] lg:h-[600px] lg:-ml-12 border-8 border-white">
                 <img 
-                  src="/works.jpg" 
+                  src="/images/care.jpg" 
                   alt="Special Care Session" 
                   className="w-full h-full object-cover" 
                 />
@@ -56,7 +56,7 @@ const HowItWorks = () => {
               className="w-full lg:w-[55%] flex flex-col justify-center p-10 lg:pl-16 lg:pr-20"
             >
               <div className="mb-12">
-                <h3 className="text-2xl font-bold text-brand-blue mb-6 font-serif underline decoration-brand-orange decoration-2 underline-offset-8">
+                <h3 className="text-2xl font-medium text-brand-blue mb-6 font-serif underline decoration-brand-orange decoration-2 underline-offset-8">
                   How do you get our services
                 </h3>
                 <p className="text-brand-blue text-lg font-light leading-relaxed max-w-lg">
@@ -71,7 +71,7 @@ const HowItWorks = () => {
                     key={index}
                     className="flex items-center gap-8 py-6 border-t border-gray-900/10 group cursor-default"
                   >
-                    <span className="text-xl font-bold text-brand-blue/80 w-12 tracking-tighter">{step.id}</span>
+                    <span className="text-xl font-medium text-brand-blue/80 w-12 tracking-tighter">{step.id}</span>
                     <div className="w-[1.5px] h-8 bg-brand-orange/40 group-hover:bg-brand-orange transition-colors" />
                     <span className="text-[17px] md:text-[20px] font-serif italic text-brand-blue group-hover:text-brand-orange transition-colors">
                       {step.text}

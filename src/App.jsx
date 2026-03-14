@@ -55,7 +55,7 @@ function App() {
                   placeholder="Your email address" 
                   className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-full w-full md:w-72 focus:outline-none focus:border-brand-orange transition-colors"
                 />
-                <button className="bg-brand-orange hover:bg-[#E68A2E] text-white px-8 py-3 rounded-full font-bold text-sm transition-all duration-300">
+                <button className="bg-brand-orange hover:bg-[#E68A2E] text-white px-8 py-3 rounded-full font-medium text-sm transition-all duration-300">
                   SUBSCRIBE
                 </button>
               </div>
@@ -87,7 +87,7 @@ function App() {
 
               {/* Quick Links */}
               <div className="md:col-span-4 lg:col-span-2 lg:col-start-6">
-                <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Explore</h4>
+                <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Explore</h4>
                 <ul className="space-y-4 text-gray-400 text-sm font-light">
                   <li><Link to="/" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Home</Link></li>
                   <li><Link to="/about" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">About Us</Link></li>
@@ -98,7 +98,7 @@ function App() {
 
               {/* Support */}
               <div className="md:col-span-4 lg:col-span-2">
-                <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Support</h4>
+                <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Support</h4>
                 <ul className="space-y-4 text-gray-400 text-sm font-light">
                   <li><Link to="/faqs" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">FAQs</Link></li>
                   <li><Link to="/testimonials" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Testimonials</Link></li>
@@ -109,7 +109,7 @@ function App() {
 
               {/* Contact Info */}
               <div className="md:col-span-4 lg:col-span-3">
-                <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Connect</h4>
+                <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Connect</h4>
                 <div className="space-y-4 text-sm font-light">
                   <div>
                     <span className="block text-gray-500 mb-1">Email</span>
@@ -129,11 +129,11 @@ function App() {
 
             {/* Bottom Copyright */}
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-gray-500 text-[11px] tracking-[0.2em] uppercase font-bold">
+              <p className="text-gray-500 text-[11px] tracking-[0.3em] uppercase font-medium">
                 Transform your mind • Transform your life
               </p>
               <p className="text-gray-500 text-xs font-light">
-                © {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Designed & Developed by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-bold"><a href="https://digicoders.in">Team Digicoders</a></span>
+                © {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Designed & Developed by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-semibold"><a href="https://digicoders.in">Team Digicoders</a></span>
               </p>
             </div>
           </div>

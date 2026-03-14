@@ -4,17 +4,17 @@ import { motion } from 'framer-motion';
 const blogPosts = [
   {
     title: "Don't forget to understand yourself",
-    image: "/a1.jpg",
+    image: "/images/image.png",
     link: "#"
   },
   {
     title: "Recovery is not magic, it takes time",
-    image: "/a2.jpg",
+    image: "/images/image2.png",
     link: "#"
   },
   {
     title: "Understand the roots of anxiety",
-    image: "/a3.jpg",
+    image: "/images/image4.png",
     link: "#"
   }
 ];
@@ -25,10 +25,10 @@ const BlogInsights = () => {
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         {/* Header */}
         <div className="mb-16 space-y-4">
-          <span className="text-[#FF9933] text-[13px] font-bold tracking-[0.2em] uppercase">
+          <span className="text-[#FF9933] text-[13px] font-medium tracking-[0.3em] uppercase">
             ( BLOG INSIGHTS )
           </span>
-          <h2 className="text-5xl md:text-6xl font-serif text-brand-blue leading-tight">
+          <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight">
             Stay <span className="text-[#B97758] italic">connected</span>
           </h2>
         </div>
@@ -60,7 +60,7 @@ const BlogInsights = () => {
                 </h3>
                 <a 
                   href={post.link} 
-                  className="inline-block text-[#B97758] text-sm font-bold uppercase tracking-wider border-b-2 border-[#B97758] pb-1 hover:text-[#FF9933] hover:border-[#FF9933] transition-all"
+                  className="inline-block text-[#B97758] text-sm font-medium uppercase tracking-wider border-b-2 border-[#B97758] pb-1 hover:text-[#FF9933] hover:border-[#FF9933] transition-all"
                 >
                   Read More
                 </a>

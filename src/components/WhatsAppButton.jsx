@@ -37,7 +37,7 @@ const WhatsAppButton = () => {
           <WhatsAppIcon />
           
           {/* Tooltip on Hover */}
-          <span className="absolute left-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-gray-800 text-sm font-bold px-4 py-2 rounded-xl shadow-xl border border-gray-100 whitespace-nowrap pointer-events-none">
+          <span className="absolute left-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-gray-800 text-sm font-semibold px-4 py-2 rounded-xl shadow-xl border border-gray-100 whitespace-nowrap pointer-events-none">
             Chat with us
           </span>
         </motion.a>

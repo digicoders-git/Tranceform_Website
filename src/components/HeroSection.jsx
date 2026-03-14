@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-top md:bg-center bg-no-repeat z-0 scale-105"
-        style={{ backgroundImage: 'url("/hero-bg.png")' }}
+        style={{ backgroundImage: 'url("/images/slider.jpg")' }}
       >
         {/* Professional Overlays for Depth */}
         <div className="absolute inset-0 bg-black/15" />
@@ -28,9 +28,8 @@ const HeroSection = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-2xl mb-8"
           >
-            <p className="text-white/90 text-[16px] md:text-[18px] font-medium leading-relaxed tracking-wide drop-shadow-md">
-              Experience the profound clinical power of the subconscious mind to heal, transform, and empower. 
-              Our expert-guided hypnotherapy sessions provide a safe sanctuary for mental liberation and lasting emotional wellness.
+            <p className="text-white/90 text-[16px] md:text-[18px] font-light leading-relaxed tracking-wider drop-shadow-md">
+              Helping you understand and gently shift the subconscious patterns behind anxiety, self-sabotage, relationship struggles, and emotional overwhelm.
             </p>
           </motion.div>
           
@@ -39,9 +38,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className="text-white text-6xl md:text-8xl lg:text-[120px] font-serif italic font-bold leading-[0.9] tracking-tight drop-shadow-2xl"
+            className="text-white text-4xl md:text-6xl lg:text-[70px] font-serif italic font-medium leading-[1.2] tracking-wide drop-shadow-2xl max-w-5xl"
           >
-            Begin your <span className="block mt-2 italic">inner peace journey</span>
+            Hypnotherapy in Bangkok for <span className="block mt-2 italic font-light opacity-90">deep emotional healing and lasting inner change</span>
           </motion.h1>
 
           {/* Floating Get Started Button (Right-aligned relative to container) */}
@@ -55,8 +54,8 @@ const HeroSection = () => {
               onClick={() => setIsModalOpen(true)}
               className="w-40 h-40 rounded-full bg-white flex flex-col items-center justify-center shadow-[0_25px_60px_rgba(0,0,0,0.3)] hover:bg-[#FF9933] transition-all duration-700 transform hover:-translate-y-4 hover:scale-110 group"
             >
-              <span className="text-brand-blue group-hover:text-white font-bold text-[16px] tracking-tight transition-colors duration-500 text-center px-4 leading-tight">
-                Get Started
+              <span className="text-brand-blue group-hover:text-white font-medium text-[16px] tracking-tight transition-colors duration-500 text-center px-4 leading-tight">
+                Book a Session
               </span>
             </button>
           </motion.div>

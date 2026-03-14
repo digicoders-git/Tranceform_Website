@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-serif text-brand-blue leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif text-brand-blue leading-tight">
             <span className="text-[#B97758] italic font-medium">20,000+ people</span> have been consulted & helped.
           </h2>
         </div>
@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
                 <p className="text-gray-600 italic leading-relaxed text-lg">
                   "{item.text}"
                 </p>
-                <h4 className="text-brand-blue font-bold text-lg mt-6">
+                <h4 className="text-brand-blue font-medium text-lg mt-6">
                   {item.name}
                 </h4>
               </motion.div>
@@ -77,7 +77,7 @@ const TestimonialsSection = () => {
                 <p className="text-gray-600 italic leading-relaxed text-lg">
                   "{item.text}"
                 </p>
-                <h4 className="text-brand-blue font-bold text-lg mt-6">
+                <h4 className="text-brand-blue font-medium text-lg mt-6">
                   {item.name}
                 </h4>
               </motion.div>

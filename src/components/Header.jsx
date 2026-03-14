@@ -55,7 +55,7 @@ const Header = () => {
             >
               {item.hasDropdown ? (
                 <button
-                  className={`text-[13px] font-bold tracking-widest flex items-center gap-1.5 py-4 transition-all duration-300 ${
+                  className={`text-[13px] font-medium tracking-widest flex items-center gap-1.5 py-4 transition-all duration-300 ${
                     isServicesOpen ? 'text-brand-orange' : 'text-gray-700 hover:text-brand-orange'
                   }`}
                 >
@@ -65,7 +65,7 @@ const Header = () => {
               ) : (
                 <Link
                   to={item.href}
-                  className="whitespace-nowrap text-[13px] font-bold tracking-widest flex items-center gap-1.5 py-4 transition-all duration-300 text-gray-700 hover:text-brand-orange"
+                  className="whitespace-nowrap text-[13px] font-medium tracking-widest flex items-center gap-1.5 py-4 transition-all duration-300 text-gray-700 hover:text-brand-orange"
                 >
                   {item.name}
                 </Link>
@@ -104,9 +104,9 @@ const Header = () => {
         <div className="hidden lg:block">
           <button 
             onClick={() => setIsAppointmentModalOpen(true)}
-            className="px-8 py-3 bg-brand-orange text-white rounded-full text-[14px] font-bold shadow-lg shadow-orange-200 hover:bg-[#15202B] hover:shadow-none transition-all duration-300 transform active:scale-95"
+            className="px-8 py-3 bg-brand-orange text-white rounded-full text-[14px] font-medium shadow-lg shadow-orange-200 hover:bg-[#15202B] hover:shadow-none transition-all duration-300 transform active:scale-95"
           >
-            GET STARTED
+            BOOK A SESSION
           </button>
         </div>
 
@@ -134,7 +134,7 @@ const Header = () => {
                   <Link
                     to={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-[15px] font-bold text-brand-blue hover:text-brand-orange block py-2"
+                    className="text-[15px] font-medium text-brand-blue hover:text-brand-orange block py-2"
                   >
                     {item.name}
                   </Link>
@@ -154,9 +154,9 @@ const Header = () => {
                   setIsMobileMenuOpen(false);
                   setIsAppointmentModalOpen(true);
                 }}
-                className="mt-4 w-full py-4 bg-brand-orange text-white text-[15px] rounded-2xl font-bold hover:bg-[#15202B] transition-colors"
+                className="mt-4 w-full py-4 bg-brand-orange text-white text-[15px] rounded-2xl font-medium hover:bg-[#15202B] transition-colors"
               >
-                GET STARTED
+                BOOK A SESSION
               </button>
             </div>
           </motion.div>

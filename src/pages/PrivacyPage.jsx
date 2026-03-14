@@ -200,7 +200,7 @@ const PrivacyPage = () => {
             Our priority is your comfort and security. You can discuss any privacy concerns directly with a therapist during your free discovery call before committing to any sessions.
           </p>
           <div className="pt-4">
-            <a href="/contact" className="inline-flex items-center gap-2 bg-[#15202B] text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide hover:bg-brand-orange hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <a href="/contact" className="inline-flex items-center gap-2 bg-[#15202B] text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-brand-orange hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               BOOK DISCOVERY CALL
             </a>
           </div>

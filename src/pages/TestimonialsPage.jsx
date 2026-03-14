@@ -145,7 +145,7 @@ const TestimonialsPage = () => {
             transition={{ duration: 0.9 }}
             className="space-y-5 max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-semibold tracking-[0.3em] uppercase px-4 py-2 rounded-full">
               Client Stories
             </div>
             <h1 className="text-white text-5xl md:text-7xl font-serif italic leading-tight">
@@ -179,7 +179,7 @@ const TestimonialsPage = () => {
       <section className="py-24 bg-[#FAFAFA]">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
           <div className="mb-16 space-y-3">
-            <span className="text-brand-orange text-[12px] font-bold tracking-[0.2em] uppercase block">
+            <span className="text-brand-orange text-[12px] font-semibold tracking-[0.3em] uppercase block">
               ( ALL REVIEWS )
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-brand-blue italic leading-snug">
@@ -200,11 +200,11 @@ const TestimonialsPage = () => {
                 {/* Top */}
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <div className={`w-12 h-12 ${t.color} rounded-2xl flex items-center justify-center text-white text-sm font-bold shrink-0`}>
+                    <div className={`w-12 h-12 ${t.color} rounded-2xl flex items-center justify-center text-white text-sm font-semibold shrink-0`}>
                       {t.avatar}
                     </div>
                     <div>
-                      <h4 className="font-bold text-brand-blue text-sm">{t.name}</h4>
+                      <h4 className="font-semibold text-brand-blue text-sm">{t.name}</h4>
                       <p className="text-gray-400 text-xs">{t.location}</p>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ const TestimonialsPage = () => {
                 </div>
 
                 {/* Service badge */}
-                <span className="inline-block px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-bold rounded-full">
+                <span className="inline-block px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-semibold rounded-full">
                   {t.service}
                 </span>
 
@@ -223,7 +223,7 @@ const TestimonialsPage = () => {
 
                 <button
                   onClick={() => setExpanded(expanded === t.id ? null : t.id)}
-                  className="text-brand-orange text-xs font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                  className="text-brand-orange text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all"
                 >
                   {expanded === t.id ? 'Show less ↑' : 'Read full story →'}
                 </button>
@@ -248,10 +248,10 @@ const TestimonialsPage = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <span className="text-white/60 text-[12px] font-bold tracking-[0.2em] uppercase block">
+            <span className="text-white/60 text-[12px] font-semibold tracking-[0.3em] uppercase block">
               ( YOUR STORY STARTS HERE )
             </span>
-            <h2 className="text-4xl md:text-6xl font-serif text-white italic leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif text-white italic leading-tight">
               The next success story could be yours
             </h2>
             <p className="text-white/70 text-lg font-light max-w-xl mx-auto">
@@ -259,10 +259,10 @@ const TestimonialsPage = () => {
             </p>
           </motion.div>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="px-10 py-4 bg-white text-brand-orange rounded-full font-bold text-base hover:bg-[#15202B] hover:text-white transition-all duration-300 shadow-lg">
+            <button className="px-10 py-4 bg-white text-brand-orange rounded-full font-semibold text-base hover:bg-[#15202B] hover:text-white transition-all duration-300 shadow-lg">
               BOOK A SESSION
             </button>
-            <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-base hover:bg-white hover:text-brand-orange transition-all duration-300">
+            <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold text-base hover:bg-white hover:text-brand-orange transition-all duration-300">
               FREE DISCOVERY CALL
             </button>
           </div>

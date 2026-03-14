@@ -45,39 +45,40 @@ const AboutDiscovery = () => {
               className="space-y-8"
             >
               <div className="space-y-4">
-                <span className="text-white/60 text-[13px] font-bold tracking-[0.2em] uppercase block">
+                <span className="text-white/60 text-[13px] font-medium tracking-[0.3em] uppercase block">
                   ( MORE ABOUT )
                 </span>
-                <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
-                  Take some <span className="italic">time to travel</span> within yourself
+                <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight font-medium">
+                  A deeply personalised <br />
+                  <span className="text-white italic font-light">approach to hypnotherapy</span>
                 </h2>
               </div>
-              <p className="text-white/70 text-lg font-light leading-relaxed max-w-lg">
-                Our clinical approach combines modern neuroscience with ancient healing wisdom. 
-                We don't just treat symptoms; we help you navigate your inner world to create permanent, 
-                positive neural pathways.
-              </p>
+              <div className="text-white/70 text-lg font-light leading-relaxed max-w-lg space-y-4">
+                <p>
+                  Anxiety returns. Relationships feel complicated. Self-doubt appears at the very moment confidence is needed.
+                </p>
+                <p>
+                  Often this is not because you are doing something wrong. It is because the deeper emotional patterns beneath the surface have not yet been fully understood.
+                </p>
+              </div>
             </motion.div>
 
-            {/* Right Features */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="grid grid-cols-1 gap-10"
-            >
-              {features.map((item, idx) => (
-                <div key={idx} className="flex gap-6 items-start">
-                  <div className="p-3 bg-white/10 rounded-2xl shrink-0">
-                    {item.icon}
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="text-white text-xl font-serif">{item.title}</h4>
-                    <p className="text-white/60 font-light text-sm leading-relaxed max-w-xs">{item.desc}</p>
-                  </div>
+              <div className="grid grid-cols-1 gap-8">
+                <p className="text-white/80 font-light text-lg">
+                  Every person who comes to see me has their own story, emotional history, and inner world. Because of this, my sessions are never one-size-fits-all.
+                </p>
+                <div className="space-y-4 pt-4 border-t border-white/10">
+                  <p className="text-white font-medium">Our sessions often explore themes such as:</p>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 text-white/60 font-light text-sm list-disc pl-5">
+                    <li>Anxiety and nervous system regulation</li>
+                    <li>Inner child healing</li>
+                    <li>Subconscious beliefs about self-worth</li>
+                    <li>Relationship patterns and attachment</li>
+                    <li>Emotional trauma and unresolved experiences</li>
+                    <li>Habits and behaviours rooted in deeper emotions</li>
+                  </ul>
                 </div>
-              ))}
-            </motion.div>
+              </div>
           </div>
         </div>
       </div>
@@ -92,7 +93,7 @@ const AboutDiscovery = () => {
           className="relative rounded-[40px] overflow-hidden shadow-3xl group cursor-pointer"
         >
           <img 
-            src="/works.jpg" 
+            src="/images/image5.png" 
             alt="Hypnotherapy Session" 
             className="w-full h-[400px] md:h-[500px] object-cover"
           />
@@ -174,7 +175,7 @@ const AboutDiscovery = () => {
                 className="space-y-2"
               >
                 <h3 className="text-4xl md:text-5xl font-serif text-brand-blue">{stat.value}</h3>
-                <p className="text-gray-400 text-[12px] font-bold tracking-[0.2em] uppercase">
+                <p className="text-gray-400 text-[12px] font-medium tracking-[0.3em] uppercase">
                   {stat.label}
                 </p>
               </motion.div>

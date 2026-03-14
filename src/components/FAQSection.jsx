@@ -29,10 +29,10 @@ const FAQSection = () => {
       <div className="container mx-auto px-6 md:px-12 max-w-5xl">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
-          <span className="text-brand-orange text-[13px] font-bold tracking-[0.2em] uppercase">
+          <span className="text-brand-orange text-[13px] font-medium tracking-[0.3em] uppercase">
             ( QUESTIONS & ANSWERS )
           </span>
-          <h2 className="text-5xl md:text-6xl font-serif text-brand-blue leading-tight">
+          <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight">
             Any <span className="text-brand-orange italic">questions?</span>
           </h2>
         </div>

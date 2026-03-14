@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Award, Star, ChevronRight } from 'lucide-react';
@@ -7,6 +7,7 @@ import { servicesData } from '../data/servicesData';
 const ServiceDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const service = servicesData.find(s => s.id === id);
 
   useEffect(() => {
@@ -48,7 +49,7 @@ const ServiceDetailPage = () => {
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="space-y-4 max-w-4xl"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 backdrop-blur-md border border-brand-orange/30 text-brand-orange text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-brand-orange/20 backdrop-blur-md border border-brand-orange/30 text-brand-orange text-xs font-medium tracking-[0.3em] uppercase px-4 py-2 rounded-full">
               Our Services
             </div>
             <h1 className="text-white text-4xl md:text-7xl font-serif italic leading-tight">
@@ -76,7 +77,7 @@ const ServiceDetailPage = () => {
                 viewport={{ once: true }}
                 className="space-y-6"
               >
-                <span className="text-brand-orange text-[13px] font-bold tracking-[0.2em] uppercase">
+                <span className="text-brand-orange text-[13px] font-medium tracking-[0.3em] uppercase">
                   ( OVERVIEW )
                 </span>
                 <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-snug">
@@ -89,7 +90,7 @@ const ServiceDetailPage = () => {
 
               {/* Feature Cards */}
               <div>
-                <span className="text-brand-orange text-[13px] font-bold tracking-[0.2em] uppercase">
+                <span className="text-brand-orange text-[13px] font-medium tracking-[0.3em] uppercase">
                   ( HOW WE DO IT )
                 </span>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -119,7 +120,7 @@ const ServiceDetailPage = () => {
                 viewport={{ once: true }}
                 className="bg-[#B97758] rounded-[40px] p-10 md:p-16 text-white"
               >
-                <span className="text-white/60 text-[13px] font-bold tracking-[0.2em] uppercase block mb-4">
+                <span className="text-white/60 text-[13px] font-medium tracking-[0.3em] uppercase block mb-4">
                   ( KEY BENEFITS )
                 </span>
                 <h3 className="text-3xl md:text-4xl font-serif italic mb-12">
@@ -178,7 +179,10 @@ const ServiceDetailPage = () => {
                   </div>
                 </div>
 
-                <button className="w-full py-4 bg-brand-orange text-white rounded-full font-bold text-base hover:bg-[#15202B] transition-all duration-300 flex items-center justify-center gap-3 group shadow-lg shadow-orange-200">
+                <button 
+                  onClick={() => setIsAppointmentModalOpen(true)}
+                  className="w-full py-4 bg-brand-orange text-white rounded-full font-medium text-base hover:bg-[#15202B] transition-all duration-300 flex items-center justify-center gap-3 group shadow-lg shadow-orange-200"
+                >
                   BOOK APPOINTMENT
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -207,7 +211,7 @@ const ServiceDetailPage = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
           <div className="text-center mb-12 space-y-3">
-            <span className="text-brand-orange text-[13px] font-bold tracking-[0.2em] uppercase">
+            <span className="text-brand-orange text-[13px] font-medium tracking-[0.3em] uppercase">
               ( EXPLORE MORE )
             </span>
             <h2 className="text-3xl md:text-4xl font-serif text-brand-blue italic">
@@ -229,6 +233,10 @@ const ServiceDetailPage = () => {
           </div>
         </div>
       </section>
+      <AppointmentModal 
+        isOpen={isAppointmentModalOpen} 
+        onClose={() => setIsAppointmentModalOpen(false)} 
+      />
     </div>
   );
 };

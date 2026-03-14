@@ -4,19 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 const slides = [
   {
     id: 1,
-    image: '/slider1.png',
+    image: '/images/image6.png',
     title: 'Transform Your Life',
     subtitle: 'Expert Hypnotherapy for a Better You',
   },
   {
     id: 2,
-    image: '/slider2.png',
+    image: '/images/image7.png',
     title: 'Find Inner Peace',
     subtitle: 'Relaxation and Mental Clarity Sessions',
   },
   {
     id: 3,
-    image: '/slider3.png',
+    image: '/images/image8.png',
     title: 'New Beginnings',
     subtitle: 'Overcome Challenges with Professional Support',
   },
@@ -72,7 +72,7 @@ const HeroSlider = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-4xl md:text-7xl font-bold text-[#FDFDFD] drop-shadow-2xl mb-4"
+                className="text-4xl md:text-7xl font-semibold text-[#FDFDFD] drop-shadow-2xl mb-4"
               >
                 {slides[current].title}
               </motion.h2>
@@ -80,7 +80,7 @@ const HeroSlider = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
-                className="text-xl md:text-2xl text-white/90 font-medium drop-shadow-lg"
+                className="text-xl md:text-2xl text-white/90 font-light drop-shadow-lg"
               >
                 {slides[current].subtitle}
               </motion.p>

@@ -17,7 +17,7 @@ const AboutSection = () => {
           >
             <div className="relative rounded-[30px] overflow-hidden shadow-2xl">
               <img 
-                src="/a2.jpg" 
+                src="/images/image.png" 
                 alt="Therapy Session" 
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700" 
               />
@@ -33,21 +33,31 @@ const AboutSection = () => {
             className="lg:w-1/3 w-full text-center lg:text-left space-y-8"
           >
             <div className="space-y-4">
-              <span className="text-brand-orange text-[13px] font-bold tracking-[0.2em] uppercase">
+              <span className="text-brand-orange text-[12px] font-medium tracking-[0.3em] uppercase">
                 ( MIND INTELLECTS )
               </span>
-              <h2 className="text-5xl md:text-6xl font-serif leading-tight text-brand-blue">
-                Transform your <br />
-                <span className="text-brand-orange italic">mental health</span>
+              <h2 className="text-4xl md:text-5xl font-serif leading-tight text-brand-blue font-medium">
+                When life looks fine but <br />
+                <span className="text-brand-orange italic font-light">something still feels stuck</span>
               </h2>
             </div>
 
             <div className="space-y-6 text-gray-600 leading-relaxed font-light text-lg">
-              <p>
-                Experience the profound clinical power of the subconscious mind to heal, transform, and empower. Our expert-guided sessions provide a safe sanctuary for mental liberation.
+              <p className="text-brand-blue font-normal leading-relaxed">
+                You may recognise yourself here. You may be someone who appears calm and capable to others, yet internally you feel:
+              </p>
+              <ul className="space-y-3 text-gray-600 font-light text-lg list-disc pl-5">
+                <li>Anxious or overwhelmed at times</li>
+                <li>Caught in repeating relationship patterns</li>
+                <li>Unsure why certain emotional reactions feel so strong</li>
+                <li>Stuck in cycles of overthinking</li>
+                <li>Disconnected from your own sense of safety or self-worth</li>
+              </ul>
+              <p className="pt-4">
+                You may understand your patterns logically, but still feel them operating beneath the surface. This can be frustrating.
               </p>
               <p>
-                We believe in a holistic approach where every individual finds their own path to clarity, strength, and inner peace through professional support.
+                Many people reach a point where they realise that insight alone is not always enough. The deeper emotional layers also need attention.
               </p>
             </div>
 
@@ -68,15 +78,15 @@ const AboutSection = () => {
           >
             <div className="rounded-[30px] overflow-hidden shadow-xl">
               <img 
-                src="/a1.jpg" 
-                alt="Group Therapy" 
+                src="/images/image5.png" 
+                alt="Therapy Environment" 
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="rounded-[30px] overflow-hidden shadow-xl lg:ml-12">
               <img 
-                src="/a3.jpg" 
-                alt="Individual Session" 
+                src="/images/image3.png" 
+                alt="The Result of Healing" 
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
               />
             </div>

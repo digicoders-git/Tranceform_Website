@@ -156,7 +156,7 @@ const FAQPage = () => {
             transition={{ duration: 0.9 }}
             className="space-y-5 max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-semibold tracking-[0.3em] uppercase px-4 py-2 rounded-full">
               Help Centre
             </div>
             <h1 className="text-white text-5xl md:text-7xl font-serif italic leading-tight">
@@ -197,7 +197,7 @@ const FAQPage = () => {
               <button
                 key={cat.id}
                 onClick={() => { setActiveCategory(cat.id); setActiveIndex(null); }}
-                className={`shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all duration-300 ${
+                className={`shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
                   activeCategory === cat.id
                     ? 'bg-brand-orange text-white shadow-md shadow-orange-200'
                     : 'text-gray-500 hover:bg-gray-100'
@@ -215,7 +215,7 @@ const FAQPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-6 md:px-16 max-w-5xl">
           <div className="mb-12 space-y-2">
-            <span className="text-brand-orange text-[12px] font-bold tracking-[0.2em] uppercase block">
+            <span className="text-brand-orange text-[12px] font-semibold tracking-[0.3em] uppercase block">
               ( {faqCategories.find(c => c.id === activeCategory)?.label?.toUpperCase()} )
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-brand-blue italic leading-snug">
@@ -237,7 +237,7 @@ const FAQPage = () => {
                   className="w-full py-8 flex items-start justify-between text-left gap-6 group"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="text-brand-orange/40 font-mono text-sm font-bold mt-1 shrink-0">
+                    <span className="text-brand-orange/40 font-mono text-sm font-semibold mt-1 shrink-0">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span className={`text-xl md:text-2xl font-serif transition-colors duration-300 leading-snug ${
@@ -285,10 +285,10 @@ const FAQPage = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <span className="text-white/60 text-[12px] font-bold tracking-[0.2em] uppercase block">
+            <span className="text-white/60 text-[12px] font-semibold tracking-[0.3em] uppercase block">
               ( READY TO START? )
             </span>
-            <h2 className="text-4xl md:text-6xl font-serif text-white italic leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif text-white italic leading-tight">
               Your transformation begins with a single session
             </h2>
             <p className="text-white/70 text-lg font-light max-w-xl mx-auto">
@@ -296,10 +296,10 @@ const FAQPage = () => {
             </p>
           </motion.div>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="px-10 py-4 bg-white text-brand-orange rounded-full font-bold text-base hover:bg-[#15202B] hover:text-white transition-all duration-300 shadow-lg">
+            <button className="px-10 py-4 bg-white text-brand-orange rounded-full font-semibold text-base hover:bg-[#15202B] hover:text-white transition-all duration-300 shadow-lg">
               BOOK A SESSION
             </button>
-            <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-base hover:bg-white hover:text-brand-orange transition-all duration-300">
+            <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold text-base hover:bg-white hover:text-brand-orange transition-all duration-300">
               FREE DISCOVERY CALL
             </button>
           </div>

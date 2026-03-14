@@ -68,7 +68,7 @@ const ContactPage = () => {
       <section className="relative min-h-[65vh] flex items-end overflow-hidden bg-[#1E2A3A]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/slider3.png)' }}
+          style={{ backgroundImage: 'url(/images/image.png)' }}
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#111] via-black/40 to-transparent" />
 
@@ -79,7 +79,7 @@ const ContactPage = () => {
             transition={{ duration: 0.9 }}
             className="max-w-3xl space-y-5"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-medium tracking-[0.3em] uppercase px-4 py-2 rounded-full">
               Get In Touch
             </div>
             <h1 className="text-white text-5xl md:text-7xl font-serif italic leading-tight">
@@ -120,7 +120,7 @@ const ContactPage = () => {
                       {info.icon}
                     </div>
                     <div>
-                      <h4 className="font-bold text-brand-blue text-lg mb-2">{info.title}</h4>
+                      <h4 className="font-medium text-brand-blue text-lg mb-2">{info.title}</h4>
                       {info.details.map((line, i) => (
                         <p key={i} className="text-gray-500 text-sm font-light leading-relaxed">
                           {line}
@@ -137,7 +137,7 @@ const ContactPage = () => {
                 <p className="text-white/80 font-light text-sm">
                   Unsure if hypnotherapy is right for you? Speak directly with a therapist before booking.
                 </p>
-                <button className="flex items-center gap-2 text-white font-bold text-sm tracking-wide hover:gap-3 transition-all pt-2">
+                <button className="flex items-center gap-2 text-white font-medium text-sm tracking-wide hover:gap-3 transition-all pt-2">
                   BOOK CALL <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -156,7 +156,7 @@ const ContactPage = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 ml-1">Full Name</label>
+                      <label className="text-sm font-medium text-gray-700 ml-1">Full Name</label>
                       <input 
                         type="text" 
                         name="name"
@@ -168,7 +168,7 @@ const ContactPage = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 ml-1">Email Address</label>
+                      <label className="text-sm font-medium text-gray-700 ml-1">Email Address</label>
                       <input 
                         type="email" 
                         name="email"
@@ -183,7 +183,7 @@ const ContactPage = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 ml-1">Phone Number</label>
+                      <label className="text-sm font-medium text-gray-700 ml-1">Phone Number</label>
                       <input 
                         type="tel" 
                         name="phone"
@@ -194,7 +194,7 @@ const ContactPage = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 ml-1">Subject / Service</label>
+                      <label className="text-sm font-medium text-gray-700 ml-1">Subject / Service</label>
                       <select 
                         name="subject"
                         value={formData.subject}
@@ -213,7 +213,7 @@ const ContactPage = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 ml-1">Your Message</label>
+                    <label className="text-sm font-medium text-gray-700 ml-1">Your Message</label>
                     <textarea 
                       name="message"
                       value={formData.message}
@@ -228,7 +228,7 @@ const ContactPage = () => {
                   <button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full bg-brand-orange text-white rounded-2xl px-8 py-5 font-bold text-lg hover:bg-[#E68A2E] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:transform-none"
+                    className="w-full bg-brand-orange text-white rounded-2xl px-8 py-5 font-medium text-lg hover:bg-[#E68A2E] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:transform-none"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">Sending...</span>
@@ -243,7 +243,7 @@ const ContactPage = () => {
                     <motion.div 
                       initial={{ opacity: 0, y: 10 }} 
                       animate={{ opacity: 1, y: 0 }} 
-                      className="p-4 bg-green-50 text-green-700 rounded-xl text-center text-sm font-semibold border border-green-100"
+                      className="p-4 bg-green-50 text-green-700 rounded-xl text-center text-sm font-medium border border-green-100"
                     >
                       Thank you! Your message has been received. We'll be in touch shortly.
                     </motion.div>
