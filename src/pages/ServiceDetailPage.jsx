@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Award, Star, ChevronRight } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
+import AppointmentModal from '../components/AppointmentModal';
 
 const ServiceDetailPage = () => {
   const { id } = useParams();
@@ -20,13 +21,25 @@ const ServiceDetailPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ─── Hero Section ─── */}
-      <section className="relative min-h-[75vh] flex items-end overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${service.image})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
-        </div>
+      <section className="relative min-h-[75vh] flex items-end overflow-hidden bg-[#1E2A3A]">
+        {service.id === 'past-life-regression' ? (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center blur-3xl opacity-50 scale-110"
+              style={{ backgroundImage: `url(${service.image})` }}
+            />
+            <div
+              className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${service.image})` }}
+            />
+          </>
+        ) : (
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${service.image})` }}
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#15202B] via-black/40 to-black/20" />
 
         <div className="relative z-10 w-full container mx-auto px-6 md:px-16 max-w-7xl pt-36 pb-20">
           {/* Breadcrumb */}

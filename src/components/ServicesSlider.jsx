@@ -77,14 +77,14 @@ const ServicesSlider = () => {
                 />
                 
                 {/* Dark Overlay with Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 transition-opacity duration-500" />
                 
                 {/* Content */}
-                <div className="absolute bottom-10 left-8 right-8 text-white">
-                  <h3 className="text-2xl md:text-3xl font-serif italic mb-4 drop-shadow-lg">
+                <div className="absolute bottom-10 left-8 right-8 text-white z-10">
+                  <h3 className="text-2xl md:text-3xl font-serif text-white italic mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                     {service.title}
                   </h3>
-                  <p className="text-sm md:text-base text-white/80 leading-relaxed font-light line-clamp-2 md:line-clamp-none">
+                  <p className="text-sm md:text-base text-white/95 leading-relaxed font-light line-clamp-2 md:line-clamp-none drop-shadow-[0_1px_5px_rgba(0,0,0,0.8)]">
                     {service.desc}
                   </p>
                 </div>

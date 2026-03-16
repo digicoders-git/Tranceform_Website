@@ -63,7 +63,7 @@ export const servicesData = [
     id: "past-life-regression",
     title: "Past Life Regression",
     subtitle: "Journey into the depths of your soul to unlock ancient wisdom",
-    image: "/images/image6.png",
+    image: "/images/img6.png",
     shortDesc: "Explore the journey of your soul across time to resolve karmic patterns and understand your present life more deeply.",
     fullDesc: "Past Life Regression (PLR) is a profound therapeutic modality used to access memories from previous incarnations stored in the deeper layers of the subconscious. Under a guided hypnotic state, clients often uncover the origins of current phobias, unexplained emotional pain, relationship patterns, and life purpose. Whether approached from a spiritual or psychological angle, PLR offers remarkable insights and healing opportunities.",
     benefits: [
@@ -93,7 +93,7 @@ export const servicesData = [
     id: "eliminate-anxiety-and-stress",
     title: "Eliminate Anxiety & Stress",
     subtitle: "Restore calm, clarity and confidence from within",
-    image: "/images/image4.png",
+    image: "/anxity.jpg",
     shortDesc: "Rewire your brain's stress-response system and step into a life of lasting calm and emotional balance.",
     fullDesc: "Anxiety and chronic stress have become an epidemic of the modern age. Hypnotherapy offers a drug-free, side-effect-free path to real and lasting calm by working directly with the subconscious mind — the seat of all habitual thought and emotional response. Our sessions help you identify the root triggers of your anxiety, dissolve them at the source, and install a new baseline of peace and resilience.",
     benefits: [
@@ -153,7 +153,7 @@ export const servicesData = [
     id: "stop-smoking",
     title: "Stop Smoking",
     subtitle: "End your dependency on cigarettes — permanently and gently",
-    image: "/images/image8.png",
+    image: "/images/img8.png",
     shortDesc: "Clinical hypnotherapy has one of the highest success rates for smoking cessation — more effective than patches, gum, or willpower alone.",
     fullDesc: "Smoking is one of the most stubborn habits to break because it is psychologically anchored in the subconscious. Hypnotherapy bypasses the conscious urge to smoke and directly reprograms the underlying associations and triggers. Our structured stop-smoking programme typically shows results within 1–3 sessions, helping you step into your smoke-free identity with confidence, removing both the cravings and the emotional need to light up.",
     benefits: [

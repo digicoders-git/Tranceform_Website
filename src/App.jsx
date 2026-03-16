@@ -44,8 +44,8 @@ function App() {
             {/* Top Newsletter / CTA Row */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-16 border-b border-white/10 mb-16">
               <div className="max-w-xl">
-                <h3 className="text-3xl font-serif italic mb-2">Join our community</h3>
-                <p className="text-gray-400 font-light text-sm">
+                <h3 className="text-white text-3xl font-serif italic mb-2">Join our community</h3>
+                <p className="text-white/70 font-light text-sm">
                   Subscribe for insights on hypnotherapy, mental wellness, and exclusive offers.
                 </p>
               </div>
@@ -68,7 +68,7 @@ function App() {
                 <div className="bg-white inline-block p-4 rounded-2xl w-full max-w-[280px]">
                    <img src="/logo.png" alt="Tranceform Logo" className="w-full h-auto object-contain" />
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed font-light pr-4">
+                <p className="text-white/70 text-sm leading-relaxed font-light pr-4">
                   Empowering minds through professional hypnotherapy. Experience clinical depth and lasting transformation.
                 </p>
                 <div className="flex gap-3">
@@ -88,7 +88,7 @@ function App() {
               {/* Quick Links */}
               <div className="md:col-span-4 lg:col-span-2 lg:col-start-6">
                 <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Explore</h4>
-                <ul className="space-y-4 text-gray-400 text-sm font-light">
+                <ul className="space-y-4 text-white/70 text-sm font-light">
                   <li><Link to="/" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Home</Link></li>
                   <li><Link to="/about" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">About Us</Link></li>
                   <li><Link to="/services/hypnotherapy-for-reducing-pain" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Services</Link></li>
@@ -99,7 +99,7 @@ function App() {
               {/* Support */}
               <div className="md:col-span-4 lg:col-span-2">
                 <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Support</h4>
-                <ul className="space-y-4 text-gray-400 text-sm font-light">
+                <ul className="space-y-4 text-white/70 text-sm font-light">
                   <li><Link to="/faqs" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">FAQs</Link></li>
                   <li><Link to="/testimonials" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Testimonials</Link></li>
                   <li><Link to="/contact" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Contact Us</Link></li>
@@ -112,16 +112,16 @@ function App() {
                 <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Connect</h4>
                 <div className="space-y-4 text-sm font-light">
                   <div>
-                    <span className="block text-gray-500 mb-1">Email</span>
-                    <a href="mailto:info@tranceform.com" className="text-white hover:text-brand-orange transition-colors">info@tranceform.com</a>
+                    <span className="block text-white/50 mb-1">Email</span>
+                    <a href="mailto:info@tranceform.com" className="text-white/90 hover:text-brand-orange transition-colors">info@tranceform.com</a>
                   </div>
                   <div>
-                    <span className="block text-gray-500 mb-1">Phone</span>
-                    <a href="tel:+442071234567" className="text-white hover:text-brand-orange transition-colors">+44 (0) 20 7123 4567</a>
+                    <span className="block text-white/50 mb-1">Phone</span>
+                    <a href="tel:+442071234567" className="text-white/90 hover:text-brand-orange transition-colors">+44 (0) 20 7123 4567</a>
                   </div>
                   <div>
-                    <span className="block text-gray-500 mb-1">Clinic</span>
-                    <p className="text-white/80">12 Harley Street<br />London, W1G 9PF</p>
+                    <span className="block text-white/50 mb-1">Clinic</span>
+                    <p className="text-white/90">12 Harley Street<br />London, W1G 9PF</p>
                   </div>
                 </div>
               </div>
@@ -129,10 +129,10 @@ function App() {
 
             {/* Bottom Copyright */}
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-gray-500 text-[11px] tracking-[0.3em] uppercase font-medium">
+              <p className="text-white/50 text-[11px] tracking-[0.3em] uppercase font-medium">
                 Transform your mind • Transform your life
               </p>
-              <p className="text-gray-500 text-xs font-light">
+              <p className="text-white/50 text-xs font-light">
                 © {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Designed & Developed by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-semibold"><a href="https://digicoders.in">Team Digicoders</a></span>
               </p>
             </div>
