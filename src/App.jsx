@@ -133,7 +133,7 @@ function App() {
                 Transform your mind • Transform your life
               </p>
               <p className="text-white/50 text-xs font-light">
-                © {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Designed & Developed by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-semibold"><a href="https://digicoders.in">Team Digicoders</a></span>
+                © {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Crafter with ❤️ by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-semibold"><a href="https://digicoders.in">#TeamDigiCoders</a></span>
               </p>
             </div>
           </div>
