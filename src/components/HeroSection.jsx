@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import AppointmentModal from './AppointmentModal';
-import heroImage from '../assets/Hero.png';
+import heroImage from '../assets/hero.png';
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
