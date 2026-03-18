@@ -8,6 +8,15 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'HOME', href: '/' },
@@ -33,14 +42,18 @@ const Header = () => {
   ];
 
   return (
-    <div className="absolute top-8 left-0 right-0 z-50 px-4 md:px-10">
-      <header className="max-w-7xl mx-auto bg-white/95 backdrop-blur-md rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] py-4 px-8 md:px-12 flex items-center justify-between border border-white/20">
+    <div className={`fixed left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'top-0 px-0' : 'top-8 px-4 md:px-10'}`}>
+      <header className={`max-w-7xl mx-auto transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md rounded-none md:rounded-b-[24px] shadow-xl py-3 px-6 md:px-12 border-b border-gray-100' 
+          : 'bg-white/95 backdrop-blur-md rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] py-4 px-8 md:px-12 border border-white/20'
+      } flex items-center justify-between`}>
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img 
             src="/logo.png" 
             alt="Tranceform Logo" 
-            className="h-10 md:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300 cursor-pointer" 
+            className={`transition-all duration-300 object-contain hover:scale-105 cursor-pointer ${isScrolled ? 'h-8 md:h-10' : 'h-10 md:h-12'}`} 
           />
         </Link>
 
@@ -104,7 +117,11 @@ const Header = () => {
         <div className="hidden lg:block">
           <button 
             onClick={() => setIsAppointmentModalOpen(true)}
-            className="px-8 py-3 bg-brand-orange text-white rounded-full text-[14px] font-medium shadow-lg shadow-orange-200 hover:bg-[#15202B] hover:shadow-none transition-all duration-300 transform active:scale-95"
+            className={`bg-brand-orange text-white rounded-full font-medium transition-all duration-300 transform active:scale-95 ${
+              isScrolled 
+                ? 'px-6 py-2 text-[13px] hover:bg-[#15202B]' 
+                : 'px-8 py-3 text-[14px] shadow-lg shadow-orange-200 hover:bg-[#15202B] hover:shadow-none'
+            }`}
           >
             BOOK A SESSION
           </button>
@@ -126,20 +143,26 @@ const Header = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            className="absolute top-28 left-4 right-4 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 xl:hidden z-50"
+            className={`absolute left-4 right-4 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 xl:hidden z-50 transition-all duration-500 ${isScrolled ? 'top-20' : 'top-28'}`}
           >
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <div key={item.name}>
-                  <Link
-                    to={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-[15px] font-medium text-brand-blue hover:text-brand-orange block py-2"
-                  >
-                    {item.name}
-                  </Link>
+                  {item.hasDropdown ? (
+                    <div className="text-[15px] font-medium text-brand-blue py-2">
+                      {item.name}
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-[15px] font-medium text-brand-blue hover:text-brand-orange block py-2"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                   {item.hasDropdown && (
-                    <div className="pl-4 mt-2 flex flex-col gap-2 border-l-2 border-orange-100">
+                    <div className="pl-4 mt-1 flex flex-col gap-2 border-l-2 border-orange-100 mb-2">
                       {item.dropdownItems.map((subItem) => (
                         <Link key={subItem.href} to={subItem.href} onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] text-gray-500 hover:text-brand-orange py-1">
                           {subItem.name}

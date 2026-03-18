@@ -110,15 +110,14 @@ const PrivacyPage = () => {
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
       
-      {/* ─── Header Spacer ─── */}
-      <div className="pt-36 bg-[#1E2A3A]"></div>
+
 
       {/* ─── Page Header ─── */}
-      <section className="bg-[#1E2A3A] py-20 border-b border-white/5 relative overflow-hidden">
+      <section className="bg-[#1E2A3A] min-h-[65vh] flex items-center border-b border-white/5 relative overflow-hidden">
         {/* Subtle background element */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-orange/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
         
-        <div className="container mx-auto px-6 md:px-16 max-w-4xl relative z-10 text-center">
+        <div className="container mx-auto px-6 md:px-16 max-w-4xl relative z-10 text-center pt-40 pb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,7 +127,7 @@ const PrivacyPage = () => {
             <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Shield className="w-8 h-8 text-brand-orange" />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white italic leading-tight">
+            <h1 className="text-4xl md:text-6xl font-serif text-white leading-tight">
               Privacy & Security Policy
             </h1>
             <p className="text-white/60 text-lg font-light max-w-2xl mx-auto leading-relaxed">
@@ -195,7 +194,7 @@ const PrivacyPage = () => {
       {/* ─── Bottom CTA ─── */}
       <section className="py-20 bg-[#E8E1DC]">
         <div className="container mx-auto px-6 max-w-3xl text-center space-y-6">
-          <h3 className="text-2xl md:text-3xl font-serif text-brand-blue italic">Have concerns about confidentiality?</h3>
+          <h3 className="text-2xl md:text-3xl font-serif text-brand-blue">Have concerns about confidentiality?</h3>
           <p className="text-gray-600 font-light leading-relaxed">
             Our priority is your comfort and security. You can discuss any privacy concerns directly with a therapist during your free discovery call before committing to any sessions.
           </p>

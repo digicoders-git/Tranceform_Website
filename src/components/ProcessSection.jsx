@@ -21,26 +21,33 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#B97758] text-white overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+    <section className="py-24 bg-[#15202B] text-white overflow-hidden relative">
+      {/* Decorative vertical line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-white/5" />
+
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="space-y-4 mb-20"
+          className="space-y-6 mb-24 text-center"
         >
-          <span className="text-white/60 text-[13px] font-medium tracking-[0.3em] uppercase block">
-            ( OUR PROCESS )
-          </span>
-          <h2 className="text-3xl md:text-5xl font-serif leading-tight">
-            Mental <span className="italic">health</span> starts with you
+          <div className="flex justify-center items-center gap-4">
+            <div className="h-[1px] w-8 bg-[#A67C52]" />
+            <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase block">
+              ( OUR PROCESS )
+            </span>
+            <div className="h-[1px] w-8 bg-[#A67C52]" />
+          </div>
+          <h2 className="text-4xl md:text-6xl font-serif leading-tight max-w-3xl mx-auto">
+            Mental <span className="serif text-[#A67C52]">health</span> starts with you
           </h2>
         </motion.div>
-
+ 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {steps.map((step, idx) => (
             <motion.div 
               key={idx}
@@ -48,19 +55,22 @@ const ProcessSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
               viewport={{ once: true }}
-              className={`relative py-10 md:py-0 px-0 md:px-12 flex flex-col items-start space-y-8 ${
-                idx !== 0 ? 'md:border-l md:border-white/20' : ''
+              className={`relative py-16 md:py-12 px-0 md:px-12 flex flex-col items-center text-center space-y-8 group ${
+                idx !== 0 ? 'md:border-l md:border-white/10' : ''
               }`}
             >
-              {/* Number Box */}
-              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#B97758] font-medium text-xl shadow-lg">
-                {step.id}
+              {/* Number Box - Premium Style */}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-[#A67C52]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="w-20 h-20 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-[#A67C52] font-serif text-3xl shadow-2xl relative z-10 group-hover:border-[#A67C52]/50 transition-all duration-500">
+                  {step.id}
+                </div>
               </div>
-
+ 
               {/* Content */}
               <div className="space-y-4">
-                <h3 className="text-2xl font-serif">{step.title}</h3>
-                <p className="text-white/70 font-light leading-relaxed">
+                <h3 className="text-2xl md:text-3xl font-serif group-hover:text-[#A67C52] transition-colors duration-500">{step.title}</h3>
+                <p className="text-white/60 font-light leading-relaxed text-lg max-w-sm">
                   {step.desc}
                 </p>
               </div>

@@ -21,29 +21,33 @@ const BlogPage = () => {
   const featuredPost = blogPosts[0];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
 
       {/* ─── Hero Section ─── */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-[#1E2A3A]">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: 'url(/blog.jpg)' }}
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
-        <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-7xl pt-36 pb-20">
+      <section className="relative overflow-hidden bg-linear-to-br from-[#15202B] via-[#0F1722] to-[#15202B]">
+        {/* Subtle Accent Glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#A67C52]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#A67C52]/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+        
+        <div className="absolute inset-0 bg-linear-to-t from-[#15202B] via-transparent to-transparent" />
+        <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-7xl pt-40 pb-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="max-w-3xl space-y-5"
+            className="max-w-3xl space-y-6"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-medium tracking-[0.3em] uppercase px-4 py-2 rounded-full">
-              Our Blog
+            <div className="flex items-center gap-4 mb-2">
+              <div className="h-[1px] w-12 bg-[#A67C52]" />
+               <span className="text-[#A67C52] text-xs font-medium tracking-[0.4em] uppercase">
+                 ( OUR BLOG )
+               </span>
             </div>
-            <h1 className="text-white text-5xl md:text-7xl font-serif italic leading-tight">
-              Insights & Healing Stories
+            <h1 className="text-white text-4xl md:text-6xl font-serif leading-[1.1]">
+              Insights & <br />
+              <span className="text-[#A67C52]">Healing Stories</span>
             </h1>
-            <p className="text-white/70 text-lg font-light max-w-xl">
+            <p className="text-white/80 text-lg md:text-xl font-light max-w-2xl leading-relaxed serif">
               Expert knowledge, real transformations, and everything you need to begin your hypnotherapy journey.
             </p>
           </motion.div>
@@ -62,20 +66,21 @@ const BlogPage = () => {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:border-brand-orange transition-colors"
+                className="w-full pl-11 pr-4 py-3 rounded-full border border-gray-100 text-sm focus:outline-none focus:border-[#A67C52] transition-colors bg-gray-50/50"
               />
             </div>
 
             {/* Category Filters */}
-            <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none w-full md:w-auto">
+            <div className="flex overflow-x-auto scrollbar-hide gap-3 w-full md:w-auto pb-2 md:pb-0">
+              <div className="flex flex-nowrap gap-3">
               {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`shrink-0 px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-300 ${
+                  className={`shrink-0 px-6 py-2.5 rounded-full text-xs font-medium tracking-wider transition-all duration-500 ${
                     activeCategory === cat
-                      ? 'bg-brand-orange text-white shadow-md shadow-orange-200'
-                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                      ? 'bg-[#A67C52] text-white shadow-xl shadow-[#A67C52]/20'
+                      : 'bg-white border border-gray-100 text-gray-500 hover:border-[#A67C52]/30 hover:text-brand-blue'
                   }`}
                 >
                   {cat}
@@ -83,50 +88,54 @@ const BlogPage = () => {
               ))}
             </div>
           </div>
+          </div>
         </div>
       </section>
 
       {/* ─── Featured Post ─── */}
       {activeCategory === 'All' && !searchQuery && (
-        <section className="py-16 bg-[#FAFAFA]">
+        <section className="py-20 bg-[#FAFAFA] overflow-hidden">
           <div className="container mx-auto px-6 md:px-16 max-w-7xl">
-            <span className="text-brand-orange text-[12px] font-medium tracking-[0.3em] uppercase block mb-8">
-              ( FEATURED ARTICLE )
-            </span>
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-[1.5px] w-10 bg-[#A67C52]/40" />
+              <span className="text-[#A67C52] text-[12px] font-medium tracking-[0.4em] uppercase block">
+                ( FEATURED ARTICLE )
+              </span>
+            </div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               onClick={() => navigate(`/blog/${featuredPost.id}`)}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[40px] overflow-hidden shadow-2xl cursor-pointer group"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[60px] overflow-hidden shadow-3xl cursor-pointer group bg-white border border-gray-100"
             >
               {/* Image */}
-              <div className="relative h-72 lg:h-auto overflow-hidden">
+              <div className="relative h-80 lg:h-auto overflow-hidden">
                 <img
                   src={featuredPost.image}
                   alt={featuredPost.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
                 />
-                <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-[#15202B]/30 to-transparent" />
               </div>
               {/* Content */}
-              <div className="bg-white p-10 md:p-14 flex flex-col justify-center space-y-6">
-                <div className="flex items-center gap-3">
-                  <span className="px-3 py-1 bg-brand-orange/10 text-brand-orange text-xs font-medium rounded-full">
+              <div className="p-10 md:p-20 flex flex-col justify-center space-y-8">
+                <div className="flex items-center gap-4">
+                  <span className="px-4 py-1.5 bg-[#A67C52]/10 text-[#A67C52] text-[10px] font-medium tracking-[0.2em] uppercase rounded-full border border-[#A67C52]/20">
                     {featuredPost.category}
                   </span>
-                  <span className="flex items-center gap-1 text-gray-400 text-xs">
-                    <Clock className="w-3 h-3" /> {featuredPost.readTime}
+                  <span className="flex items-center gap-2 text-black/40 text-xs font-light">
+                    <Clock className="w-3.5 h-3.5" /> {featuredPost.readTime}
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-serif text-brand-blue leading-snug group-hover:text-brand-orange transition-colors">
+                <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight group-hover:text-[#A67C52] transition-colors tracking-tight">
                   {featuredPost.title}
                 </h2>
-                <p className="text-gray-500 font-light leading-relaxed line-clamp-3">
+                <p className="text-black/70 font-normal text-lg leading-relaxed line-clamp-3">
                   {featuredPost.excerpt}
                 </p>
-                <div className="flex items-center gap-2 text-brand-orange font-medium text-sm">
-                  Read Full Article <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <div className="flex items-center gap-3 text-[#A67C52] font-medium text-xs tracking-[0.2em] uppercase pt-4">
+                  Read Full Article <ChevronRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                 </div>
               </div>
             </motion.div>
@@ -144,12 +153,13 @@ const BlogPage = () => {
             </div>
           ) : (
             <>
-              <div className="flex items-center justify-between mb-12">
-                <span className="text-brand-orange text-[12px] font-medium tracking-[0.3em] uppercase">
+              <div className="flex items-center gap-4 mb-16">
+                <div className="h-[1px] w-8 bg-[#A67C52]" />
+                <span className="text-[#A67C52] text-[12px] font-medium tracking-[0.4em] uppercase">
                   ( {filtered.length} ARTICLES )
                 </span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {filtered.map((post, idx) => (
                   <motion.article
                     key={post.id}
@@ -158,39 +168,39 @@ const BlogPage = () => {
                     transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
                     viewport={{ once: true }}
                     onClick={() => navigate(`/blog/${post.id}`)}
-                    className="group cursor-pointer bg-white rounded-[32px] overflow-hidden border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-400"
+                    className="group cursor-pointer bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-xl hover:shadow-3xl hover:-translate-y-3 transition-all duration-500"
                   >
                     {/* Image */}
-                    <div className="relative h-56 overflow-hidden">
+                    <div className="relative h-64 overflow-hidden">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]"
                       />
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-black/60 backdrop-blur-sm text-white text-xs font-medium rounded-full flex items-center gap-1">
-                          <Tag className="w-3 h-3" /> {post.category}
+                      <div className="absolute top-6 left-6">
+                        <span className="px-4 py-1.5 bg-[#15202B]/80 backdrop-blur-md text-white text-[10px] font-medium tracking-widest uppercase rounded-full flex items-center gap-2 border border-white/10">
+                          <Tag className="w-3 h-3 text-[#A67C52]" /> {post.category}
                         </span>
                       </div>
                     </div>
 
                     {/* Content */}
-                    <div className="p-8 space-y-4">
-                      <div className="flex items-center gap-3 text-gray-400 text-xs">
+                    <div className="p-10 space-y-5">
+                      <div className="flex items-center gap-4 text-black/40 text-[11px] font-medium tracking-widest uppercase">
                         <span>{post.date}</span>
-                        <span>•</span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {post.readTime}
+                        <div className="w-1 h-1 rounded-full bg-[#A67C52]/40" />
+                        <span className="flex items-center gap-2">
+                          <Clock className="w-3.5 h-3.5" /> {post.readTime}
                         </span>
                       </div>
-                      <h3 className="text-xl font-serif text-brand-blue leading-snug group-hover:text-brand-orange transition-colors line-clamp-2">
+                      <h3 className="text-2xl font-serif text-brand-blue leading-tight group-hover:text-[#A67C52] transition-colors line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 font-light">
+                      <p className="text-black/60 font-normal text-base leading-relaxed line-clamp-3">
                         {post.excerpt}
                       </p>
-                      <div className="flex items-center gap-2 text-brand-orange font-medium text-sm pt-2">
-                        Read More <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <div className="flex items-center gap-3 text-[#A67C52] font-medium text-[11px] tracking-[0.2em] uppercase pt-4">
+                        Read More <ChevronRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                       </div>
                     </div>
                   </motion.article>
@@ -202,27 +212,41 @@ const BlogPage = () => {
       </section>
 
       {/* ─── CTA Section ─── */}
-      <section className="py-24 bg-[#B97758]">
-        <div className="container mx-auto px-6 max-w-4xl text-center space-y-8">
+      <section className="py-32 bg-[#15202B] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#A67C52] blur-[150px] rounded-full" />
+        </div>
+        
+        <div className="container mx-auto px-6 max-w-4xl text-center space-y-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-8"
           >
-            <span className="text-white/60 text-[12px] font-medium tracking-[0.3em] uppercase block">
-              ( START YOUR JOURNEY )
-            </span>
-            <h2 className="text-3xl md:text-5xl font-serif text-white italic leading-tight">
-              Ready to transform your mind?
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-[1px] w-12 bg-[#A67C52]/50" />
+              <span className="text-[#A67C52] text-[12px] font-medium tracking-[0.4em] uppercase block">
+                ( START YOUR JOURNEY )
+              </span>
+              <div className="h-[1px] w-12 bg-[#A67C52]/50" />
+            </div>
+            <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
+              Ready to <span className="text-[#A67C52] serif">transform</span> your mind?
             </h2>
-            <p className="text-white/70 text-lg font-light max-w-xl mx-auto">
+            <p className="text-white/70 text-xl font-light max-w-2xl mx-auto leading-relaxed serif">
               Book a consultation with our certified hypnotherapists and take the first step towards lasting change.
             </p>
           </motion.div>
-          <button className="px-10 py-4 bg-white text-brand-orange rounded-full font-medium text-base hover:bg-[#15202B] hover:text-white transition-all duration-300 shadow-lg">
-            BOOK A SESSION
-          </button>
+          
+          <div className="pt-4">
+            <button 
+              onClick={() => navigate('/contact')}
+              className="px-14 py-6 bg-[#A67C52] text-white rounded-full font-medium text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-brand-blue transition-all duration-500 shadow-3xl active:scale-95"
+            >
+              BOOK A SESSION
+            </button>
+          </div>
         </div>
       </section>
     </div>

@@ -1,88 +1,100 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Compass, ArrowRight } from 'lucide-react';
 
 const HowItWorks = () => {
   const steps = [
-    { id: '01/', text: "Define your therapy goals and session type" },
-    { id: '02/', text: "Connect with our certified clinical hypnotherapist" },
-    { id: '03/', text: "Schedule your discovery or deep-healing session" },
-    { id: '04/', text: "Complete your safe and secure registration" },
-    { id: '05/', text: "Begin your journey to a empowered subconscious" },
+    { title: "Define Your Vision", text: "Identify your therapy goals and choose your preferred session type." },
+    { title: "Safe Sanctuary", text: "Schedule your discovery or deep-healing session in a safe environment." },
+    { title: "Inner Awakening", text: "Begin your journey toward an empowered and harmonious subconscious." },
   ];
 
   return (
-    <section className="pt-24 pb-12 bg-white">
+    <section className="py-12 md:py-16 bg-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+        
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-brand-orange text-[13px] font-medium tracking-[0.3em] uppercase">
-            ( HOW IT WORKS )
-          </span>
-          <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight">
-            Everyone deserves our <span className="text-brand-orange italic">special care</span>
-          </h2>
+        <div className="text-center mb-16 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center items-center gap-6"
+          >
+            <div className="h-[1px] w-12 bg-[#A67C52]/40" />
+            <span className="text-[#A67C52] text-[14px] font-medium tracking-[0.4em] uppercase">
+              ( HOW IT WORKS )
+            </span>
+            <div className="h-[1px] w-12 bg-[#A67C52]/40" />
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-6xl font-serif text-brand-blue leading-[1.1] font-medium max-w-4xl mx-auto"
+          >
+            Everyone deserves our <br />
+            <span className="text-[#A67C52] font-medium serif">specialised care</span>
+          </motion.h2>
+          <div className="flex justify-center pt-4">
+             <div className="h-1.5 w-24 bg-[#A67C52]/20 rounded-full" />
+          </div>
         </div>
-
-        {/* The Card Section with specific background layout */}
-        <div className="relative mt-20">
-          {/* Peach Box: Positioned to the right as per reference */}
-          <div className="absolute top-0 right-0 w-full lg:w-[85%] h-full bg-[#EBC9B4] rounded-[40px] -z-10" />
-
-          <div className="flex flex-col lg:flex-row items-stretch min-h-[650px]">
+ 
+        {/* Content Layout */}
+        <div className="relative mt-12">
+          {/* Elegant Shape Background */}
+          <div className="absolute top-1/2 -translate-y-1/2 right-0 w-full lg:w-[90%] h-[90%] bg-[#A67C52]/[0.02] rounded-[100px] -z-10 border border-[#A67C52]/5" />
+          
+            {/* Left Column Hidden as requested */}
             
-            {/* Left Image: Overlapping and vertical */}
-            <motion.div 
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="w-full lg:w-[45%] p-6 lg:p-0 flex items-center justify-center lg:justify-start"
-            >
-              <div className="rounded-[40px] overflow-hidden shadow-[30px_30px_60px_rgba(0,0,0,0.15)] w-full max-w-[500px] h-[550px] lg:h-[600px] lg:-ml-12 border-8 border-white">
-                <img 
-                  src="/images/care.jpg" 
-                  alt="Special Care Session" 
-                  className="w-full h-full object-cover" 
-                />
-              </div>
-            </motion.div>
-
-            {/* Right List: Inside the peach box area */}
+            {/* Right Column: Premium Step List (Now centered and wider) */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
               viewport={{ once: true }}
-              className="w-full lg:w-[55%] flex flex-col justify-center p-10 lg:pl-16 lg:pr-20"
+              className="w-full max-w-3xl mx-auto space-y-12"
             >
-              <div className="mb-12">
-                <h3 className="text-2xl font-medium text-brand-blue mb-6 font-serif underline decoration-brand-orange decoration-2 underline-offset-8">
-                  How do you get our services
-                </h3>
-                <p className="text-brand-blue text-lg font-light leading-relaxed max-w-lg">
-                  Starting your transformation is simple. We follow a structured approach to ensure your mind is ready for positive suggestions and lasting emotional release.
-                </p>
-              </div>
-
-              {/* Numbered List matching reference format */}
-              <div className="space-y-0">
+              {/* Step Items */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
                 {steps.map((step, index) => (
-                  <div 
+                  <motion.div 
                     key={index}
-                    className="flex items-center gap-8 py-6 border-t border-gray-900/10 group cursor-default"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex flex-col items-center text-center space-y-4 group"
                   >
-                    <span className="text-xl font-medium text-brand-blue/80 w-12 tracking-tighter">{step.id}</span>
-                    <div className="w-[1.5px] h-8 bg-brand-orange/40 group-hover:bg-brand-orange transition-colors" />
-                    <span className="text-[17px] md:text-[20px] font-serif italic text-brand-blue group-hover:text-brand-orange transition-colors">
-                      {step.text}
-                    </span>
-                  </div>
+                    {/* Number Circle */}
+                    <div className="relative z-10 w-[64px] h-[64px] rounded-full border border-[#A67C52]/30 bg-white flex items-center justify-center shrink-0 shadow-lg group-hover:bg-[#A67C52] group-hover:border-[#A67C52] transition-all duration-500">
+                       <span className="text-2xl font-serif text-[#A67C52] group-hover:text-white transition-colors duration-500">
+                         {index + 1}
+                       </span>
+                    </div>
+  
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-serif text-brand-blue group-hover:text-[#A67C52] transition-colors">
+                        {step.title}
+                      </h4>
+                      <p className="text-black/60 font-light leading-relaxed text-base">
+                        {step.text}
+                      </p>
+                    </div>
+                  </motion.div>
                 ))}
-                <div className="border-t border-gray-900/10" />
+              </div>
+  
+              {/* CTA Button */}
+              <div className="pt-8 text-center">
+                 <button className="inline-flex items-center gap-6 px-12 py-5 bg-[#A67C52] text-white rounded-full font-medium tracking-[0.2em] text-xs uppercase hover:bg-brand-blue transition-all duration-300 group shadow-2xl active:scale-95">
+                   Schedule Your Journey
+                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                 </button>
               </div>
             </motion.div>
-
-          </div>
         </div>
       </div>
     </section>
@@ -90,3 +102,4 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
+

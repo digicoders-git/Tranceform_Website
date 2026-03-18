@@ -60,7 +60,7 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                 >
                   <X className="w-5 h-5" />
                 </button>
-                <h3 className="text-3xl font-serif italic text-white mb-2">Book Your Session</h3>
+                <h3 className="text-3xl font-serif text-white mb-2">Book Your Session</h3>
                 <p className="text-white/60 text-sm font-light">Take the first step towards your transformation.</p>
               </div>
 

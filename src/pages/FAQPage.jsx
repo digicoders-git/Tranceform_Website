@@ -142,37 +142,37 @@ const FAQPage = () => {
     <div className="min-h-screen bg-white">
 
       {/* ─── Hero Section ─── */}
-      <section className="relative min-h-[55vh] flex items-end overflow-hidden bg-[#1E2A3A]">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/slider1.png)' }}
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
+      <section className="relative flex items-center overflow-hidden bg-[#15202B]">
 
-        <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-7xl pt-36 pb-20 space-y-6">
+
+        <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-7xl pt-36 pb-8 space-y-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="space-y-5 max-w-3xl"
+            className="space-y-6 max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-semibold tracking-[0.3em] uppercase px-4 py-2 rounded-full">
-              Help Centre
+            <div className="flex items-center gap-4">
+              <div className="h-[1px] w-12 bg-[#A67C52]" />
+              <span className="text-[#A67C52] text-xs font-medium tracking-[0.4em] uppercase">
+                ( HELP CENTRE )
+              </span>
             </div>
-            <h1 className="text-white text-5xl md:text-7xl font-serif italic leading-tight">
-              Frequently Asked Questions
+            <h1 className="text-white text-3xl md:text-5xl font-serif leading-[1.1]">
+              Frequently Asked <br />
+              <span className="text-[#A67C52]">Questions</span>
             </h1>
-            <p className="text-white/70 text-lg font-light max-w-xl">
+            <p className="text-white/80 text-lg md:text-xl font-light max-w-xl leading-relaxed serif">
               Everything you need to know about hypnotherapy, our process, and what to expect from your sessions.
             </p>
           </motion.div>
 
-          {/* Stats Row */}
+          {/* Stats Bar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-wrap gap-8 pt-4"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center bg-white/5 backdrop-blur-sm border border-white/5 rounded-2xl p-8 md:p-10 w-full"
           >
             {[
               { value: '4.2K+', label: 'Sessions Conducted' },
@@ -180,30 +180,31 @@ const FAQPage = () => {
               { value: '15+', label: 'Years Experience' },
               { value: '24h', label: 'Response Time' },
             ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-2xl font-serif text-brand-orange">{stat.value}</div>
-                <div className="text-white/50 text-xs tracking-widest uppercase">{stat.label}</div>
+              <div key={i} className="space-y-2 text-center md:text-left border-r last:border-r-0 border-white/10 pr-4 last:pr-0">
+                <div className="text-3xl md:text-4xl font-serif text-[#A67C52] tracking-tighter">{stat.value}</div>
+                <div className="text-white/60 text-[10px] tracking-[0.2em] uppercase font-semibold">{stat.label}</div>
               </div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ─── Category Tabs ─── */}
       <section className="sticky top-0 z-30 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
-          <div className="flex overflow-x-auto scrollbar-none gap-1 py-3">
+          <div className="flex overflow-x-auto scrollbar-none gap-3 py-4">
             {faqCategories.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => { setActiveCategory(cat.id); setActiveIndex(null); }}
-                className={`shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
+                className={`shrink-0 flex items-center gap-3 px-6 py-3 rounded-full text-xs font-medium tracking-wider transition-all duration-500 ${
                   activeCategory === cat.id
-                    ? 'bg-brand-orange text-white shadow-md shadow-orange-200'
-                    : 'text-gray-500 hover:bg-gray-100'
+                    ? 'bg-[#A67C52] text-white shadow-xl shadow-[#A67C52]/20'
+                    : 'text-gray-500 hover:text-brand-blue hover:bg-gray-50'
                 }`}
               >
-                {cat.icon}
+                <span className={activeCategory === cat.id ? 'text-white' : 'text-[#A67C52]'}>
+                  {cat.icon}
+                </span>
                 {cat.label}
               </button>
             ))}
@@ -211,15 +212,17 @@ const FAQPage = () => {
         </div>
       </section>
 
-      {/* ─── FAQ Accordion ─── */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="container mx-auto px-6 md:px-16 max-w-5xl">
-          <div className="mb-12 space-y-2">
-            <span className="text-brand-orange text-[12px] font-semibold tracking-[0.3em] uppercase block">
-              ( {faqCategories.find(c => c.id === activeCategory)?.label?.toUpperCase()} )
-            </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-brand-blue italic leading-snug">
-              Common questions we get asked
+          <div className="mb-10 space-y-3">
+            <div className="flex items-center gap-4">
+              <div className="h-[1px] w-8 bg-[#A67C52]" />
+              <span className="text-[#A67C52] text-[11px] font-medium tracking-[0.4em] uppercase block">
+                ( {faqCategories.find(c => c.id === activeCategory)?.label?.toUpperCase()} )
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight tracking-tight">
+              Common <span className="text-[#A67C52] serif">questions</span> we get asked
             </h2>
           </div>
 
@@ -234,22 +237,22 @@ const FAQPage = () => {
               >
                 <button
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                  className="w-full py-8 flex items-start justify-between text-left gap-6 group"
+                  className="w-full py-7 flex items-start justify-between text-left gap-8 group"
                 >
-                  <div className="flex items-start gap-4">
-                    <span className="text-brand-orange/40 font-mono text-sm font-semibold mt-1 shrink-0">
+                  <div className="flex items-start gap-6">
+                    <span className="text-[#A67C52]/40 font-serif text-base mt-1 shrink-0">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className={`text-xl md:text-2xl font-serif transition-colors duration-300 leading-snug ${
-                      activeIndex === index ? 'text-brand-orange' : 'text-brand-blue group-hover:text-brand-orange'
+                    <span className={`text-xl md:text-2xl font-serif transition-colors duration-500 leading-snug tracking-tight ${
+                      activeIndex === index ? 'text-[#A67C52]' : 'text-brand-blue group-hover:text-[#A67C52]'
                     }`}>
                       {faq.question}
                     </span>
                   </div>
-                  <div className={`shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all duration-300 mt-1 ${
+                  <div className={`shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-500 mt-0.5 ${
                     activeIndex === index
-                      ? 'bg-brand-orange border-brand-orange text-white rotate-45'
-                      : 'border-gray-200 text-gray-400 group-hover:border-brand-orange group-hover:text-brand-orange'
+                      ? 'bg-[#A67C52] border-[#A67C52] text-white rotate-45 shadow-lg shadow-[#A67C52]/20'
+                      : 'border-gray-200 text-gray-300 group-hover:border-[#A67C52] group-hover:text-[#A67C52] group-hover:bg-[#A67C52]/5'
                   }`}>
                     <span className="text-xl font-light leading-none">+</span>
                   </div>
@@ -261,10 +264,10 @@ const FAQPage = () => {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                      transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
                       className="overflow-hidden"
                     >
-                      <div className="pl-10 pb-8 pr-16 text-gray-500 text-lg font-light leading-relaxed">
+                      <div className="pl-14 pb-8 pr-20 text-black text-lg font-normal leading-relaxed serif opacity-80">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -277,29 +280,36 @@ const FAQPage = () => {
       </section>
 
       {/* ─── CTA Banner ─── */}
-      <section className="py-24 bg-[#B97758]">
-        <div className="container mx-auto px-6 max-w-4xl text-center space-y-8">
+      <section className="py-32 bg-[#15202B] relative overflow-hidden">
+
+
+        <div className="container mx-auto px-6 max-w-4xl text-center space-y-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-8"
           >
-            <span className="text-white/60 text-[12px] font-semibold tracking-[0.3em] uppercase block">
-              ( READY TO START? )
-            </span>
-            <h2 className="text-3xl md:text-5xl font-serif text-white italic leading-tight">
-              Your transformation begins with a single session
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-[1px] w-12 bg-[#A67C52]/50" />
+              <span className="text-[#A67C52] text-[12px] font-medium tracking-[0.4em] uppercase block">
+                ( READY TO START? )
+              </span>
+              <div className="h-[1px] w-12 bg-[#A67C52]/50" />
+            </div>
+            <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
+              Your transformation begins with a <span className="text-[#A67C52] serif">single session</span>
             </h2>
-            <p className="text-white/70 text-lg font-light max-w-xl mx-auto">
+            <p className="text-white/70 text-xl font-light max-w-2xl mx-auto leading-relaxed serif">
               Join thousands of people who have already transformed their lives through the power of clinical hypnotherapy.
             </p>
           </motion.div>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <button className="px-10 py-4 bg-white text-brand-orange rounded-full font-semibold text-base hover:bg-[#15202B] hover:text-white transition-all duration-300 shadow-lg">
+          
+          <div className="flex gap-6 justify-center flex-wrap pt-4">
+            <button className="px-14 py-6 bg-[#A67C52] text-white rounded-full font-medium text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-brand-blue transition-all duration-500 shadow-3xl active:scale-95">
               BOOK A SESSION
             </button>
-            <button className="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold text-base hover:bg-white hover:text-brand-orange transition-all duration-300">
+            <button className="px-14 py-6 bg-transparent border border-white/30 text-white rounded-full font-medium text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-brand-blue hover:border-white transition-all duration-500 active:scale-95">
               FREE DISCOVERY CALL
             </button>
           </div>

@@ -30,7 +30,7 @@ const PricingSection = () => {
             ( PRICING PLAN )
           </span>
           <h2 className="text-3xl md:text-5xl font-serif text-brand-blue leading-tight">
-            Affordable <span className="text-[#FF9933] italic">pricing packages</span> for everyone
+            Affordable <span className="text-[#FF9933]">pricing packages</span> for everyone
           </h2>
         </div>
 
@@ -45,14 +45,14 @@ const PricingSection = () => {
           >
              {/* Icon/Logo Background */}
              <div className="w-16 h-16 bg-[#333] rounded-full flex items-center justify-center mb-8 shrink-0">
-               <span className="text-white text-2xl font-medium italic">X</span>
+               <span className="text-white text-2xl font-medium">X</span>
              </div>
 
              <div className="space-y-4 mb-10">
                <h3 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight">
                  Individual <br /> Therapy
                </h3>
-               <p className="text-[#FF9933] font-medium text-sm italic tracking-wide">
+               <p className="text-[#FF9933] font-medium text-sm tracking-wide">
                  It's time you own your health.
                </p>
              </div>
@@ -62,7 +62,7 @@ const PricingSection = () => {
                  <span className="text-4xl md:text-5xl font-medium text-brand-blue">$150</span>
                  <span className="text-gray-500 font-medium tracking-tight">/ session</span>
                </div>
-               <p className="text-gray-400 text-xs mt-3 italic">*Terms and Conditions apply</p>
+               <p className="text-gray-400 text-xs mt-3">*Terms and Conditions apply</p>
              </div>
 
              <button className="w-full py-5 bg-[#B97758] hover:bg-[#A6664B] text-white rounded-[20px] font-medium text-[16px] transition-all duration-300 transform active:scale-95 shadow-lg shadow-[#B97758]/20">

@@ -17,18 +17,20 @@
   --color-gray-900: #2f3846;
 
   --color-brand-light: #F8F9FA;
+  --font-serif: "Playfair Display", serif;
   --font-sans: "Source Sans 3", sans-serif;
 }
 
 @layer base {
   body {
-    @apply text-gray-700 bg-white font-light;
+    @apply text-black bg-white font-normal;
     font-family: var(--font-sans);
     line-height: 1.8;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-medium text-brand-blue tracking-tight;
+    font-family: var(--font-serif);
   }
 
   p {
@@ -44,4 +46,14 @@
   --brand-orange: #FF9933;
   --header-bg: #FFFFFF;
   --topbar-bg: #F9FAFB;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

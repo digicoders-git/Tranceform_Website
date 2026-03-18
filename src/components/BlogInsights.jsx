@@ -21,18 +21,21 @@ const blogPosts = [
 
 const BlogInsights = () => {
   return (
-    <section className="py-24 bg-[#F2D8C9]">
+    <section className="py-24 bg-[#15202B]">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         {/* Header */}
-        <div className="mb-16 space-y-4">
-          <span className="text-[#FF9933] text-[13px] font-medium tracking-[0.3em] uppercase">
-            ( BLOG INSIGHTS )
-          </span>
-          <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight">
-            Stay <span className="text-[#B97758] italic">connected</span>
+        <div className="mb-16 space-y-6">
+          <div className="flex items-center gap-4">
+            <div className="h-[1px] w-8 bg-[#A67C52]" />
+            <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase block">
+              ( BLOG INSIGHTS )
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight">
+            Stay <span className="text-[#A67C52]">connected</span>
           </h2>
         </div>
-
+ 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {blogPosts.map((post, index) => (
@@ -45,22 +48,22 @@ const BlogInsights = () => {
               className="flex items-center gap-6 group"
             >
               {/* Post Image */}
-              <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-[30px] overflow-hidden shadow-lg">
+              <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-[30px] overflow-hidden shadow-2xl border border-white/10">
                 <img 
                   src={post.image} 
                   alt={post.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1000ms]"
                 />
               </div>
-
+ 
               {/* Post Content */}
-              <div className="space-y-3">
-                <h3 className="text-xl md:text-2xl font-serif text-brand-blue leading-snug">
+              <div className="space-y-4">
+                <h3 className="text-xl md:text-2xl font-serif text-white/90 leading-snug group-hover:text-white transition-colors">
                   {post.title}
                 </h3>
                 <a 
                   href={post.link} 
-                  className="inline-block text-[#B97758] text-sm font-medium uppercase tracking-wider border-b-2 border-[#B97758] pb-1 hover:text-[#FF9933] hover:border-[#FF9933] transition-all"
+                  className="inline-block text-[#A67C52] text-[11px] font-medium uppercase tracking-[0.2em] border-b border-[#A67C52]/30 pb-1 hover:text-white hover:border-white transition-all"
                 >
                   Read More
                 </a>

@@ -35,29 +35,29 @@ const ContactPage = () => {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
       details: ["+44 (0) 20 7123 4567", "+44 (0) 7700 900077"],
-      color: "text-brand-orange",
-      bg: "bg-brand-orange/10"
+      color: "text-[#A67C52]",
+      bg: "bg-[#A67C52]/5"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
       details: ["hello@tranceform.com", "bookings@tranceform.com"],
-      color: "text-[#B97758]",
-      bg: "bg-[#B97758]/10"
+      color: "text-[#A67C52]",
+      bg: "bg-[#A67C52]/5"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Clinic Location",
       details: ["12 Harley Street", "London, W1G 9PF", "United Kingdom"],
-      color: "text-teal-600",
-      bg: "bg-teal-50"
+      color: "text-[#A67C52]",
+      bg: "bg-[#A67C52]/5"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Opening Hours",
-      details: ["Mon - Fri: 9:00 AM - 8:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed (Online only)"],
-      color: "text-purple-600",
-      bg: "bg-purple-50"
+      details: ["Mon - Fri: 9:00 AM - 8:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"],
+      color: "text-[#A67C52]",
+      bg: "bg-[#A67C52]/5"
     }
   ];
 
@@ -65,27 +65,27 @@ const ContactPage = () => {
     <div className="min-h-screen bg-[#FAFAFA]">
 
       {/* ─── Hero Section ─── */}
-      <section className="relative min-h-[65vh] flex items-end overflow-hidden bg-[#1E2A3A]">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: 'url(/images/image.png)' }}
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-[#111] via-black/40 to-transparent" />
+      <section className="relative min-h-[65vh] flex items-center overflow-hidden bg-[#15202B]">
 
-        <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-7xl pt-36 pb-20">
+
+        <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-7xl pt-40 pb-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="max-w-3xl space-y-5"
+            className="max-w-4xl space-y-8"
           >
-            <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-xs font-medium tracking-[0.3em] uppercase px-4 py-2 rounded-full">
-              Get In Touch
+            <div className="flex items-center gap-4">
+              <div className="h-[1px] w-12 bg-[#A67C52]" />
+              <span className="text-[#A67C52] text-xs font-medium tracking-[0.4em] uppercase">
+                ( GET IN TOUCH )
+              </span>
             </div>
-            <h1 className="text-white text-5xl md:text-7xl font-serif italic leading-tight">
-              Let's start your transformation.
+            <h1 className="text-white text-4xl md:text-6xl font-serif leading-[1.1]">
+              Let's start your <br />
+              <span className="text-[#A67C52]">transformation.</span>
             </h1>
-            <p className="text-white/70 text-lg font-light max-w-xl">
+            <p className="text-white/80 text-lg md:text-xl font-light max-w-xl leading-relaxed serif">
               Whether you have a question, need to book an appointment, or want to arrange a free discovery call, we are here to help.
             </p>
           </motion.div>
@@ -93,7 +93,7 @@ const ContactPage = () => {
       </section>
 
       {/* ─── Main Content Area ─── */}
-      <section className="py-24 relative z-20 -mt-10">
+      <section className="py-20 relative z-20">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
@@ -102,27 +102,33 @@ const ContactPage = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-5 space-y-12"
+              className="lg:col-span-5 space-y-10"
             >
-              <div>
-                <h2 className="text-4xl font-serif text-brand-blue leading-tight mb-4">
-                  We'd love to hear from you
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-[1px] w-8 bg-[#A67C52]" />
+                  <span className="text-[#A67C52] text-[12px] font-medium tracking-[0.4em] uppercase block">
+                    ( CONNECT )
+                  </span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-serif text-brand-blue leading-tight tracking-tight">
+                  We'd love to <br /><span className="text-[#A67C52] serif">hear from you</span>
                 </h2>
-                <p className="text-gray-500 font-light text-lg">
+                <p className="text-black/60 font-normal serif text-base leading-relaxed">
                   Reach out to us using the form, or contact our clinic directly. We aim to respond to all enquiries within 24 hours.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 {contactInfo.map((info, idx) => (
-                  <div key={idx} className="space-y-4">
-                    <div className={`w-14 h-14 ${info.bg} ${info.color} rounded-2xl flex items-center justify-center`}>
+                  <div key={idx} className="space-y-5 group">
+                    <div className={`w-14 h-14 ${info.bg} ${info.color} rounded-2xl flex items-center justify-center border border-[#A67C52]/10 group-hover:bg-[#A67C52] group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-[#A67C52]/20`}>
                       {info.icon}
                     </div>
                     <div>
-                      <h4 className="font-medium text-brand-blue text-lg mb-2">{info.title}</h4>
+                      <h4 className="font-serif text-[#15202B] text-lg mb-2">{info.title}</h4>
                       {info.details.map((line, i) => (
-                        <p key={i} className="text-gray-500 text-sm font-light leading-relaxed">
+                        <p key={i} className="text-black/60 text-sm font-normal serif leading-relaxed">
                           {line}
                         </p>
                       ))}
@@ -132,95 +138,100 @@ const ContactPage = () => {
               </div>
 
               {/* Social or extra banner */}
-              <div className="p-8 bg-[#B97758] rounded-[32px] text-white space-y-4">
-                <h4 className="text-2xl font-serif italic">Free 15-Min Discovery Call</h4>
-                <p className="text-white/80 font-light text-sm">
+              <div className="p-8 bg-[#15202B] rounded-[32px] text-white space-y-5 relative overflow-hidden group border border-[#A67C52]/20">
+                <div className="absolute inset-0 bg-linear-to-br from-[#A67C52]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                <h4 className="text-2xl font-serif text-[#A67C52]">Free 15-Min Discovery Call</h4>
+                <p className="text-white/70 font-normal serif text-base leading-relaxed">
                   Unsure if hypnotherapy is right for you? Speak directly with a therapist before booking.
                 </p>
-                <button className="flex items-center gap-2 text-white font-medium text-sm tracking-wide hover:gap-3 transition-all pt-2">
-                  BOOK CALL <ArrowRight className="w-4 h-4" />
+                <button className="flex items-center gap-3 text-white font-medium text-xs tracking-[0.3em] uppercase hover:text-[#A67C52] transition-all duration-300">
+                  BOOK CALL <ArrowRight className="w-4 h-4 text-[#A67C52]" />
                 </button>
               </div>
             </motion.div>
 
-            {/* Right: Contact Form */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="lg:col-span-7"
             >
-              <div className="bg-white p-10 md:p-14 rounded-[40px] shadow-2xl shadow-gray-200/50 border border-gray-100">
-                <h3 className="text-3xl font-serif text-brand-blue mb-8">Send us a message</h3>
+              <div className="bg-white p-10 md:p-14 rounded-[48px] shadow-3xl shadow-gray-200/40 border border-gray-100/50">
+                <h3 className="text-3xl font-serif text-brand-blue mb-10 tracking-tight">Send us a <span className="text-[#A67C52] serif">message</span></h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700 ml-1">Full Name</label>
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-medium text-[#A67C52] tracking-[0.2em] uppercase ml-1">Full Name</label>
                       <input 
                         type="text" 
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full bg-gray-50 border border-gray-200 text-brand-blue rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all"
-                        placeholder="John Doe"
+                        className="w-full bg-gray-50/50 border border-gray-100 text-brand-blue rounded-2xl px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#A67C52]/20 focus:border-[#A67C52] transition-all duration-500 serif"
+                        placeholder="Your full name"
                       />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700 ml-1">Email Address</label>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-medium text-[#A67C52] tracking-[0.2em] uppercase ml-1">Email Address</label>
                       <input 
                         type="email" 
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full bg-gray-50 border border-gray-200 text-brand-blue rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all"
-                        placeholder="john@example.com"
+                        className="w-full bg-gray-50/50 border border-gray-100 text-brand-blue rounded-2xl px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#A67C52]/20 focus:border-[#A67C52] transition-all duration-500 serif"
+                        placeholder="your@email.com"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700 ml-1">Phone Number</label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-medium text-[#A67C52] tracking-[0.2em] uppercase ml-1">Phone Number</label>
                       <input 
                         type="tel" 
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-gray-50 border border-gray-200 text-brand-blue rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all"
-                        placeholder="+44 7000 000000"
+                        className="w-full bg-gray-50/50 border border-gray-100 text-brand-blue rounded-2xl px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#A67C52]/20 focus:border-[#A67C52] transition-all duration-500 serif"
+                        placeholder="+44 ..."
                       />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700 ml-1">Subject / Service</label>
-                      <select 
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="w-full bg-gray-50 border border-gray-200 text-brand-blue rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all appearance-none"
-                      >
-                        <option value="">Select a subject...</option>
-                        <option value="General Enquiry">General Enquiry</option>
-                        <option value="Anxiety & Stress">Anxiety & Stress</option>
-                        <option value="Stop Smoking">Stop Smoking</option>
-                        <option value="Pain Management">Pain Management</option>
-                        <option value="Past Life Regression">Past Life Regression</option>
-                        <option value="Other">Other / Not sure</option>
-                      </select>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-medium text-[#A67C52] tracking-[0.2em] uppercase ml-1">Subject / Service</label>
+                      <div className="relative">
+                        <select 
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          className="w-full bg-gray-50/50 border border-gray-100 text-brand-blue rounded-2xl px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#A67C52]/20 focus:border-[#A67C52] transition-all duration-500 appearance-none serif cursor-pointer"
+                        >
+                          <option value="">Select a subject...</option>
+                          <option value="General Enquiry">General Enquiry</option>
+                          <option value="Anxiety & Stress">Anxiety & Stress</option>
+                          <option value="Stop Smoking">Stop Smoking</option>
+                          <option value="Pain Management">Pain Management</option>
+                          <option value="Past Life Regression">Past Life Regression</option>
+                          <option value="Other">Other / Not sure</option>
+                        </select>
+                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none">
+                           <ArrowRight className="w-4 h-4 text-[#A67C52] rotate-90" />
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700 ml-1">Your Message</label>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-medium text-[#A67C52] tracking-[0.2em] uppercase ml-1">Your Message</label>
                     <textarea 
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
                       rows="5"
-                      className="w-full bg-gray-50 border border-gray-200 text-brand-blue rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all resize-none"
+                      className="w-full bg-gray-50/50 border border-gray-100 text-brand-blue rounded-[32px] px-6 py-5 focus:outline-none focus:ring-1 focus:ring-[#A67C52]/20 focus:border-[#A67C52] transition-all duration-500 resize-none serif"
                       placeholder="How can we help you today?"
                     ></textarea>
                   </div>
@@ -228,14 +239,14 @@ const ContactPage = () => {
                   <button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full bg-brand-orange text-white rounded-2xl px-8 py-5 font-medium text-lg hover:bg-[#E68A2E] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:transform-none"
+                    className="w-full bg-[#A67C52] text-white rounded-full px-8 py-6 font-medium text-xs tracking-[0.2em] uppercase hover:bg-[#15202B] hover:shadow-2xl hover:shadow-[#A67C52]/20 hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:transform-none active:scale-95"
                   >
                     {isSubmitting ? (
-                      <span className="flex items-center gap-2">Sending...</span>
+                      <span className="flex items-center gap-2">Processing...</span>
                     ) : submitted ? (
-                      <span className="flex items-center gap-2">Message Sent <CheckCircle2 className="w-5 h-5" /></span>
+                      <span className="flex items-center gap-3 serif">Message Sent <CheckCircle2 className="w-5 h-5" /></span>
                     ) : (
-                      <span className="flex items-center gap-2">Send Message <Send className="w-5 h-5" /></span>
+                      <span className="flex items-center gap-3">Send Message <ArrowRight className="w-4 h-4" /></span>
                     )}
                   </button>
                   
@@ -243,7 +254,7 @@ const ContactPage = () => {
                     <motion.div 
                       initial={{ opacity: 0, y: 10 }} 
                       animate={{ opacity: 1, y: 0 }} 
-                      className="p-4 bg-green-50 text-green-700 rounded-xl text-center text-sm font-medium border border-green-100"
+                      className="p-6 bg-green-50/50 text-green-700 rounded-2xl text-center text-sm font-normal serif border border-green-100"
                     >
                       Thank you! Your message has been received. We'll be in touch shortly.
                     </motion.div>

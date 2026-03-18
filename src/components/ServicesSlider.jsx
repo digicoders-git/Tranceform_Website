@@ -48,8 +48,8 @@ const ServicesSlider = () => {
           <span className="text-white/80 text-[13px] font-semibold tracking-[0.3em] uppercase">
             ( OUR SERVICES )
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif leading-tight text-white mt-4 italic">
-            Let's all fight <span className="font-semibold not-italic">mental illness</span>
+          <h2 className="text-4xl md:text-5xl font-serif leading-tight text-white mt-4">
+            Let's all fight <span className="font-semibold">mental illness</span>
           </h2>
         </div>
       </div>
@@ -81,7 +81,7 @@ const ServicesSlider = () => {
                 
                 {/* Content */}
                 <div className="absolute bottom-10 left-8 right-8 text-white z-10">
-                  <h3 className="text-2xl md:text-3xl font-serif text-white italic mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                  <h3 className="text-2xl md:text-3xl font-serif text-white mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                     {service.title}
                   </h3>
                   <p className="text-sm md:text-base text-white/95 leading-relaxed font-light line-clamp-2 md:line-clamp-none drop-shadow-[0_1px_5px_rgba(0,0,0,0.8)]">

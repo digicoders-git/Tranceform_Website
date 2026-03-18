@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { Twitter, Facebook, Instagram, Linkedin } from 'lucide-react'
 import Header from './components/Header'
 import HomePage from './pages/HomePage'
@@ -15,11 +15,24 @@ import PrivacyPage from './pages/PrivacyPage'
 import ScrollToTop from './components/ScrollToTop'
 import BackToTop from './components/BackToTop'
 import WhatsAppButton from './components/WhatsAppButton'
+import CallFloatingButton from './components/CallFloatingButton'
+import Preloader from './components/Preloader'
 import './App.css'
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Initial site-wide load delay for preloader
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Router>
+      <Preloader isLoading={loading} />
       <ScrollToTop />
       <div className="min-h-screen bg-white font-sans selection:bg-brand-orange selection:text-white">
         {/* Header */}
@@ -39,13 +52,13 @@ function App() {
         </Routes>
         
         {/* Modern Footer */}
-        <footer className="bg-[#1E2A3A] text-white pt-24 pb-12">
+        <footer className="bg-[#1E2A3A] text-white pt-16 pb-10">
           <div className="container mx-auto px-6 md:px-16 max-w-7xl">
             {/* Top Newsletter / CTA Row */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-16 border-b border-white/10 mb-16">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10 mb-12">
               <div className="max-w-xl">
-                <h3 className="text-white text-3xl font-serif italic mb-2">Join our community</h3>
-                <p className="text-white/70 font-light text-sm">
+                <h3 className="text-white text-2xl font-serif mb-1">Join our community</h3>
+                <p className="text-white/70 font-light text-xs">
                   Subscribe for insights on hypnotherapy, mental wellness, and exclusive offers.
                 </p>
               </div>
@@ -62,10 +75,10 @@ function App() {
             </div>
 
             {/* Main Links Row */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-12">
               {/* Branding */}
-              <div className="md:col-span-12 lg:col-span-4 space-y-6">
-                <div className="bg-white inline-block p-4 rounded-2xl w-full max-w-[280px]">
+              <div className="md:col-span-12 lg:col-span-4 space-y-5">
+                <div className="bg-white inline-block p-3 rounded-xl w-full max-w-[220px]">
                    <img src="/logo.png" alt="Tranceform Logo" className="w-full h-auto object-contain" />
                 </div>
                 <p className="text-white/70 text-sm leading-relaxed font-light pr-4">
@@ -78,7 +91,7 @@ function App() {
                     { icon: <Instagram className="w-4 h-4" />, url: '#' },
                     { icon: <Linkedin className="w-4 h-4" />, url: '#' }
                   ].map((social, i) => (
-                    <a key={i} href={social.url} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 cursor-pointer text-white">
+                    <a key={i} href={social.url} className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 cursor-pointer text-white">
                       {social.icon}
                     </a>
                   ))}
@@ -87,8 +100,8 @@ function App() {
 
               {/* Quick Links */}
               <div className="md:col-span-4 lg:col-span-2 lg:col-start-6">
-                <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Explore</h4>
-                <ul className="space-y-4 text-white/70 text-sm font-light">
+                <h4 className="text-white font-medium tracking-widest text-[11px] uppercase mb-4">Explore</h4>
+                <ul className="space-y-2 text-white/70 text-[13px] font-light">
                   <li><Link to="/" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Home</Link></li>
                   <li><Link to="/about" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">About Us</Link></li>
                   <li><Link to="/services/hypnotherapy-for-reducing-pain" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Services</Link></li>
@@ -98,8 +111,8 @@ function App() {
 
               {/* Support */}
               <div className="md:col-span-4 lg:col-span-2">
-                <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Support</h4>
-                <ul className="space-y-4 text-white/70 text-sm font-light">
+                <h4 className="text-white font-medium tracking-widest text-[11px] uppercase mb-4">Support</h4>
+                <ul className="space-y-2 text-white/70 text-[13px] font-light">
                   <li><Link to="/faqs" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">FAQs</Link></li>
                   <li><Link to="/testimonials" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Testimonials</Link></li>
                   <li><Link to="/contact" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Contact Us</Link></li>
@@ -109,18 +122,18 @@ function App() {
 
               {/* Contact Info */}
               <div className="md:col-span-4 lg:col-span-3">
-                <h4 className="text-white font-medium tracking-widest text-xs uppercase mb-6">Connect</h4>
-                <div className="space-y-4 text-sm font-light">
+                <h4 className="text-white font-medium tracking-widest text-[11px] uppercase mb-4">Connect</h4>
+                <div className="space-y-3 text-[13px] font-light">
                   <div>
-                    <span className="block text-white/50 mb-1">Email</span>
+                    <span className="block text-white/50 mb-0">Email</span>
                     <a href="mailto:info@tranceform.com" className="text-white/90 hover:text-brand-orange transition-colors">info@tranceform.com</a>
                   </div>
                   <div>
-                    <span className="block text-white/50 mb-1">Phone</span>
+                    <span className="block text-white/50 mb-0">Phone</span>
                     <a href="tel:+442071234567" className="text-white/90 hover:text-brand-orange transition-colors">+44 (0) 20 7123 4567</a>
                   </div>
                   <div>
-                    <span className="block text-white/50 mb-1">Clinic</span>
+                    <span className="block text-white/50 mb-0">Clinic</span>
                     <p className="text-white/90">12 Harley Street<br />London, W1G 9PF</p>
                   </div>
                 </div>
@@ -128,11 +141,11 @@ function App() {
             </div>
 
             {/* Bottom Copyright */}
-            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-white/50 text-[11px] tracking-[0.3em] uppercase font-medium">
                 Transform your mind • Transform your life
               </p>
-              <p className="text-white/50 text-xs font-light">
+              <p className="text-white/50 text-[11px] font-light">
                 © {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Crafter with ❤️ by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-semibold"><a href="https://digicoders.in">#TeamDigiCoders</a></span>
               </p>
             </div>
@@ -142,6 +155,7 @@ function App() {
         {/* Global Floating Buttons */}
         <BackToTop />
         <WhatsAppButton />
+        <CallFloatingButton />
       </div>
     </Router>
   )

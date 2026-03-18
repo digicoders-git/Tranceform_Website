@@ -18,45 +18,46 @@ const BlogDetailPage = () => {
   if (!post) return null;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* ─── Hero ─── */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${post.image})` }}
-        >
-          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/20" />
-        </div>
+      <section className="relative min-h-[65vh] flex items-center overflow-hidden bg-linear-to-br from-[#15202B] via-[#0F1722] to-[#15202B]">
+        {/* Subtle Accent Glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#A67C52]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#A67C52]/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+        
+        <div className="absolute inset-0 bg-linear-to-t from-[#15202B] via-transparent to-transparent" />
 
-        <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-5xl pt-40 pb-16 space-y-6">
+        <div className="relative z-10 container mx-auto px-6 md:px-16 max-w-5xl pt-40 pb-12 space-y-8">
           {/* Back Button */}
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors mb-2"
+            className="flex items-center gap-3 text-white/70 hover:text-white text-xs tracking-[0.2em] uppercase transition-all mb-4 group"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to Blog
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Blog
           </button>
 
-          <div className="flex items-center gap-3">
-            <span className="px-3 py-1 bg-brand-orange/80 text-white text-xs font-semibold rounded-full flex items-center gap-1">
+          <div className="flex items-center gap-4">
+            <span className="px-4 py-1.5 bg-[#A67C52]/90 backdrop-blur-md text-white text-[10px] font-medium tracking-[0.2em] uppercase rounded-full flex items-center gap-2 border border-white/10">
               <Tag className="w-3 h-3" /> {post.category}
             </span>
-            <span className="text-white/60 text-xs flex items-center gap-1">
-              <Clock className="w-3 h-3" /> {post.readTime}
+            <div className="w-1 h-1 rounded-full bg-white/30" />
+            <span className="text-white/60 text-[11px] font-light tracking-wider flex items-center gap-2">
+              <Clock className="w-3.5 h-3.5" /> {post.readTime}
             </span>
-            <span className="text-white/60 text-xs">{post.date}</span>
+            <div className="w-1 h-1 rounded-full bg-white/30" />
+            <span className="text-white/60 text-[11px] font-light tracking-wider">{post.date}</span>
           </div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white text-3xl md:text-5xl font-serif italic leading-tight max-w-3xl"
+            className="text-white text-4xl md:text-6xl font-serif leading-[1.1] max-w-4xl tracking-tight"
           >
             {post.title}
           </motion.h1>
 
-          <p className="text-white/70 text-lg font-light max-w-2xl">
+          <p className="text-white/80 text-lg md:text-xl font-light max-w-2xl leading-relaxed serif">
             {post.excerpt}
           </p>
         </div>
@@ -70,9 +71,11 @@ const BlogDetailPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="prose prose-lg max-w-none
-              prose-headings:font-serif prose-headings:text-brand-blue prose-headings:mb-4 prose-headings:mt-10
-              prose-h2:text-3xl prose-h2:italic prose-h2:text-brand-orange
-              prose-p:text-gray-600 prose-p:leading-relaxed prose-p:font-light prose-p:text-lg prose-p:mb-6
+              prose-headings:font-serif prose-headings:text-brand-blue prose-headings:mb-6 prose-headings:mt-12
+              prose-h2:text-4xl prose-h2:text-[#A67C52]
+              prose-p:text-black prose-p:leading-relaxed prose-p:font-normal prose-p:text-xl prose-p:mb-8
+              prose-strong:text-brand-blue prose-strong:font-semibold
+              prose-blockquote:border-l-[#A67C52] prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-8 prose-blockquote:serif prose-blockquote:text-2xl
             "
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
@@ -82,11 +85,14 @@ const BlogDetailPage = () => {
       {/* ─── Related Posts ─── */}
       <section className="py-20 bg-[#FAFAFA]">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
-          <div className="mb-12 space-y-2">
-            <span className="text-brand-orange text-[12px] font-semibold tracking-[0.3em] uppercase block">
-              ( KEEP READING )
-            </span>
-            <h2 className="text-4xl font-serif text-brand-blue italic">Related Articles</h2>
+          <div className="mb-16 space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="h-[1px] w-12 bg-[#A67C52]/40" />
+              <span className="text-[#A67C52] text-[12px] font-medium tracking-[0.4em] uppercase block">
+                ( KEEP READING )
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-serif text-brand-blue">Related Articles</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedPosts.map((related, idx) => (
@@ -97,22 +103,22 @@ const BlogDetailPage = () => {
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
                 onClick={() => { navigate(`/blog/${related.id}`); window.scrollTo(0,0); }}
-                className="group cursor-pointer bg-white rounded-[28px] overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group cursor-pointer bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-500"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-56 overflow-hidden">
                   <img
                     src={related.image}
                     alt={related.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]"
                   />
                 </div>
-                <div className="p-6 space-y-3">
-                  <span className="text-brand-orange text-xs font-semibold">{related.category}</span>
-                  <h3 className="text-lg font-serif text-brand-blue leading-snug group-hover:text-brand-orange transition-colors line-clamp-2">
+                <div className="p-10 space-y-5">
+                  <span className="text-[#A67C52] text-[11px] font-medium tracking-[0.2em] uppercase">{related.category}</span>
+                  <h3 className="text-xl font-serif text-brand-blue leading-snug group-hover:text-[#A67C52] transition-colors line-clamp-2">
                     {related.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-brand-orange font-semibold text-xs pt-1">
-                    Read Article <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  <div className="flex items-center gap-3 text-[#A67C52] font-medium text-[11px] tracking-[0.2em] uppercase pt-2">
+                    Read Article <ChevronRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
               </motion.article>
