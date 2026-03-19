@@ -42,11 +42,11 @@ const Header = () => {
   ];
 
   return (
-    <div className={`fixed left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'top-0 px-0' : 'top-8 px-4 md:px-10'}`}>
+    <div className={`fixed left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'top-0 px-0' : 'top-8 px-2 md:px-6 lg:px-10'}`}>
       <header className={`max-w-7xl mx-auto transition-all duration-500 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md rounded-none md:rounded-b-[24px] shadow-xl py-3 px-6 md:px-12 border-b border-gray-100' 
-          : 'bg-white/95 backdrop-blur-md rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] py-4 px-8 md:px-12 border border-white/20'
+          ? 'bg-white/95 backdrop-blur-md rounded-none md:rounded-b-[24px] shadow-xl py-3 px-4 md:px-8 lg:px-12 border-b border-gray-100' 
+          : 'bg-white/95 backdrop-blur-md rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] py-4 px-4 md:px-8 lg:px-12 border border-white/20'
       } flex items-center justify-between`}>
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -58,7 +58,7 @@ const Header = () => {
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden xl:flex items-center gap-x-5">
+        <nav className="hidden lg:flex items-center lg:gap-x-3 xl:gap-x-5">
           {navItems.map((item) => (
             <div 
               key={item.name} 
@@ -68,7 +68,7 @@ const Header = () => {
             >
               {item.hasDropdown ? (
                 <button
-                  className={`text-[13px] font-medium tracking-widest flex items-center gap-1.5 py-4 transition-all duration-300 ${
+                  className={`lg:text-[11px] xl:text-[13px] font-medium tracking-widest flex items-center gap-1.5 py-4 transition-all duration-300 ${
                     isServicesOpen ? 'text-brand-orange' : 'text-gray-700 hover:text-brand-orange'
                   }`}
                 >
@@ -78,7 +78,7 @@ const Header = () => {
               ) : (
                 <Link
                   to={item.href}
-                  className="whitespace-nowrap text-[13px] font-medium tracking-widest flex items-center gap-1.5 py-4 transition-all duration-300 text-gray-700 hover:text-brand-orange"
+                  className="whitespace-nowrap lg:text-[11px] xl:text-[13px] font-medium tracking-widest flex items-center gap-1.5 py-4 transition-all duration-300 text-gray-700 hover:text-brand-orange"
                 >
                   {item.name}
                 </Link>
@@ -129,7 +129,7 @@ const Header = () => {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="xl:hidden p-2 text-brand-blue hover:bg-gray-100 rounded-full transition-colors"
+          className="lg:hidden p-2 text-brand-blue hover:bg-gray-100 rounded-full transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -140,31 +140,36 @@ const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            className={`absolute left-4 right-4 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 xl:hidden z-50 transition-all duration-500 ${isScrolled ? 'top-20' : 'top-28'}`}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className={`fixed left-4 right-4 bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 lg:hidden z-50 transition-all duration-500 max-h-[calc(100vh-140px)] overflow-y-auto scrollbar-hide ${isScrolled ? 'top-[70px]' : 'top-[120px]'}`}
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               {navItems.map((item) => (
-                <div key={item.name}>
+                <div key={item.name} className="border-b border-gray-50 last:border-0 pb-2">
                   {item.hasDropdown ? (
-                    <div className="text-[15px] font-medium text-brand-blue py-2">
+                    <div className="text-[14px] font-bold text-gray-500 py-3 uppercase tracking-widest">
                       {item.name}
                     </div>
                   ) : (
                     <Link
                       to={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-[15px] font-medium text-brand-blue hover:text-brand-orange block py-2"
+                      className="text-[16px] font-medium text-brand-blue hover:text-brand-orange block py-3 transition-colors uppercase tracking-wide"
                     >
                       {item.name}
                     </Link>
                   )}
                   {item.hasDropdown && (
-                    <div className="pl-4 mt-1 flex flex-col gap-2 border-l-2 border-orange-100 mb-2">
+                    <div className="pl-4 pb-2 flex flex-col gap-1">
                       {item.dropdownItems.map((subItem) => (
-                        <Link key={subItem.href} to={subItem.href} onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] text-gray-500 hover:text-brand-orange py-1">
+                        <Link 
+                          key={subItem.href} 
+                          to={subItem.href} 
+                          onClick={() => setIsMobileMenuOpen(false)} 
+                          className="text-[14px] text-gray-600 hover:text-brand-orange py-2 border-l-2 border-gray-100 pl-4 transition-all hover:border-brand-orange"
+                        >
                           {subItem.name}
                         </Link>
                       ))}
@@ -172,15 +177,17 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <button 
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  setIsAppointmentModalOpen(true);
-                }}
-                className="mt-4 w-full py-4 bg-brand-orange text-white text-[15px] rounded-2xl font-medium hover:bg-[#15202B] transition-colors"
-              >
-                BOOK A SESSION
-              </button>
+              <div className="pt-4">
+                <button 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsAppointmentModalOpen(true);
+                  }}
+                  className="w-full py-4 bg-brand-orange text-white text-[15px] rounded-2xl font-bold uppercase tracking-widest hover:bg-[#15202B] transition-all shadow-lg shadow-orange-100"
+                >
+                  BOOK A SESSION
+                </button>
+              </div>
             </div>
           </motion.div>
         )}

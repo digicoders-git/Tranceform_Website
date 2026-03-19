@@ -34,7 +34,7 @@ function App() {
     <Router>
       <Preloader isLoading={loading} />
       <ScrollToTop />
-      <div className="min-h-screen bg-white font-sans selection:bg-brand-orange selection:text-white">
+      <div className="min-h-screen bg-white font-sans selection:bg-brand-orange selection:text-white overflow-x-hidden">
         {/* Header */}
         <Header />
         
@@ -58,7 +58,7 @@ function App() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10 mb-12">
               <div className="max-w-xl">
                 <h3 className="text-white text-2xl font-serif mb-1">Join our community</h3>
-                <p className="text-white/70 font-light text-xs">
+                <p className="text-white font-light text-[14px]">
                   Subscribe for insights on hypnotherapy, mental wellness, and exclusive offers.
                 </p>
               </div>
@@ -81,7 +81,7 @@ function App() {
                 <div className="bg-white inline-block p-3 rounded-xl w-full max-w-[220px]">
                    <img src="/logo.png" alt="Tranceform Logo" className="w-full h-auto object-contain" />
                 </div>
-                <p className="text-white/70 text-sm leading-relaxed font-light pr-4">
+                <p className="text-white text-[15px] leading-relaxed font-light pr-4">
                   Empowering minds through professional hypnotherapy. Experience clinical depth and lasting transformation.
                 </p>
                 <div className="flex gap-3">
@@ -101,7 +101,7 @@ function App() {
               {/* Quick Links */}
               <div className="md:col-span-4 lg:col-span-2 lg:col-start-6">
                 <h4 className="text-white font-medium tracking-widest text-[11px] uppercase mb-4">Explore</h4>
-                <ul className="space-y-2 text-white/70 text-[13px] font-light">
+                <ul className="space-y-3 text-white text-[14px] font-light">
                   <li><Link to="/" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Home</Link></li>
                   <li><Link to="/about" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">About Us</Link></li>
                   <li><Link to="/services/hypnotherapy-for-reducing-pain" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Services</Link></li>
@@ -112,7 +112,7 @@ function App() {
               {/* Support */}
               <div className="md:col-span-4 lg:col-span-2">
                 <h4 className="text-white font-medium tracking-widest text-[11px] uppercase mb-4">Support</h4>
-                <ul className="space-y-2 text-white/70 text-[13px] font-light">
+                <ul className="space-y-3 text-white text-[14px] font-light">
                   <li><Link to="/faqs" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">FAQs</Link></li>
                   <li><Link to="/testimonials" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Testimonials</Link></li>
                   <li><Link to="/contact" className="hover:text-brand-orange hover:translate-x-1 inline-block transition-transform duration-300">Contact Us</Link></li>
@@ -123,30 +123,30 @@ function App() {
               {/* Contact Info */}
               <div className="md:col-span-4 lg:col-span-3">
                 <h4 className="text-white font-medium tracking-widest text-[11px] uppercase mb-4">Connect</h4>
-                <div className="space-y-3 text-[13px] font-light">
+                <div className="space-y-4 text-[14px] font-light">
                   <div>
-                    <span className="block text-white/50 mb-0">Email</span>
-                    <a href="mailto:info@tranceform.com" className="text-white/90 hover:text-brand-orange transition-colors">info@tranceform.com</a>
+                    <span className="block text-white mb-0 font-medium text-[12px] uppercase tracking-wide opacity-50">Email</span>
+                    <a href="mailto:info@tranceform.com" className="text-white hover:text-brand-orange transition-colors">info@tranceform.com</a>
                   </div>
                   <div>
-                    <span className="block text-white/50 mb-0">Phone</span>
-                    <a href="tel:+442071234567" className="text-white/90 hover:text-brand-orange transition-colors">+44 (0) 20 7123 4567</a>
+                    <span className="block text-white mb-0 font-medium text-[12px] uppercase tracking-wide opacity-50">Phone</span>
+                    <a href="tel:+442071234567" className="text-white hover:text-brand-orange transition-colors">+44 (0) 20 7123 4567</a>
                   </div>
                   <div>
-                    <span className="block text-white/50 mb-0">Clinic</span>
-                    <p className="text-white/90">12 Harley Street<br />London, W1G 9PF</p>
+                    <span className="block text-white mb-0 font-medium text-[12px] uppercase tracking-wide opacity-50">Clinic</span>
+                    <p className="text-white">12 Harley Street<br />London, W1G 9PF</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Bottom Copyright */}
-            <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-white/50 text-[11px] tracking-[0.3em] uppercase font-medium">
+            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <p className="text-white text-[11px] ml-12 md:ml-0 tracking-[0.3em] uppercase font-medium opacity-60">
                 Transform your mind • Transform your life
               </p>
-              <p className="text-white/50 text-[11px] font-light">
-                © {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Crafter with ❤️ by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-semibold"><a href="https://digicoders.in">#TeamDigiCoders</a></span>
+              <p className="text-white text-sm md:text-md font-light opacity-60">
+                &copy; {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Crafted with ❤️ by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-semibold"><a href="https://digicoders.in">#TeamDigiCoders</a></span>
               </p>
             </div>
           </div>

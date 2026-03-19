@@ -92,23 +92,23 @@ const TestimonialCard = ({ item }) => {
 
   return (
     <motion.div
-      className={`min-w-[300px] md:min-w-[340px] md:w-[340px] bg-gray-50/50 rounded-[30px] p-10 border border-gray-100 shadow-sm flex flex-col shrink-0 ${isExpanded ? 'h-auto' : 'h-[320px]'}`}
-      whileHover={{ y: -10, shadow: "0 20px 40px rgba(0,0,0,0.05)" }}
+      className={`w-full bg-gray-50/50 rounded-[30px] p-6 md:p-10 border border-gray-100 shadow-sm flex flex-col shrink-0 ${isExpanded ? 'h-auto' : 'min-h-[360px] md:min-h-[320px]'}`}
+      whileHover={{ y: -10 }}
     >
-      <div>
-        <p className={`text-black font-normal leading-relaxed text-lg ${!isExpanded && isLong ? 'line-clamp-4' : ''}`}>
+      <div className="flex-grow">
+        <p className={`text-black font-normal leading-relaxed text-base md:text-lg ${!isExpanded && isLong ? 'line-clamp-6' : ''}`}>
           "{item.text}"
         </p>
         {isLong && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-brand-orange text-sm font-semibold mt-2 hover:underline focus:outline-none"
+            className="text-brand-orange text-sm font-semibold mt-4 hover:underline focus:outline-none"
           >
             {isExpanded ? 'Read Less' : 'Read More...'}
           </button>
         )}
       </div>
-      <h4 className="text-brand-blue font-medium text-lg mt-2">
+      <h4 className="text-brand-blue font-bold text-lg mt-6">
         {item.name}
       </h4>
     </motion.div>
@@ -118,6 +118,8 @@ const TestimonialCard = ({ item }) => {
 const TestimonialsSection = () => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [cardMetrics, setCardMetrics] = useState({ width: 340, gap: 24, visible: 3 });
+  const containerRef = React.useRef(null);
 
   const handleNext = useCallback(() => {
     setIndex((prev) => (prev + 1) % testimonials.length);
@@ -127,57 +129,79 @@ const TestimonialsSection = () => {
     setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   }, []);
 
-  // Auto-slide functionality
   useEffect(() => {
     if (isPaused) return;
-
-    const timer = setInterval(() => {
-      handleNext();
-    }, 4000);
+    const timer = setInterval(handleNext, 4000);
     return () => clearInterval(timer);
   }, [isPaused, handleNext]);
+
+  useEffect(() => {
+    const updateMetrics = () => {
+      const w = window.innerWidth;
+      const gap = 24;
+      let visible, cardWidth;
+      if (w < 640) {
+        visible = 1;
+        cardWidth = Math.min(w - 48, 320);
+      } else if (w < 1024) {
+        visible = 2;
+        // fit 2 cards + 1 gap inside container (container = w - 48px padding)
+        cardWidth = Math.floor((w - 48 - gap) / 2);
+      } else {
+        visible = 3;
+        cardWidth = 340;
+      }
+      setCardMetrics({ width: cardWidth, gap, visible });
+    };
+    updateMetrics();
+    window.addEventListener('resize', updateMetrics);
+    return () => window.removeEventListener('resize', updateMetrics);
+  }, []);
 
   return (
     <section className="pt-12 pb-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-serif text-brand-blue leading-tight">
             <span className="text-[#B97758] font-medium">15+ people</span> have been consulted & helped.
           </h2>
         </div>
 
         {/* Slidable Cards Container */}
-        <div 
-          className="relative px-4"
+        <div
+          className="relative group"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white border border-gray-100 rounded-full flex items-center justify-center shadow-lg hover:bg-[#A67C52] hover:text-white transition-all duration-300 active:scale-95"
+            className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-100 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange hover:text-white transition-all duration-300 active:scale-95 md:opacity-0 md:group-hover:opacity-100"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white border border-gray-100 rounded-full flex items-center justify-center shadow-lg hover:bg-[#A67C52] hover:text-white transition-all duration-300 active:scale-95"
+            className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-100 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange hover:text-white transition-all duration-300 active:scale-95 md:opacity-0 md:group-hover:opacity-100"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
-          <div className="overflow-hidden py-10 px-4 md:max-w-[1072px] mx-auto"> 
+          <div ref={containerRef} className="overflow-hidden py-10 px-2">
             <motion.div
-              className="flex items-start gap-8 md:gap-6"
-              animate={{ x: `calc(-${index * (340 + 24)}px)` }} // 340px card + 24px gap (gap-6)
+              className="flex items-start"
+              style={{ gap: cardMetrics.gap }}
+              animate={{ x: -(index * (cardMetrics.width + cardMetrics.gap)) }}
               transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
             >
               {testimonials.map((item, i) => (
-                <TestimonialCard key={i} item={item} />
+                <div key={i} style={{ minWidth: cardMetrics.width, width: cardMetrics.width }}>
+                  <TestimonialCard item={item} />
+                </div>
               ))}
             </motion.div>
           </div>

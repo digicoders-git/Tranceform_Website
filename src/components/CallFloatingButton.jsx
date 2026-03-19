@@ -23,15 +23,15 @@ const CallFloatingButton = () => {
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
           transition={{ duration: 0.5, type: "spring", stiffness: 120 }}
           href={`tel:${phoneNumber}`}
-          className="fixed bottom-24 left-8 z-[99] flex items-center justify-center w-14 h-14 bg-[#A67C52] text-white rounded-full shadow-[0_10px_30px_rgba(166,124,82,0.4)] hover:bg-[#8B6543] hover:shadow-[0_15px_40px_rgba(166,124,82,0.6)] hover:-translate-y-1 transition-all duration-300 group"
+          className="fixed bottom-40 left-0 z-[99] flex items-center bg-[#A67C52] text-white rounded-r-full shadow-[0_10px_30px_rgba(166,124,82,0.4)] hover:bg-[#8B6543] hover:shadow-[0_15px_40px_rgba(166,124,82,0.6)] transition-all duration-500 group -translate-x-[calc(100%-64px)] hover:translate-x-0 pr-4 pl-10 py-3 whitespace-nowrap overflow-hidden"
           aria-label="Call us"
         >
-          <Phone className="w-6 h-6" />
-          
-          {/* Tooltip on Hover */}
-          <span className="absolute left-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-gray-800 text-sm font-semibold px-4 py-2 rounded-xl shadow-xl border border-gray-100 whitespace-nowrap pointer-events-none">
-            Call us now
-          </span>
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="text-[12px] font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              CALL US
+            </span>
+            <Phone className="w-6 h-6" />
+          </div>
         </motion.a>
       )}
     </AnimatePresence>

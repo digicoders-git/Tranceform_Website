@@ -6,7 +6,7 @@ const AboutSection = () => {
   return (
     <section className="py-12 bg-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-10 md:gap-16 lg:gap-24">
           
           {/* Right Side: Images with Decorative Element */}
           <motion.div 
@@ -25,7 +25,7 @@ const AboutSection = () => {
                   src="/images/image.png" 
                   alt="Therapy Session" 
                   loading="lazy"
-                  className="w-full h-[500px] object-cover transform transition-transform duration-1000 group-hover:scale-105" 
+                  className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover transform transition-transform duration-1000 group-hover:scale-105" 
                 />
               </div>
  
@@ -42,7 +42,7 @@ const AboutSection = () => {
                     ease: "easeInOut" 
                   }
                 }}
-                className="absolute -bottom-8 -left-8 bg-white p-8 rounded-[30px] shadow-xl z-20 hidden md:block border border-gray-100"
+                className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 bg-white p-5 md:p-8 rounded-[24px] md:rounded-[30px] shadow-xl z-20 hidden md:block border border-gray-100"
               >
                 <div className="text-center">
                   <span className="block text-3xl font-serif text-[#A67C52] mb-1">Tranceform*</span>

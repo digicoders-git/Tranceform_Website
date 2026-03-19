@@ -31,15 +31,15 @@ const WhatsAppButton = () => {
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-8 left-8 z-[99] flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:bg-[#128C7E] hover:shadow-[0_15px_40px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all duration-300 group"
+          className="fixed bottom-24 left-0 z-[99] flex items-center bg-[#25D366] text-white rounded-r-full shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:bg-[#128C7E] hover:shadow-[0_15px_40px_rgba(37,211,102,0.6)] transition-all duration-500 group -translate-x-[calc(100%-64px)] hover:translate-x-0 pr-4 pl-10 py-3 whitespace-nowrap overflow-hidden"
           aria-label="Chat on WhatsApp"
         >
-          <WhatsAppIcon />
-          
-          {/* Tooltip on Hover */}
-          <span className="absolute left-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-gray-800 text-sm font-semibold px-4 py-2 rounded-xl shadow-xl border border-gray-100 whitespace-nowrap pointer-events-none">
-            Chat with us
-          </span>
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="text-[12px] font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              WHATSAPP
+            </span>
+            <WhatsAppIcon />
+          </div>
         </motion.a>
       )}
     </AnimatePresence>
