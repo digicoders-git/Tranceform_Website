@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import AppointmentModal from './AppointmentModal';
+import React from 'react';
 
 const PricingSection = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   const features = [
     {
       title: "Free Consultation",
@@ -65,7 +68,10 @@ const PricingSection = () => {
                <p className="text-gray-400 text-xs mt-3">*Terms and Conditions apply</p>
              </div>
 
-             <button className="w-full py-5 bg-[#B97758] hover:bg-[#A6664B] text-white rounded-[20px] font-medium text-[16px] transition-all duration-300 transform active:scale-95 shadow-lg shadow-[#B97758]/20">
+             <button 
+               onClick={() => setIsModalOpen(true)}
+               className="w-full py-5 bg-[#B97758] hover:bg-[#A6664B] text-white rounded-[20px] font-medium text-[16px] transition-all duration-300 transform active:scale-95 shadow-lg shadow-[#B97758]/20"
+             >
                Book a Session
              </button>
           </motion.div>
@@ -104,6 +110,7 @@ const PricingSection = () => {
           </motion.div>
         </div>
       </div>
+      <AppointmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

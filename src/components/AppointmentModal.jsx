@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, User, Mail, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const AppointmentModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -14,19 +15,37 @@ const AppointmentModal = ({ isOpen, onClose }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate an API Booking Request
-    setTimeout(() => {
+    try {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const res = await fetch(`${API_URL}/api/appointments`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Booking failed');
+      
+      Swal.fire({
+        title: 'Booking Requested!',
+        text: 'We have received your request. Our team will contact you shortly to confirm.',
+        icon: 'success',
+        confirmButtonColor: '#EE6F36',
+      });
+
+      setFormData({ name: '', email: '', phone: '', date: '', service: '', message: '' });
+      onClose();
+    } catch (err) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Something went wrong. Please try again.',
+        icon: 'error',
+        confirmButtonColor: '#1E2A3A',
+      });
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setTimeout(() => {
-        setIsSuccess(false);
-        setFormData({ name: '', email: '', phone: '', date: '', service: '', message: '' });
-        onClose();
-      }, 4000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -66,22 +85,6 @@ const AppointmentModal = ({ isOpen, onClose }) => {
 
               {/* Body */}
               <div className="p-8 overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
-                {isSuccess ? (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center justify-center py-12 text-center"
-                  >
-                    <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6">
-                      <CheckCircle2 className="w-10 h-10 text-green-500" />
-                    </div>
-                    <h4 className="text-2xl font-serif text-brand-blue mb-2">Booking Requested!</h4>
-                    <p className="text-gray-500 font-light mb-6">We'll review your details and contact you shortly to confirm your appointment time.</p>
-                    <button onClick={onClose} className="px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-colors">
-                      Done
-                    </button>
-                  </motion.div>
-                ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
@@ -144,7 +147,6 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                       </button>
                     </div>
                   </form>
-                )}
               </div>
             </motion.div>
           </div>

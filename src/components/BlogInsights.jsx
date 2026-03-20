@@ -48,11 +48,11 @@ const BlogInsights = () => {
               className="flex items-center gap-6 group"
             >
               {/* Post Image */}
-              <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-[30px] overflow-hidden shadow-2xl border border-white/10">
+              <div className="w-32 h-44 md:w-40 md:h-56 shrink-0 rounded-[30px] overflow-hidden shadow-2xl border border-white/10">
                 <img 
                   src={post.image} 
                   alt={post.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1000ms]"
+                  className="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-[1000ms]"
                 />
               </div>
  

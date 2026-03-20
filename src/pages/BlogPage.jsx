@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ChevronRight, Search, Tag } from 'lucide-react';
@@ -10,15 +10,32 @@ const BlogPage = () => {
   const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [apiBlogs, setApiBlogs] = useState([]);
 
-  const filtered = blogPosts.filter(post => {
+  useEffect(() => {
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    fetch(`${API_URL}/api/blogs`)
+      .then(r => r.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          // exclude any that already exist in static list by id
+          const staticIds = new Set(blogPosts.map(p => p.id));
+          setApiBlogs(data.filter(b => !staticIds.has(b.id)));
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const allPosts = [...blogPosts, ...apiBlogs];
+
+  const filtered = allPosts.filter(post => {
     const matchesCategory = activeCategory === 'All' || post.category === activeCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
-  const featuredPost = blogPosts[0];
+  const featuredPost = allPosts[0];
 
   return (
     <div className="min-h-screen">
@@ -106,7 +123,7 @@ const BlogPage = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              onClick={() => navigate(`/blog/${featuredPost.id}`)}
+              onClick={() => navigate(`/blog/${featuredPost.id || featuredPost._id}`)}
               className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[60px] overflow-hidden shadow-3xl cursor-pointer group bg-white border border-gray-100"
             >
               {/* Image */}
@@ -114,7 +131,7 @@ const BlogPage = () => {
                 <img
                   src={featuredPost.image}
                   alt={featuredPost.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-[2000ms]"
                 />
                 <div className="absolute inset-0 bg-linear-to-r from-[#15202B]/30 to-transparent" />
               </div>
@@ -167,15 +184,15 @@ const BlogPage = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
                     viewport={{ once: true }}
-                    onClick={() => navigate(`/blog/${post.id}`)}
+                    onClick={() => navigate(`/blog/${post.id || post._id}`)}
                     className="group cursor-pointer bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-xl hover:shadow-3xl hover:-translate-y-3 transition-all duration-500"
                   >
                     {/* Image */}
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-80 overflow-hidden">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]"
+                        className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-[1500ms]"
                       />
                       <div className="absolute top-6 left-6">
                         <span className="px-4 py-1.5 bg-[#15202B]/80 backdrop-blur-md text-white text-[10px] font-medium tracking-widest uppercase rounded-full flex items-center gap-2 border border-white/10">

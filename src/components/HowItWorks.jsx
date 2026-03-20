@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Compass, ArrowRight } from 'lucide-react';
+import AppointmentModal from './AppointmentModal';
 
 const HowItWorks = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   const steps = [
     { title: "Define Your Vision", text: "Identify your therapy goals and choose your preferred session type." },
     { title: "Safe Sanctuary", text: "Schedule your discovery or deep-healing session in a safe environment." },
@@ -89,7 +91,10 @@ const HowItWorks = () => {
   
               {/* CTA Button */}
               <div className="pt-8 text-center">
-                 <button className="inline-flex items-center gap-6 px-12 py-5 bg-[#A67C52] text-white rounded-full font-medium tracking-[0.2em] text-xs uppercase hover:bg-brand-blue transition-all duration-300 group shadow-2xl active:scale-95">
+                 <button 
+                   onClick={() => setIsModalOpen(true)}
+                   className="inline-flex items-center gap-6 px-12 py-5 bg-[#A67C52] text-white rounded-full font-medium tracking-[0.2em] text-xs uppercase hover:bg-brand-blue transition-all duration-300 group shadow-2xl active:scale-95"
+                 >
                    Schedule Your Journey
                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                  </button>
@@ -97,6 +102,7 @@ const HowItWorks = () => {
             </motion.div>
         </div>
       </div>
+      <AppointmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

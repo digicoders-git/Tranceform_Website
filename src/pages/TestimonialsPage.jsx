@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 
-const testimonials = [
+const staticTestimonials = [
   {
     id: 18,
     name: "Sherry Grandmaison",
@@ -287,6 +287,31 @@ const StarRating = ({ rating }) => (
 const TestimonialsPage = () => {
   const [expanded, setExpanded] = useState(null);
   const [featured, setFeatured] = useState(0);
+  const [apiTestimonials, setApiTestimonials] = useState([]);
+
+  useEffect(() => {
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    fetch(`${API_URL}/api/testimonials`)
+      .then(r => r.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setApiTestimonials(data.map(t => ({
+            id: t._id,
+            name: t.name,
+            location: t.location || '',
+            service: t.service || '',
+            rating: t.rating || 5,
+            avatar: t.avatar || t.name.slice(0, 2).toUpperCase(),
+            color: t.color || 'bg-brand-orange',
+            short: t.short || t.text || '',
+            full: t.full || t.text || '',
+          })));
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const testimonials = [...staticTestimonials, ...apiTestimonials];
 
   const prev = () => setFeatured(f => (f - 1 + testimonials.length) % testimonials.length);
   const next = () => setFeatured(f => (f + 1) % testimonials.length);

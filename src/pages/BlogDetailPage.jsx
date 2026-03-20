@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ChevronRight, ArrowLeft, Tag } from 'lucide-react';
@@ -7,13 +7,42 @@ import { blogPosts } from '../data/blogData';
 const BlogDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const post = blogPosts.find(p => p.id === id);
-  const relatedPosts = blogPosts.filter(p => p.id !== id).slice(0, 3);
+  const [post, setPost] = useState(() => blogPosts.find(p => p.id === id) || null);
+  const [allPosts, setAllPosts] = useState(blogPosts);
+  const [loading, setLoading] = useState(!blogPosts.find(p => p.id === id));
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (!post) navigate('/blog');
-  }, [id, post, navigate]);
+    const staticPost = blogPosts.find(p => p.id === id);
+    if (staticPost) {
+      setPost(staticPost);
+      setLoading(false);
+      return;
+    }
+    // Not in static — fetch from API
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    setLoading(true);
+    fetch(`${API_URL}/api/blogs/${id}`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (data) {
+          setPost(data);
+          setAllPosts([...blogPosts, data]);
+        } else {
+          navigate('/blog');
+        }
+      })
+      .catch(() => navigate('/blog'))
+      .finally(() => setLoading(false));
+  }, [id, navigate]);
+
+  const relatedPosts = allPosts.filter(p => (p.id || p._id) !== id).slice(0, 3);
+
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center bg-[#15202B]">
+      <div className="w-10 h-10 border-2 border-[#A67C52] border-t-transparent rounded-full animate-spin" />
+    </div>
+  );
 
   if (!post) return null;
 
@@ -102,14 +131,14 @@ const BlogDetailPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                onClick={() => { navigate(`/blog/${related.id}`); window.scrollTo(0,0); }}
+                onClick={() => { navigate(`/blog/${related.id || related._id}`); window.scrollTo(0,0); }}
                 className="group cursor-pointer bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-500"
               >
-                <div className="h-56 overflow-hidden">
+                <div className="h-72 overflow-hidden">
                   <img
                     src={related.image}
                     alt={related.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms]"
+                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-[1500ms]"
                   />
                 </div>
                 <div className="p-10 space-y-5">

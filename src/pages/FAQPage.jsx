@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Brain, Heart, Zap, ShieldCheck, Clock, Users } from 'lucide-react';
 
@@ -135,8 +135,40 @@ const faqCategories = [
 const FAQPage = () => {
   const [activeCategory, setActiveCategory] = useState('general');
   const [activeIndex, setActiveIndex] = useState(null);
+  const [allCategories, setAllCategories] = useState(faqCategories);
 
-  const currentFaqs = faqCategories.find(c => c.id === activeCategory)?.faqs || [];
+  useEffect(() => {
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    fetch(`${API_URL}/api/faqs`)
+      .then(r => r.json())
+      .then(data => {
+        if (!Array.isArray(data) || data.length === 0) return;
+        setAllCategories(prev => {
+          const updated = prev.map(cat => ({ ...cat, faqs: [...cat.faqs] }));
+          data.forEach(faq => {
+            const catId = faq.category?.toLowerCase().replace(/\s+/g, '-') || 'general';
+            const existing = updated.find(c => c.id === catId || c.label.toLowerCase() === faq.category?.toLowerCase());
+            if (existing) {
+              // avoid duplicates by question text
+              const alreadyExists = existing.faqs.some(f => f.question === faq.question);
+              if (!alreadyExists) existing.faqs.push({ question: faq.question, answer: faq.answer });
+            } else {
+              // new category from API
+              updated.push({
+                id: catId,
+                label: faq.category,
+                icon: <Brain className="w-5 h-5" />,
+                faqs: [{ question: faq.question, answer: faq.answer }]
+              });
+            }
+          });
+          return updated;
+        });
+      })
+      .catch(() => {});
+  }, []);
+
+  const currentFaqs = allCategories.find(c => c.id === activeCategory)?.faqs || [];
 
   return (
     <div className="min-h-screen bg-white">
@@ -192,7 +224,7 @@ const FAQPage = () => {
       <section className="sticky top-0 z-30 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
           <div className="flex overflow-x-auto scrollbar-none gap-3 py-4">
-            {faqCategories.map(cat => (
+            {allCategories.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => { setActiveCategory(cat.id); setActiveIndex(null); }}
@@ -218,7 +250,7 @@ const FAQPage = () => {
             <div className="flex items-center gap-4">
               <div className="h-[1px] w-8 bg-[#A67C52]" />
               <span className="text-[#A67C52] text-[11px] font-medium tracking-[0.4em] uppercase block">
-                ( {faqCategories.find(c => c.id === activeCategory)?.label?.toUpperCase()} )
+                ( {allCategories.find(c => c.id === activeCategory)?.label?.toUpperCase()} )
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight tracking-tight">

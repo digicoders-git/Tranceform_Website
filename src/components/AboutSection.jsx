@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import AppointmentModal from './AppointmentModal';
 
 const AboutSection = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   return (
     <section className="py-12 bg-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
@@ -81,6 +83,7 @@ const AboutSection = () => {
  
             <div className="pt-6">
               <button 
+                onClick={() => setIsModalOpen(true)}
                 className="px-10 py-5 bg-[#A67C52] text-white rounded-full font-medium hover:bg-brand-blue transition-all shadow-xl active:scale-95 text-xs tracking-[0.2em] uppercase"
               >
                 BOOK A SESSION
@@ -90,6 +93,7 @@ const AboutSection = () => {
  
         </div>
       </div>
+      <AppointmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

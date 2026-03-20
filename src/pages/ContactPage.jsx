@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle2 } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -14,16 +15,41 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
+    try {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const res = await fetch(`${API_URL}/api/messages`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error('Failed');
+      
+      Swal.fire({
+        title: 'Message Sent!',
+        text: 'Thank you for reaching out. We will get back to you shortly.',
+        icon: 'success',
+        confirmButtonColor: '#A67C52',
+        background: '#fff',
+        timer: 3000,
+        timerProgressBar: true,
+        showConfirmButton: false,
+        borderRadius: '20px'
+      });
+
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 1500);
+    } catch {
+      Swal.fire({
+        title: 'Oops!',
+        text: 'Something went wrong. Please try again later.',
+        icon: 'error',
+        confirmButtonColor: '#15202B'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -243,22 +269,10 @@ const ContactPage = () => {
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">Processing...</span>
-                    ) : submitted ? (
-                      <span className="flex items-center gap-3 serif">Message Sent <CheckCircle2 className="w-5 h-5" /></span>
                     ) : (
                       <span className="flex items-center gap-3">Send Message <ArrowRight className="w-4 h-4" /></span>
                     )}
                   </button>
-                  
-                  {submitted && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10 }} 
-                      animate={{ opacity: 1, y: 0 }} 
-                      className="p-6 bg-green-50/50 text-green-700 rounded-2xl text-center text-sm font-normal serif border border-green-100"
-                    >
-                      Thank you! Your message has been received. We'll be in touch shortly.
-                    </motion.div>
-                  )}
                 </form>
               </div>
             </motion.div>
