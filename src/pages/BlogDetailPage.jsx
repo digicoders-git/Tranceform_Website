@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ChevronRight, ArrowLeft, Tag } from 'lucide-react';
 import { blogPosts } from '../data/blogData';
+import API_URL from '../config';
 
 const BlogDetailPage = () => {
   const { id } = useParams();
@@ -20,7 +21,6 @@ const BlogDetailPage = () => {
       return;
     }
     // Not in static — fetch from API
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
     setLoading(true);
     fetch(`${API_URL}/api/blogs/${id}`)
       .then(r => r.ok ? r.json() : null)

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ChevronRight, Search, Tag } from 'lucide-react';
 import { blogPosts } from '../data/blogData';
+import API_URL from '../config';
 
 const categories = ['All', 'Hypnotherapy Basics', 'Anxiety & Stress', 'Emotional Healing', 'Habit Transformation', 'Spiritual Healing', 'Pain Management'];
 
@@ -13,7 +14,6 @@ const BlogPage = () => {
   const [apiBlogs, setApiBlogs] = useState([]);
 
   useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
     fetch(`${API_URL}/api/blogs`)
       .then(r => r.json())
       .then(data => {

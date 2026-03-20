@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import API_URL from '../config';
 
 const staticTestimonials = [
   {
@@ -290,7 +291,6 @@ const TestimonialsPage = () => {
   const [apiTestimonials, setApiTestimonials] = useState([]);
 
   useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
     fetch(`${API_URL}/api/testimonials`)
       .then(r => r.json())
       .then(data => {

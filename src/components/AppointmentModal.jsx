@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, User, Mail, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
 import Swal from 'sweetalert2';
+import API_URL from '../config';
 
 const AppointmentModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,6 @@ const AppointmentModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
       const res = await fetch(`${API_URL}/api/appointments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

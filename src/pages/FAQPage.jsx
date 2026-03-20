@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Brain, Heart, Zap, ShieldCheck, Clock, Users } from 'lucide-react';
+import API_URL from '../config';
 
 const faqCategories = [
   {
@@ -138,7 +139,6 @@ const FAQPage = () => {
   const [allCategories, setAllCategories] = useState(faqCategories);
 
   useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
     fetch(`${API_URL}/api/faqs`)
       .then(r => r.json())
       .then(data => {

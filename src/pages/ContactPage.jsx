@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle2 } from 'lucide-react';
 import Swal from 'sweetalert2';
+import API_URL from '../config';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,6 @@ const ContactPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
       const res = await fetch(`${API_URL}/api/messages`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
