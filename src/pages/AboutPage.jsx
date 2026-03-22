@@ -5,6 +5,7 @@ import AboutDiscovery from '../components/AboutDiscovery';
 import HowItWorks from '../components/HowItWorks';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ProcessSection from '../components/ProcessSection';
+import JourneySection from '../components/JourneySection';
 import FAQSection from '../components/FAQSection';
 import AppointmentModal from '../components/AppointmentModal';
 
@@ -58,28 +59,17 @@ const AboutPage = () => {
       </section>
 
       {/* 5. About Pooja (Now Section 1) */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            
+            {/* Content Left */}
+            <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="relative group max-w-[420px] mx-auto lg:ml-12 lg:mr-0"
+              transition={{ duration: 0.8 }}
+              className="space-y-10 order-2 lg:order-1"
             >
-              <div className="absolute -inset-4 border border-[#A67C52]/20 rounded-[50px] transform translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6 duration-700" />
-              <img 
-                src="/images/image3.png" 
-                alt="Pooja - Transformed Mind" 
-                loading="lazy"
-                className="rounded-[40px] shadow-2xl w-full h-[450px] object-cover object-top ring-1 ring-black/5 bg-gray-50"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-[#A67C52] p-8 rounded-[25px] shadow-2xl text-white transform group-hover:-translate-y-2 transition-transform duration-500">
-                <span className="text-2xl font-serif block">Tranceform*</span>
-                <span className="text-[10px] tracking-[0.3em] uppercase opacity-70">with Pooja</span>
-              </div>
-            </motion.div>
- 
-            <div className="space-y-10">
               <div className="space-y-6">
                 <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase block">
                   ( THE FOUNDER )
@@ -103,7 +93,55 @@ const AboutPage = () => {
                   This is the heart of the work I do through Tranceform with Pooja.
                 </p>
               </div>
-            </div>
+            </motion.div>
+
+            {/* Image Right */}
+            <motion.div
+              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              whileHover={{ 
+                rotateY: -6,
+                rotateX: 4,
+                scale: 1.02,
+                transition: { duration: 0.8, ease: "easeOut" }
+              }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              style={{ perspective: "1000px" }}
+              className="relative group max-w-[420px] mx-auto lg:mr-12 lg:ml-0 order-1 lg:order-2 cursor-pointer"
+            >
+              {/* Outer Glow Decor */}
+              <div className="absolute -inset-6 bg-[#A67C52]/5 rounded-[60px] blur-2xl group-hover:bg-[#A67C52]/10 transition-colors duration-700" />
+              
+              <div className="absolute -inset-4 border-2 border-[#A67C52]/10 rounded-[50px] transform translate-x-4 translate-y-4 -z-10 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:border-[#A67C52]/30 duration-700" />
+              
+              <div className="relative rounded-[40px] overflow-hidden shadow-2xl ring-1 ring-black/5 bg-gray-50">
+                <img 
+                  src="/images/image3.png" 
+                  alt="Pooja - Transformed Mind" 
+                  loading="lazy"
+                  className="w-full h-[500px] object-cover object-top transition-transform duration-[1.5s] group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              </div>
+
+              {/* Floating Brand Badge */}
+              <motion.div 
+                animate={{
+                  y: [0, -12, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute -bottom-16 left-1/2 -translate-x-1/2 z-30"
+              >
+                <div className="bg-[#A67C52] p-7 md:p-9 rounded-[30px] shadow-3xl text-white w-[max-content] min-w-[200px] text-center border-4 border-white">
+                  <span className="text-2xl md:text-3xl font-serif block leading-none">Tranceform*</span>
+                  <span className="text-[9px] tracking-[0.3em] uppercase opacity-70 mt-2 block">with Pooja</span>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -120,47 +158,9 @@ const AboutPage = () => {
       {/* Testimonials Section */}
       <TestimonialsSection />
 
-      {/* 6. Process Section */}
       <ProcessSection />
- 
-      {/* 7. Gentle Closing (Section 10) */}
-      <section className="py-32 bg-white relative overflow-hidden">
-        {/* Subtle Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-gray-100 to-transparent" />
-        
-        <div className="container mx-auto px-6 text-center max-w-4xl space-y-12 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            className="space-y-8"
-          >
-            <p className="text-3xl md:text-5xl font-serif text-brand-blue leading-[1.2] max-w-3xl mx-auto">
-              "Real transformation does not happen by forcing yourself to be different. It begins by understanding yourself more deeply."
-            </p>
-            <div className="h-1 w-20 bg-[#A67C52]/30 mx-auto rounded-full" />
-            <p className="text-black font-normal text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed">
-              When the mind and nervous system finally feel safe enough, change often happens more naturally than we expect.
-            </p>
-          </motion.div>
-
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-6">
-            <button 
-              onClick={() => setIsAppointmentModalOpen(true)}
-              className="px-12 py-5 bg-[#A67C52] text-white rounded-full font-medium shadow-2xl hover:bg-brand-blue transition-all active:scale-95 text-xs tracking-[0.2em] uppercase"
-            >
-              BOOK A SESSION
-            </button>
-            <a 
-              href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-12 py-5 border-2 border-brand-blue text-brand-blue rounded-full font-medium hover:bg-brand-blue hover:text-white transition-all active:scale-95 text-center text-xs tracking-[0.2em] uppercase"
-            >
-              MESSAGE ON WHATSAPP
-            </a>
-          </div>
-        </div>
-      </section>
+  
+      <JourneySection />
 
       <AppointmentModal 
         isOpen={isAppointmentModalOpen} 

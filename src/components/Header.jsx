@@ -3,6 +3,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import AppointmentModal from './AppointmentModal';
+import logo from '../assets/Tranceform LOGO JPEG.jpg.png';
 
 const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -51,7 +52,7 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img 
-            src="/logo.png" 
+            src={logo} 
             alt="Tranceform Logo" 
             className={`transition-all duration-300 object-contain hover:scale-105 cursor-pointer ${isScrolled ? 'h-8 md:h-10' : 'h-10 md:h-12'}`} 
           />

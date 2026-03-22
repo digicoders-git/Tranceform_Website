@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Sparkles, ShieldCheck, Zap, Heart, CheckCircle2 } from 'lucide-react';
+import { Brain } from 'lucide-react';
 import AppointmentModal from '../components/AppointmentModal';
+import AreasIWorkWith from '../components/AreasIWorkWith';
 
 const HypnotherapyPage = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
@@ -53,9 +54,9 @@ const HypnotherapyPage = () => {
       </section>
 
       {/* 2. What is Hypnotherapy Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 md:py-16 bg-white overflow-hidden">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -73,103 +74,57 @@ const HypnotherapyPage = () => {
                 <Brain className="w-12 h-12 text-white" />
               </div>
             </motion.div>
-
-            <div className="space-y-12">
-              <div className="space-y-6">
+ 
+            <div className="space-y-8 lg:space-y-10">
+              <div className="space-y-3.5 md:space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="h-[1px] w-12 bg-[#A67C52]" />
-                  <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase">
+                  <span className="text-[#A67C52] text-[12px] font-bold tracking-[0.4em] uppercase">
                     ( DEEPER UNDERSTANDING )
                   </span>
                 </div>
-                <h2 className="text-4xl md:text-6xl font-serif text-[#15202B] leading-tight tracking-tight">
+                <h2 className="text-3xl md:text-4xl font-serif text-[#15202B] leading-tight tracking-tight">
                   The subconscious mind remembers <br />
                   <span className="text-[#A67C52] serif">what the conscious mind forgets</span>
                 </h2>
               </div>
 
-              <div className="space-y-8 text-black font-normal text-xl leading-relaxed">
+              <div className="space-y-4 md:space-y-5 text-[#15202B] font-normal text-base md:text-[17px] leading-relaxed">
                 <p>
                   Much of what we experience as adults is influenced by emotional patterns that developed earlier in life.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. How Hypnotherapy Can Help */}
-      <section className="py-20 bg-[#15202B] relative overflow-hidden">
-        {/* Decorative Background Text */}
-        <div className="absolute -top-12 -right-12 text-[20rem] font-serif text-white/5 select-none pointer-events-none">
-          Areas
-        </div>
-        
-        <div className="container mx-auto px-6 md:px-16 max-w-7xl relative z-10">
-          <div className="flex flex-col lg:flex-row items-end justify-between mb-16 gap-8">
-            <div className="space-y-4 max-w-3xl">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-4"
-              >
-                <div className="h-[1px] w-12 bg-[#A67C52]" />
-                <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase block">
-                  ( AREAS I WORK WITH )
-                </span>
-              </motion.div>
-              <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight font-medium">
-                How hypnotherapy <br />
-                <span className="text-[#A67C52] font-medium serif">can help you</span>
-              </h2>
-            </div>
-            <p className="text-white/60 font-normal text-lg max-w-md pb-2 border-l border-white/10 pl-8 leading-relaxed">
-              These challenges are often connected to deeper emotional patterns that can be worked with effectively.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
-            {[
-              "Anxiety and emotional overwhelm", "Panic or fear responses", "Self-sabotage", 
-              "Inner child healing", "Relationship patterns", "Low self-worth and self-doubt", 
-              "Trauma and emotional pain", "Smoking cessation", "Stress and burnout", 
-              "Feeling stuck despite self-awareness"
-            ].map((area, idx) => (
-              <motion.div 
-                key={idx} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.05 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
-                className="bg-white/5 backdrop-blur-xl p-6 rounded-[28px] border border-white/10 flex flex-col justify-between group transition-all duration-500 hover:border-[#A67C52]/50 hover:shadow-2xl hover:shadow-black/40 relative overflow-hidden"
-              >
-                <div className="space-y-3 relative z-10">
-                  <div className="w-10 h-10 rounded-xl bg-[#A67C52]/10 flex items-center justify-center text-[#A67C52] group-hover:bg-[#A67C52] group-hover:text-white transition-all duration-500 shadow-md">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <h4 className="text-lg md:text-xl font-serif text-white/95 leading-tight group-hover:text-white transition-colors">
-                    {area}
-                  </h4>
+                <p>
+                  The mind and nervous system learn how to respond to love, stress, conflict, disappointment, safety, and connection.
+                </p>
+                <p>
+                  If those early experiences were confusing, overwhelming, or emotionally unsupported, the nervous system adapts in order to cope.
+                </p>
+                
+                <div className="pt-2">
+                  <p className="font-medium text-[#A67C52] text-sm uppercase tracking-wide mb-3">You may find yourself:</p>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 italic text-[15px] border-l-2 border-[#A67C52]/30 pl-6">
+                    <li>• needing control to feel safe</li>
+                    <li>• expecting abandonment</li>
+                    <li>• feeling anxious when stable</li>
+                    <li>• struggling to fully trust</li>
+                  </ul>
                 </div>
                 
-                <div className="w-0 h-[2px] bg-[#A67C52] mt-8 group-hover:w-full transition-all duration-500" />
-              </motion.div>
-            ))}
-          </div>
+                <p className="pt-4 font-medium text-[#A67C52] serif text-lg md:text-xl">
+                  Hypnotherapy allows us to work gently with the subconscious layers where these patterns live.
+                </p>
+              </div>
+            </div>
 
-          {/* Bottom Trust Row */}
-          <div className="mt-16 pt-10 border-t border-white/5 flex flex-wrap justify-between items-center gap-12 opacity-40">
-            <span className="text-white text-sm font-medium tracking-[0.2em] uppercase">Trusted by 15+ years of clinical excellence</span>
-            <div className="h-[1px] flex-1 bg-white/10 hidden md:block" />
-            <span className="text-white text-sm font-medium tracking-[0.2em] uppercase">Safe • Confidential • Science-based</span>
           </div>
         </div>
       </section>
 
+      {/* 3. Areas I Work With Carousel Section */}
+      <AreasIWorkWith />
+
       {/* 4. Session Process Section */}
-      <section className="py-12 bg-white">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
           <div className="text-center mb-20 space-y-6">
             <div className="flex items-center justify-center gap-4">
@@ -255,32 +210,47 @@ const HypnotherapyPage = () => {
       </section>
 
       {/* 6. Final CTA Section */}
-      <section className="py-20 bg-gray-50 relative overflow-hidden">
+      <section className="py-24 bg-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("/images/image.png")', backgroundSize: 'cover' }} />
-        <div className="container mx-auto px-6 text-center max-w-5xl space-y-12 relative z-10">
+        <div className="container mx-auto px-6 text-center max-w-5xl space-y-16 relative z-10">
           <div className="space-y-6">
             <div className="flex items-center justify-center gap-4">
               <div className="h-[1px] w-12 bg-[#A67C52]" />
               <span className="text-[#A67C52] text-[12px] font-medium tracking-[0.4em] uppercase">
-                ( START TODAY )
+                ( MY APPROACH )
               </span>
               <div className="h-[1px] w-12 bg-[#A67C52]" />
             </div>
             <h2 className="text-4xl md:text-6xl font-serif text-[#15202B] leading-tight tracking-tight">
-              Begin your <span className="text-[#A67C52] serif">journey inward</span>
+              A deeply <span className="text-[#A67C52] serif">personalised approach</span>
             </h2>
           </div>
           
-          <div className="space-y-10 max-w-3xl mx-auto">
-            <p className="text-[#15202B] font-light text-xl md:text-2xl leading-relaxed serif border-l-4 border-[#A67C52]/30 px-10">
-              "Real transformation does not happen by forcing yourself to be different. It begins by understanding yourself more deeply."
-            </p>
-            <p className="text-black/60 font-normal serif text-lg leading-relaxed">
-              Many people reach a point where they realise they do not need more advice or more analysis. What they need is a safe space to understand the deeper emotional patterns shaping their lives.
-            </p>
+          <div className="space-y-12 max-w-4xl mx-auto text-left md:text-center grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div className="space-y-6">
+              <p className="text-[#15202B] font-normal text-lg md:text-xl leading-relaxed font-serif border-l-4 border-[#A67C52]/40 pl-8">
+                Every person who comes to see me has their own story, emotional history, and inner world. <span className="text-[#A67C52] font-medium italic">Because of this, my sessions are never one-size-fits-all.</span>
+              </p>
+              <p className="text-[#15202B]/80 font-normal text-base md:text-lg leading-relaxed pl-8">
+                Rather than using the same script for everyone, I work closely with each client to understand the deeper emotional patterns behind what they are experiencing.
+              </p>
+            </div>
+
+            
+            <div className="bg-white p-10 rounded-[40px] shadow-xl border border-gray-100 space-y-6">
+              <h4 className="text-xl font-serif text-[#15202B]">The goal is not simply to manage symptoms, but to understand and shift the deeper patterns that created them.</h4>
+              <ul className="grid grid-cols-1 gap-3 text-sm text-black/60 font-medium uppercase tracking-wider">
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#A67C52]" /> Anxiety & Regulation</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#A67C52]" /> Inner Child Healing</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#A67C52]" /> Subconscious Beliefs</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#A67C52]" /> Relationship Patterns</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#A67C52]" /> Emotional Trauma</li>
+                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-[#A67C52]" /> Unresolved Experiences</li>
+              </ul>
+            </div>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-10">
             <button 
               onClick={() => setIsAppointmentModalOpen(true)}
               className="px-14 py-6 bg-[#A67C52] hover:bg-[#15202B] text-white rounded-full font-medium text-xs tracking-[0.3em] uppercase transition-all duration-500 shadow-2xl hover:shadow-[#A67C52]/20 transform hover:-translate-y-1 active:scale-95"

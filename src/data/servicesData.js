@@ -2,181 +2,194 @@ export const servicesData = [
   {
     id: "hypnotherapy-for-reducing-pain",
     title: "Hypnotherapy For Reducing Pain",
-    subtitle: "Natural pain relief through the power of the subconscious mind",
-    image: "/images/image.png",
-    shortDesc: "Discover how clinical hypnotherapy can help you manage chronic and acute pain without relying solely on medication.",
-    fullDesc: "Pain is not just physical — it is deeply intertwined with your mind. Clinical hypnotherapy accesses the subconscious to alter the brain's perception of pain signals. Through guided relaxation and direct suggestion, clients experience significant relief from chronic pain conditions, post-surgical discomfort, and pain associated with illness. Our certified hypnotherapists have helped hundreds of clients reclaim a pain-free life.",
+    subtitle: "Gently exploring what your anxiety is trying to protect",
+    image: "/images/anxiety.png",
+    shortDesc: "Anxiety isn’t always obvious. Sometimes it looks like overthinking, needing control, or constantly preparing for what might go wrong.",
+    fullDesc: `Anxiety isn’t always obvious. Sometimes it looks like overthinking, needing control, or constantly preparing for what might go wrong. Many of the people I work with are highly aware. They understand their patterns, yet their body still feels on edge. 
+
+In our work together, we gently explore what your anxiety is trying to protect. When the nervous system begins to feel safe again, the need to stay constantly alert starts to soften.`,
     benefits: [
-      "Significant reduction in chronic pain levels",
-      "Reduced dependency on pain medication",
-      "Improved mobility and daily function",
-      "Better sleep undisturbed by pain",
-      "Lowered anxiety and fear associated with pain",
-      "Empowerment through self-hypnosis techniques"
+      "Regulated nervous system response",
+      "Release of chronic overthinking patterns",
+      "Greater internal sense of safety",
+      "Reduced physical tension and edge",
+      "Clarity instead of constant preparation",
+      "Deeper emotional resilience"
     ],
     features: [
       {
-        title: "Neurological Rewiring",
-        desc: "Train your brain to dampen pain signals at the subconscious level for lasting relief."
+        title: "Safety First",
+        desc: "Creating a secure baseline for your nervous system to rest."
       },
       {
-        title: "Mind-Body Integration",
-        desc: "Harness the proven connection between mental state and physical sensation."
+        title: "Protective Analysis",
+        desc: "Understanding the underlying mission of your anxiety."
       },
       {
-        title: "Self-Hypnosis Training",
-        desc: "Learn tools to manage pain on your own between sessions."
+        title: "Somatic Integration",
+        desc: "Helping the body realize the threat has passed."
       }
     ]
   },
   {
     id: "manage-phobias-and-addictions",
     title: "Manage Phobias And Addictions",
-    subtitle: "Break free from fears and compulsive patterns that control your life",
-    image: "/images/image2.png",
-    shortDesc: "Hypnotherapy targets the subconscious roots of your phobias and addictions for permanent and meaningful change.",
-    fullDesc: "Phobias and addictions are rarely about willpower — they are deeply embedded subconscious programs running on autopilot. Hypnotherapy bypasses the critical conscious mind to directly address and reprogram these patterns. Whether you struggle with a fear of flying, social anxiety, alcohol dependency, or smoking, our tailored sessions create lasting behavioral shifts by installing new, healthier responses at the core level.",
+    subtitle: "Understanding the deeper emotional blueprint behind your relationships",
+    image: "/images/relationship.png",
+    shortDesc: "You may notice that even when the person changes, the feeling doesn’t. The same fears and doubts keep showing up.",
+    fullDesc: `You may notice that even when the person changes, the feeling doesn’t. The same fears, the same doubts, the same emotional responses keep showing up, whether it’s fear of abandonment, over-giving, or pulling away when things get close. 
+
+These patterns often begin much earlier in life. Through hypnotherapy, we begin to understand the deeper emotional blueprint behind your relationships, so you can start responding from a place that feels calmer, clearer, and more secure.`,
     benefits: [
-      "Freedom from irrational fears and phobias",
-      "Overcoming substance and behavioral addictions",
-      "Restored confidence and self-efficacy",
-      "No withdrawal-like rebound effects",
-      "Stronger emotional resilience",
-      "A renewed sense of control over your choices"
+      "Breaking cycles of abandonment fear",
+      "Establishing healthy emotional boundaries",
+      "More secure and grounding connections",
+      "Clearer communication of needs",
+      "Healing of early attachment wounds",
+      "Responding instead of reacting"
     ],
     features: [
       {
-        title: "Subconscious Reprogramming",
-        desc: "Directly access and rewrite the fear-based code in your subconscious mind."
+        title: "Blueprint Discovery",
+        desc: "Identifying the root of your relationship dynamics."
       },
       {
-        title: "Desensitisation Therapy",
-        desc: "Gradually reduce the emotional charge attached to your phobia triggers."
+        title: "Emotional Security",
+        desc: "Building a stable sense of self within a partnership."
       },
       {
-        title: "Craving Control",
-        desc: "Install powerful mental anchors to resist cravings and impulsive choices."
+        title: "Pattern Interruption",
+        desc: "Tools to stop repeating the same relationship cycles."
       }
     ]
   },
   {
     id: "past-life-regression",
     title: "Past Life Regression",
-    subtitle: "Journey into the depths of your soul to unlock ancient wisdom",
-    image: "/images/img6.png",
-    shortDesc: "Explore the journey of your soul across time to resolve karmic patterns and understand your present life more deeply.",
-    fullDesc: "Past Life Regression (PLR) is a profound therapeutic modality used to access memories from previous incarnations stored in the deeper layers of the subconscious. Under a guided hypnotic state, clients often uncover the origins of current phobias, unexplained emotional pain, relationship patterns, and life purpose. Whether approached from a spiritual or psychological angle, PLR offers remarkable insights and healing opportunities.",
+    subtitle: "Giving the younger part of you the safety it needed",
+    image: "/images/healing.png",
+    shortDesc: "There is often a younger part of you still carrying feelings that were never fully processed.",
+    fullDesc: `There is often a younger part of you still carrying feelings that were never fully processed. Not being seen. Not feeling enough. Feeling responsible too early. 
+
+These parts don’t disappear, they quietly influence how you feel about yourself even today. Through gentle hypnotherapy, we reconnect with these parts, not to relive the past, but to finally give them the safety, understanding, and support they needed.`,
     benefits: [
-      "Understanding the origin of unexplained fears",
-      "Resolving persistent relationship patterns",
-      "Deep spiritual clarity and soul-level purpose",
-      "Healing of grief and loss across timelines",
-      "Release of karmic contracts and vows",
-      "A greater sense of peace and life meaning"
+      "Resolution of 'not enough' feelings",
+      "Healing of early childhood wounds",
+      "Improved self-compassion and love",
+      "Release of early responsibilities",
+      "Integration of younger parts",
+      "Authentic self-expression"
     ],
     features: [
       {
-        title: "Deep Hypnotic Journey",
-        desc: "Safely navigate the deepest layers of your subconscious memory."
+        title: "Safe Reconnection",
+        desc: "Gently meeting the parts that felt unheard."
       },
       {
-        title: "Karmic Pattern Release",
-        desc: "Identify and resolve issues that may have originated beyond this lifetime."
+        title: "Validation & Safety",
+        desc: "Providing the acknowledgment the child never received."
       },
       {
-        title: "Soul Purpose Discovery",
-        desc: "Gain a panoramic view of your soul's journey and current mission."
+        title: "Part Integration",
+        desc: "Bringing the inner child into your current safe adult world."
       }
     ]
   },
   {
     id: "eliminate-anxiety-and-stress",
     title: "Eliminate Anxiety & Stress",
-    subtitle: "Restore calm, clarity and confidence from within",
-    image: "/anxity.jpg",
-    shortDesc: "Rewire your brain's stress-response system and step into a life of lasting calm and emotional balance.",
-    fullDesc: "Anxiety and chronic stress have become an epidemic of the modern age. Hypnotherapy offers a drug-free, side-effect-free path to real and lasting calm by working directly with the subconscious mind — the seat of all habitual thought and emotional response. Our sessions help you identify the root triggers of your anxiety, dissolve them at the source, and install a new baseline of peace and resilience.",
+    subtitle: "Moving from fighting your resistance to understanding it",
+    image: "/images/self_sabotage.png",
+    shortDesc: "You know what to do. And yet, something holds you back. This isn’t a lack of discipline, it’s a protective pattern.",
+    fullDesc: `You know what to do. And yet, something holds you back. This isn’t a lack of discipline, it’s often a protective pattern. At some point, being visible, confident, or fully yourself may not have felt safe. 
+
+So a part of you learned to pause, doubt, or pull back. In our work, we understand that part instead of fighting it. And when it no longer needs to protect you, change begins to happen more naturally.`,
     benefits: [
-      "Dramatic reduction in daily anxiety levels",
-      "Better stress-response management",
-      "Improved focus and mental clarity",
-      "Deeper and more restful sleep",
-      "Greater confidence in high-pressure situations",
-      "Long-lasting results without medication"
+      "Ending the internal fight with yourself",
+      "Discovering the source of resistance",
+      "Natural movement toward goals",
+      "Improved confidence in visibility",
+      "Permission to be fully yourself",
+      "Reduced procrastination and doubt"
     ],
     features: [
       {
-        title: "Root Trigger Analysis",
-        desc: "Identify and neutralize the original cause of your anxiety response."
+        title: "Resistance Inquiry",
+        desc: "Exploring why 'going forward' feels dangerous."
       },
       {
-        title: "Calm State Installation",
-        desc: "Embed new emotional baselines of peace and safety in the subconscious."
+        title: "Protective Realignment",
+        desc: "Teaching your system new ways to stay safe."
       },
       {
-        title: "Rapid Calm Technique",
-        desc: "Master the ability to enter a calm state within seconds, anywhere."
+        title: "Flow State Access",
+        desc: "Removing the subconscious brakes on your progress."
       }
     ]
   },
   {
     id: "heal-your-inner-child",
     title: "Heal Your Inner Child",
-    subtitle: "Reconnect with, nurture, and heal the child within you",
-    image: "/images/image3.png",
-    shortDesc: "Resolve early childhood wounds that continue to shape your adult emotions, relationships, and patterns of behavior.",
-    fullDesc: "Your inner child — the part of you that holds your earliest feelings, memories, and needs — often carries unhealed wounds that silently drive adult behavior. Inner Child Healing through hypnotherapy allows you to compassionately reconnect with this part of yourself, provide the love and safety it never received, and begin the process of deep emotional repair. This work brings profound transformations in self-love, trust, and relationship patterns.",
+    subtitle: "Allowing your system to release what it no longer needs to carry",
+    image: "/images/trauma_healing.png",
+    shortDesc: "Trauma doesn’t always look dramatic. Sometimes it lives in how quickly you feel overwhelmed.",
+    fullDesc: `Trauma doesn’t always look dramatic. Sometimes it lives in how quickly you feel overwhelmed, how hard it is to trust, or how your body reacts even when you know you’re safe. 
+
+Your mind may understand that the past is over, but your nervous system may still be holding onto it. Our work focuses on creating safety first, then gently allowing your system to release what it no longer needs to carry.`,
     benefits: [
-      "Healing of early abandonment and neglect wounds",
-      "Improved self-compassion and self-love",
-      "Breaking generational trauma cycles",
-      "More secure and satisfying relationships",
-      "Greater emotional stability and self-regulation",
-      "Restored joy, spontaneity, and playfulness"
+      "Release of somatic trauma storage",
+      "Increased window of tolerance",
+      "Improved ability to trust safety",
+      "Reduction in overwhelming reactions",
+      "Clearing of old emotional pain",
+      "Restored sense of agency"
     ],
     features: [
       {
-        title: "Guided Regression",
-        desc: "Safely revisit formative experiences to offer healing to your younger self."
+        title: "Nervous System Work",
+        desc: "Updating the body's 'current time' setting."
       },
       {
-        title: "Re-Parenting Work",
-        desc: "Provide the nurturing, validation and safety your inner child needed."
+        title: "Gentle Release",
+        desc: "Facilitating change without being overwhelmed."
       },
       {
-        title: "Emotional Integration",
-        desc: "Bring your inner child into harmony with your present adult self."
+        title: "Safety Initialization",
+        desc: "Building a profound internal sense of peace."
       }
     ]
   },
   {
     id: "stop-smoking",
     title: "Stop Smoking",
-    subtitle: "End your dependency on cigarettes — permanently and gently",
-    image: "/images/img8.png",
-    shortDesc: "Clinical hypnotherapy has one of the highest success rates for smoking cessation — more effective than patches, gum, or willpower alone.",
-    fullDesc: "Smoking is one of the most stubborn habits to break because it is psychologically anchored in the subconscious. Hypnotherapy bypasses the conscious urge to smoke and directly reprograms the underlying associations and triggers. Our structured stop-smoking programme typically shows results within 1–3 sessions, helping you step into your smoke-free identity with confidence, removing both the cravings and the emotional need to light up.",
+    subtitle: "Understanding the need behind the habit",
+    image: "/images/addiction.png",
+    shortDesc: "Habits like smoking or other dependencies are rarely just about the habit itself.",
+    fullDesc: `Habits like smoking or other dependencies are rarely just about the habit itself. They are often connected to moments of stress, loneliness, boredom, or emotional discomfort. 
+
+Part of you knows you want to stop. Another part still turns toward it. In our sessions, we work with both parts, understanding the need behind the habit while gently creating new ways for your mind and body to respond.`,
     benefits: [
-      "End cravings at the subconscious source",
-      "No painful withdrawal side effects",
-      "Improved lung function and overall health",
-      "Save thousands in annual cigarette costs",
-      "Boost in energy and physical endurance",
-      "High success rate with long-term results"
+      "Freedom from smoke and substance",
+      "New coping mechanisms for stress",
+      "Harmony between internal parts",
+      "Reduced cravings at the root",
+      "Greater behavioral control",
+      "Health and vitality restoration"
     ],
     features: [
       {
-        title: "Craving Elimination",
-        desc: "Directly target and extinguish the subconscious triggers that cause cravings."
+        title: "Root Cause Discovery",
+        desc: "Why did you need this habit in the first place?"
       },
       {
-        title: "Identity Shift",
-        desc: "Transition from 'smoker' to 'non-smoker' at a deep psychological level."
+        title: "Part Negotiation",
+        desc: "Getting all parts of you on the same page."
       },
       {
-        title: "Relapse Prevention",
-        desc: "Install robust mental defences to maintain a smoke-free life long-term."
+        title: "Future Pacing",
+        desc: "Mental rehearsals of a habit-free life."
       }
     ]
   }
 ];
+

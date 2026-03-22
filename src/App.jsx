@@ -17,6 +17,7 @@ import BackToTop from './components/BackToTop'
 import WhatsAppButton from './components/WhatsAppButton'
 import CallFloatingButton from './components/CallFloatingButton'
 import Preloader from './components/Preloader'
+import logo from './assets/Tranceform LOGO JPEG.jpg.png';
 import './App.css'
 
 function App() {
@@ -79,10 +80,10 @@ function App() {
               {/* Branding */}
               <div className="md:col-span-12 lg:col-span-4 space-y-5">
                 <div className="bg-white inline-block p-3 rounded-xl w-full max-w-[220px]">
-                   <img src="/logo.png" alt="Tranceform Logo" className="w-full h-auto object-contain" />
+                   <img src={logo} alt="Tranceform Logo" className="w-full h-auto object-contain" />
                 </div>
                 <p className="text-white text-[15px] leading-relaxed font-light pr-4">
-                  Empowering minds through professional hypnotherapy. Experience clinical depth and lasting transformation.
+                  Tranceform with Pooja: Professional clinical hypnotherapy in Bangkok. Experience deep healing and lasting transformation.
                 </p>
                 <div className="flex gap-3">
                   {[
@@ -134,7 +135,7 @@ function App() {
                   </div>
                   <div>
                     <span className="block text-white mb-0 font-medium text-[12px] uppercase tracking-wide opacity-50">Clinic</span>
-                    <p className="text-white">12 Harley Street<br />London, W1G 9PF</p>
+                    <p className="text-white">UnionSpace Sukhumvit 61<br />Bangkok, Thailand</p>
                   </div>
                 </div>
               </div>
@@ -142,8 +143,8 @@ function App() {
 
             {/* Bottom Copyright */}
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-              <p className="text-white text-[11px] ml-12 md:ml-0 tracking-[0.3em] uppercase font-medium opacity-60">
-                Transform your mind • Transform your life
+              <p className="text-white text-[11px] ml-12 md:ml-0 tracking-[0.2em] uppercase font-medium opacity-80 max-w-xl">
+                Real change doesn’t come from forcing yourself to be different. It begins by understanding yourself more deeply.
               </p>
               <p className="text-white text-sm md:text-md font-light opacity-60">
                 &copy; {new Date().getFullYear()} Tranceform Hypnotherapy. All rights reserved. || Crafted with ❤️ by <span className="text-brand-orange hover:text-white transition-colors cursor-pointer font-semibold"><a href="https://digicoders.in">#TeamDigiCoders</a></span>
