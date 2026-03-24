@@ -194,7 +194,7 @@ const AboutDiscovery = () => {
       )}
  
       {/* What a session feels like (Section 5) */}
-      <div className="bg-white py-6 md:py-8 border-b border-gray-50 relative overflow-hidden">
+      <div className="bg-white pt-16 pb-8 md:pt-24 md:pb-12 border-b border-gray-50 relative overflow-hidden">
          <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[80%] h-[80%] bg-[#A67C52]/[0.02] rounded-full blur-3xl pointer-events-none" />
          
          <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">

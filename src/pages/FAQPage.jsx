@@ -10,51 +10,51 @@ const faqCategories = [
     icon: <Brain className="w-5 h-5" />,
     faqs: [
       {
-        question: "What exactly is hypnotherapy?",
-        answer: "Hypnotherapy is a therapeutic technique that uses guided hypnosis — a state of focused attention and deep relaxation — to access the subconscious mind. In this receptive state, a trained hypnotherapist can help you explore and resolve emotional patterns, habits, fears, and beliefs that are difficult to reach through the conscious mind alone. It is safe, evidence-based, and widely used in clinical settings worldwide."
-      },
-      {
-        question: "Is hypnotherapy safe?",
-        answer: "Yes, absolutely. Clinical hypnotherapy is a completely safe, non-invasive therapeutic modality. You remain fully aware and in control throughout every session. You cannot be made to say or do anything against your will. Our hypnotherapists are certified professionals who adhere to the highest ethical and clinical standards."
-      },
-      {
-        question: "Can anyone be hypnotised?",
-        answer: "The vast majority of people can experience hypnosis to varying degrees. Contrary to myth, hypnotisability is not a sign of weakness — in fact, highly intelligent and imaginative individuals tend to be excellent subjects. The key is willingness and trust. Our therapists are skilled at creating the right environment for you to enter a comfortable, relaxed state."
-      },
-      {
         question: "Will I lose control during hypnosis?",
-        answer: "No. This is one of the most common misconceptions about hypnotherapy. You are not asleep, unconscious, or under anyone's 'control'. You are in a state of relaxed, focused awareness — much like being absorbed in a film or daydream. You can hear everything, respond to questions, and choose to exit the state at any time."
+        answer: "No, you remain fully aware and in control throughout the session.\n\nHypnosis is not something that is done to you. It is a state you enter with guidance. You can hear everything, respond if you want to, and come out of it at any time.\n\nIt is a very natural state, similar to being deeply absorbed in your thoughts or a memory."
       },
       {
-        question: "How is hypnotherapy different from meditation?",
-        answer: "While both involve relaxation and focused attention, they serve different purposes. Meditation is generally a self-directed practice for calming the mind. Hypnotherapy is a clinically guided process with specific therapeutic goals — such as resolving trauma, breaking habits, or overcoming phobias. A trained therapist actively guides the session towards measurable outcomes."
+        question: "Can you erase my memories?",
+        answer: "No, and that is not the goal of this work.\n\nYour experiences are part of your story. What we work on is how those memories are held within you, the emotional charge, the patterns, and the responses connected to them.\n\nAs those shift, the memory often feels lighter, less triggering, and no longer in control of your present."
+      },
+      {
+        question: "What if I can’t be hypnotised?",
+        answer: "Most people can enter a hypnotic state.\n\nIt is not about being “hypnotisable”. It is about your ability to focus and relax, which most people naturally can.\n\nThere is no pressure to “do it right.” I guide you gently, and we move at a pace that feels comfortable for you."
+      },
+      {
+        question: "Is hypnotherapy like what I’ve seen on stage or in movies?",
+        answer: "No, that is entertainment.\n\nStage hypnosis is designed for performance. Therapeutic hypnotherapy is a completely different process. It is safe, respectful, and focused on your wellbeing."
+      },
+      {
+        question: "Can hypnotherapy help if I already understand my problem?",
+        answer: "Yes, this is actually very common.\n\nMany people I work with are already self-aware. They understand their patterns, but still feel stuck.\n\nHypnotherapy helps bridge the gap between understanding something logically and shifting it emotionally and subconsciously."
       }
     ]
   },
   {
-    id: 'sessions',
+    id: 'process',
     label: 'Sessions & Process',
     icon: <Clock className="w-5 h-5" />,
     faqs: [
       {
-        question: "How long does a hypnotherapy session last?",
-        answer: "A standard session at Tranceform lasts between 60 and 90 minutes. Your first session is typically slightly longer as it includes an in-depth consultation to understand your goals, history, and expectations. Follow-up sessions are focused and goal-directed, typically around 60 minutes."
+        question: "Will I remember what happens in the session?",
+        answer: "Yes, most people remember everything.\n\nYou may feel deeply relaxed or absorbed at times, but you remain aware of the process. Some parts may feel dream-like, but not lost or forgotten."
+      },
+      {
+        question: "Will you make me do something I don’t want to do?",
+        answer: "No.\n\nHypnotherapy does not override your values, beliefs, or boundaries. You cannot be made to do anything against your will.\n\nThis work is collaborative. Your mind will always protect you."
       },
       {
         question: "How many sessions will I need?",
-        answer: "It depends on your specific goals and the complexity of the issue. Many clients experience powerful shifts in as few as 1–3 sessions for issues like smoking cessation or simple phobias. Deeper work — such as trauma processing, inner child healing, or long-standing anxiety — may require 4–8 sessions. Your therapist will recommend a personalised programme after your initial consultation."
+        answer: "This varies from person to person.\n\nSome people notice shifts quickly, while others benefit from a few sessions to work through deeper patterns.\n\nWe focus on meaningful, lasting change rather than rushing the process."
       },
       {
-        question: "What happens in my first session?",
-        answer: "Your first session begins with a thorough consultation where your therapist takes the time to understand your goals, background, and any relevant medical or emotional history. This is followed by a brief explanation of the hypnotic process, addressing any questions you may have. The actual hypnotherapy then takes place in the second half of the session. You will leave feeling relaxed, clear-headed, and informed about your path forward."
+        question: "What if I feel emotional during the session?",
+        answer: "That is completely okay.\n\nEmotions are often part of the healing process. You will be supported throughout, and nothing is forced or rushed.\n\nWe move in a way that feels safe and manageable for you."
       },
       {
-        question: "Do you offer online sessions?",
-        answer: "Yes! We offer fully effective online hypnotherapy sessions via secure video conferencing. Research and clinical experience confirm that online sessions are equally effective as in-person visits. All you need is a quiet, comfortable space, a reliable internet connection, and a device with a camera. Many clients prefer the convenience and comfort of sessions from their own home."
-      },
-      {
-        question: "What should I do to prepare for a session?",
-        answer: "Simply arrive (or log in) on time and with an open mind. Avoid alcohol or heavy meals for a few hours beforehand. Wear comfortable clothing. It helps to have already thought about what you'd like to work on, though your therapist will guide you through this. Most importantly — trust the process. The more relaxed and open you are, the more effective your session will be."
+        question: "Is this a safe process?",
+        answer: "Yes.\n\nCreating a sense of safety is at the core of the work. We do not push you into anything you are not ready for.\n\nThe process is gentle, grounded, and guided with care."
       }
     ]
   },
@@ -275,7 +275,7 @@ const FAQPage = () => {
                     <span className="text-[#A67C52]/40 font-serif text-base mt-1 shrink-0">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className={`text-xl md:text-2xl font-serif transition-colors duration-500 leading-snug tracking-tight ${
+                    <span className={`text-xl md:text-2xl font-serif font-bold transition-colors duration-500 leading-snug tracking-tight ${
                       activeIndex === index ? 'text-[#A67C52]' : 'text-brand-blue group-hover:text-[#A67C52]'
                     }`}>
                       {faq.question}
@@ -299,8 +299,10 @@ const FAQPage = () => {
                       transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
                       className="overflow-hidden"
                     >
-                      <div className="pl-14 pb-8 pr-20 text-black text-lg font-normal leading-relaxed serif opacity-80">
-                        {faq.answer}
+                      <div className="pl-14 pb-8 pr-20 text-black text-lg font-normal leading-relaxed serif opacity-80 space-y-3">
+                        {faq.answer.split('\n\n').map((paragraph, i) => (
+                          <p key={i}>{paragraph}</p>
+                        ))}
                       </div>
                     </motion.div>
                   )}

@@ -83,13 +83,14 @@ const AreasIWorkWith = () => {
               ].map((area, idx) => (
                 <div 
                   key={idx}
-                  className="w-[240px] md:w-[320px] h-[320px] md:h-[400px] shrink-0 relative rounded-[28px] overflow-hidden group/card shadow-2xl"
+                  className="w-[240px] md:w-[320px] h-[320px] md:h-[400px] shrink-0 relative rounded-[28px] overflow-hidden group/card shadow-2xl isolate bg-[#15202B] transform-gpu"
+                  style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
                 >
-                  <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover/card:scale-110" />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#15202B] via-[#15202B]/40 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+                  <img src={area.image} alt={area.title} className="w-full h-full object-cover scale-105 transition-transform duration-1000 group-hover/card:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#15202B] via-[#15202B]/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
                   {/* Hover content (Slides up) */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 transform translate-y-full group-hover/card:translate-y-0 transition-transform duration-500 ease-out z-20">
+                  <div className="absolute inset-x-0 bottom-0 p-6 transform translate-y-full group-hover/card:translate-y-0 transition-transform duration-500 ease-out z-20 pointer-events-none">
                     <div className="space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif text-white">{area.title}</h4>
                       <p className="text-white/70 text-xs md:text-sm leading-relaxed font-light line-clamp-4">
@@ -136,13 +137,14 @@ const AreasIWorkWith = () => {
               ].map((area, idx) => (
                 <div 
                   key={`dup-${idx}`}
-                  className="w-[240px] md:w-[320px] h-[320px] md:h-[400px] shrink-0 relative rounded-[28px] overflow-hidden group/card shadow-2xl"
+                  className="w-[240px] md:w-[320px] h-[320px] md:h-[400px] shrink-0 relative rounded-[28px] overflow-hidden group/card shadow-2xl isolate bg-[#15202B] transform-gpu"
+                  style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
                 >
-                  <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover/card:scale-110" />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#15202B] via-[#15202B]/40 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+                  <img src={area.image} alt={area.title} className="w-full h-full object-cover scale-105 transition-transform duration-1000 group-hover/card:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#15202B] via-[#15202B]/60 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
                   {/* Hover content (Slides up) */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 transform translate-y-full group-hover/card:translate-y-0 transition-transform duration-500 ease-out z-20">
+                  <div className="absolute inset-x-0 bottom-0 p-6 transform translate-y-full group-hover/card:translate-y-0 transition-transform duration-500 ease-out z-20 pointer-events-none">
                     <div className="space-y-3">
                       <h4 className="text-xl md:text-2xl font-serif text-white">{area.title}</h4>
                       <p className="text-white/70 text-xs md:text-sm leading-relaxed font-light line-clamp-4">
