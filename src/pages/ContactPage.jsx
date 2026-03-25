@@ -60,7 +60,7 @@ const ContactPage = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["+44 (0) 20 7123 4567", "+44 (0) 7700 900077"],
+      details: ["+66 89 779 8028"],
       color: "text-[#A67C52]",
       bg: "bg-[#A67C52]/5"
     },
@@ -222,7 +222,7 @@ const ContactPage = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full bg-gray-50/50 border border-gray-100 text-brand-blue rounded-2xl px-6 py-4 focus:outline-none focus:ring-1 focus:ring-[#A67C52]/20 focus:border-[#A67C52] transition-all duration-500 serif"
-                        placeholder="+44 ..."
+                        placeholder="+66 ..."
                       />
                     </div>
                     <div className="space-y-3">

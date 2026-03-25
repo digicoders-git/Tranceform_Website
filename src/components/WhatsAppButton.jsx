@@ -9,7 +9,7 @@ const WhatsAppIcon = () => (
 
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const phoneNumber = "442071234567"; // Can be replaced with actual WhatsApp number
+  const phoneNumber = "66897798028"; // Can be replaced with actual WhatsApp number
   const message = "Hello, I would like to book a quick consultation or know more about Tranceform Hypnotherapy.";
 
   useEffect(() => {

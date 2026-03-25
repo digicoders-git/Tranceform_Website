@@ -36,11 +36,11 @@ const AboutSection = () => {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#15202B]/5 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/4 pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
           
           {/* Left Side: Image with Premium Frame */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
@@ -91,7 +91,7 @@ const AboutSection = () => {
 
           {/* Right Side: Content */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: true }}

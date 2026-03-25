@@ -199,25 +199,7 @@ const FAQPage = () => {
             </p>
           </motion.div>
 
-          {/* Stats Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center bg-white/5 backdrop-blur-sm border border-white/5 rounded-2xl p-8 md:p-10 w-full"
-          >
-            {[
-              { value: '4.2K+', label: 'Sessions Conducted' },
-              { value: '99%', label: 'Client Satisfaction' },
-              { value: '15+', label: 'Years Experience' },
-              { value: '24h', label: 'Response Time' },
-            ].map((stat, i) => (
-              <div key={i} className="space-y-2 text-center md:text-left border-r last:border-r-0 border-white/10 pr-4 last:pr-0">
-                <div className="text-3xl md:text-4xl font-serif text-[#A67C52] tracking-tighter">{stat.value}</div>
-                <div className="text-white/60 text-[10px] tracking-[0.2em] uppercase font-semibold">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
+
         </div>
       </section>
 

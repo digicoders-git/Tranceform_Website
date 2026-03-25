@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
+import WhatIsHypnotherapy from '../components/WhatIsHypnotherapy';
 import AboutSection from '../components/AboutSection';
 import AreasIWorkWith from '../components/AreasIWorkWith';
 import AboutDiscovery from '../components/AboutDiscovery';
@@ -14,6 +15,7 @@ const HomePage = () => {
   return (
     <>
       <HeroSection />
+      <WhatIsHypnotherapy />
       <AboutSection />
       <AreasIWorkWith />
       <HowItWorks />

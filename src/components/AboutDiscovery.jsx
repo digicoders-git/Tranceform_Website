@@ -5,12 +5,7 @@ import { Brain, Heart, Zap, ShieldCheck } from 'lucide-react';
 const AboutDiscovery = () => {
   const [isVideoOpen, setIsVideoOpen] = React.useState(false);
 
-  const stats = [
-    { value: "15+", label: "Years Of Experience" },
-    { value: "4.2K+", label: "Transformative Sessions" },
-    { value: "10+", label: "Certified Specialists" },
-    { value: "99%", label: "Success Rate" }
-  ];
+
 
   const features = [
     {

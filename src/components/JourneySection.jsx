@@ -4,7 +4,7 @@ import AppointmentModal from './AppointmentModal';
 
 const JourneySection = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const phoneNumber = "442071234567"; // Provided in AboutPage
+  const phoneNumber = "66897798028"; // Provided in AboutPage
   const message = "Hello, I would like to book a hypnotherapy session or know more about your services.";
 
   return (
@@ -86,7 +86,7 @@ const JourneySection = () => {
           </p>
           <div className="space-y-2">
             <p className="text-[#A67C52] font-serif text-2xl">Pooja</p>
-            <p className="text-gray-500 font-light tracking-widest text-xs uppercase">Founder of Tranceform with Pooja</p>
+            <p className="text-[#15202B] font-bold tracking-widest text-xs uppercase bg-[#A67C52]/5 px-6 py-2 rounded-full inline-block border border-[#A67C52]/10">Founder of Tranceform with Pooja</p>
           </div>
         </motion.div>
       </div>

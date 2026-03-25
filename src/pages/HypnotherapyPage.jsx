@@ -6,7 +6,7 @@ import AreasIWorkWith from '../components/AreasIWorkWith';
 
 const HypnotherapyPage = () => {
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
-  const phoneNumber = "442071234567"; // Replace with actual number
+  const phoneNumber = "66897798028"; // Replace with actual number
   const message = "Hello, I would like to book a hypnotherapy session or know more about your services.";
   return (
     <div className="min-h-screen">

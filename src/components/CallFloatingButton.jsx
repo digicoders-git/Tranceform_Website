@@ -4,7 +4,7 @@ import { Phone } from 'lucide-react';
 
 const CallFloatingButton = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const phoneNumber = "+442071234567";
+  const phoneNumber = "+66897798028";
 
   useEffect(() => {
     // Show after 1.5s delay to let the initial animation play out

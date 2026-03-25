@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Award, Star, ChevronRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, ShieldCheck, Award, Star, ChevronRight } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import AppointmentModal from '../components/AppointmentModal';
 
@@ -180,10 +180,7 @@ const ServiceDetailPage = () => {
                 </div>
 
                 <div className="space-y-4 text-left bg-gray-50/50 rounded-[32px] p-8 border border-gray-100">
-                  <div className="flex items-center gap-4 text-black/70 serif">
-                    <Clock className="w-5 h-5 text-[#A67C52] shrink-0" />
-                    <span className="text-sm font-medium">60 – 90 Minute Sessions</span>
-                  </div>
+
                   <div className="flex items-center gap-4 text-black/70 serif">
                     <ShieldCheck className="w-5 h-5 text-[#A67C52] shrink-0" />
                     <span className="text-sm font-medium">100% Safe & Confidential</span>
@@ -203,20 +200,7 @@ const ServiceDetailPage = () => {
                 </button>
               </motion.div>
 
-              {/* Stats Card */}
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: '99%', label: 'Success Rate' },
-                  { value: '15+', label: 'Years Expert' },
-                  { value: '4.2K+', label: 'Sessions Done' },
-                  { value: '10+', label: 'Specialists' },
-                ].map((stat, idx) => (
-                  <div key={idx} className="bg-white rounded-[24px] p-6 text-center border border-gray-100 shadow-sm hover:border-[#A67C52]/20 transition-all duration-300 group">
-                    <h4 className="text-2xl md:text-3xl font-serif text-[#A67C52] group-hover:scale-110 transition-transform duration-500">{stat.value}</h4>
-                    <p className="text-[10px] text-black/40 mt-1 font-medium uppercase tracking-[0.2em]">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
+
             </div>
           </div>
         </div>

@@ -106,7 +106,7 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                         <label className="text-sm font-semibold text-gray-700 ml-1 flex items-center gap-2">
                           <Phone className="w-4 h-4 text-brand-orange" /> Phone Number
                         </label>
-                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-gray-50 border border-gray-200 text-brand-blue rounded-2xl px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all" placeholder="+44 7000 000000" />
+                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-gray-50 border border-gray-200 text-brand-blue rounded-2xl px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-brand-orange/20 focus:border-brand-orange transition-all" placeholder="+66 89 779 8028" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-semibold text-gray-700 ml-1 flex items-center gap-2">

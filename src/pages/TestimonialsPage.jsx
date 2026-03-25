@@ -270,12 +270,7 @@ const staticTestimonials = [
   }
 ];
 
-const stats = [
-  { value: '4.9/5', label: 'Average Rating', sub: 'ACROSS 1,200+ REVIEWS' },
-  { value: '98%', label: 'Would Recommend', sub: 'TO FRIENDS AND FAMILY' },
-  { value: '4.2K+', label: 'Lives Transformed', sub: 'SINCE 2009' },
-  { value: '93%', label: 'See Results', sub: 'WITHIN 3 SESSIONS' },
-];
+
 
 const StarRating = ({ rating }) => (
   <div className="flex gap-1">
