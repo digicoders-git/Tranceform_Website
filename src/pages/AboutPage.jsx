@@ -147,6 +147,33 @@ const AboutPage = () => {
                     <div className="h-[1px] flex-grow bg-[#A67C52]/20 hidden md:block" />
                   </div>
                 </div>
+
+                {/* Accreditations / Certifications */}
+                <div className="pt-8 flex flex-wrap items-center gap-8 border-t border-gray-100">
+                  <div className="flex items-center gap-4 group cursor-default">
+                    <div className="w-14 h-14 rounded-full border-2 border-[#A67C52]/20 flex items-center justify-center p-1.5 transition-all duration-500 group-hover:border-[#A67C52] group-hover:rotate-12 bg-[#A67C52]/[0.02]">
+                       <div className="w-full h-full rounded-full border border-dashed border-[#A67C52]/40 flex flex-col items-center justify-center bg-white shadow-sm">
+                          <span className="text-[8px] font-bold text-[#A67C52] leading-none mb-0.5">THE</span>
+                          <span className="text-[12px] font-black text-[#A67C52] leading-none">IHA</span>
+                       </div>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold tracking-[0.2em] text-[#A67C52] uppercase block mb-0.5">Approved By</span>
+                      <span className="text-sm font-serif font-medium text-[#15202B]">International Hypnosis Assoc.</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 group cursor-default">
+                    <div className="px-4 py-3 bg-white border border-[#15202B]/5 rounded-2xl shadow-sm transition-all duration-500 group-hover:border-[#15202B]/20 group-hover:-translate-y-1">
+                       <span className="text-[14px] font-black text-[#15202B] tracking-[-0.05em] block leading-none">IANLPC</span>
+                       <div className="h-[2px] w-full bg-[#15202B]/10 mt-1" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold tracking-[0.2em] text-[#15202B]/40 uppercase block mb-0.5">Global Member</span>
+                      <span className="text-sm font-serif font-medium text-[#15202B]">NLP & Coaching Assoc.</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

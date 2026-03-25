@@ -141,18 +141,36 @@ const ServiceDetailPage = () => {
                   </p>
                 </div>
 
-                <div className="space-y-4 text-left bg-[#15202B]/[0.02] rounded-[32px] p-7 border border-[#15202B]/5 relative z-10">
-                  <div className="flex items-center gap-4 text-[#15202B]/70 serif group/item cursor-default">
-                    <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center transition-transform group-hover/item:scale-110">
+                <div className="space-y-5 text-left bg-[#15202B]/[0.02] rounded-[40px] p-7 border border-[#15202B]/5 relative z-10">
+                  <div className="flex items-center gap-4 group/item cursor-default">
+                    <div className="w-12 h-12 rounded-full border border-[#A67C52]/20 flex items-center justify-center p-1 bg-white shadow-sm transition-transform group-hover/item:scale-110">
+                       <div className="w-full h-full rounded-full border border-dashed border-[#A67C52]/30 flex flex-col items-center justify-center">
+                          <span className="text-[6px] font-bold text-[#A67C52] leading-none">THE</span>
+                          <span className="text-[10px] font-black text-[#A67C52] leading-none">IHA</span>
+                       </div>
+                    </div>
+                    <div>
+                      <span className="text-[9px] font-bold tracking-[0.2em] text-[#A67C52] uppercase block">IHA Approved</span>
+                      <span className="text-[13px] font-medium text-[#15202B]">Intl. Hypnosis Assoc.</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4 group/item cursor-default">
+                    <div className="px-3 py-2 bg-white border border-[#15202B]/5 rounded-xl shadow-sm transition-transform group-hover/item:scale-110">
+                       <span className="text-[12px] font-black text-[#15202B] tracking-[-0.05em] block leading-none">IANLPC</span>
+                       <div className="h-[1.5px] w-full bg-[#15202B]/10 mt-0.5" />
+                    </div>
+                    <div>
+                      <span className="text-[9px] font-bold tracking-[0.2em] text-[#15202B]/40 uppercase block">Global Member</span>
+                      <span className="text-[13px] font-medium text-[#15202B]">NLP & Coaching Assoc.</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-[#15202B]/5 flex items-center gap-4 text-[#15202B]/70 serif group/item cursor-default">
+                    <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center transition-transform group-hover/item:rotate-12">
                       <ShieldCheck className="w-4 h-4 text-[#A67C52]" />
                     </div>
-                    <span className="text-[13px] font-medium tracking-tight">100% Safe & Confidential</span>
-                  </div>
-                  <div className="flex items-center gap-4 text-[#15202B]/70 serif group/item cursor-default">
-                    <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center transition-transform group-hover/item:scale-110">
-                      <Award className="w-4 h-4 text-[#A67C52]" />
-                    </div>
-                    <span className="text-[13px] font-medium tracking-tight">IHA Certified Therapists</span>
+                    <span className="text-[12px] font-medium tracking-tight">100% Safe & Confidential</span>
                   </div>
                 </div>
 
