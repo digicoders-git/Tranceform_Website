@@ -25,7 +25,6 @@ const ServiceDetailPage = () => {
         {/* Subtle Accent Glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#A67C52]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#A67C52]/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-        
         <div className="absolute inset-0 bg-linear-to-t from-[#15202B] via-transparent to-transparent" />
 
         <div className="relative z-10 w-full container mx-auto px-6 md:px-16 max-w-7xl pt-40 pb-12">
@@ -72,7 +71,6 @@ const ServiceDetailPage = () => {
 
             {/* ── Left Column ── */}
             <div className="lg:col-span-8 space-y-16">
-
               {/* Overview */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -82,14 +80,14 @@ const ServiceDetailPage = () => {
               >
                 <div className="flex items-center gap-4">
                   <div className="h-[1px] w-8 bg-[#A67C52]" />
-                  <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercaseblock">
+                  <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase block">
                     ( OVERVIEW )
                   </span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-serif text-[#15202B] leading-snug tracking-tight">
                   What is <span className="text-[#A67C52] serif">{service.title}</span>?
                 </h2>
-                <p className="text-black/60 font-normal serif text-lg leading-relaxed">
+                <p className="text-black/60 font-normal serif text-lg leading-relaxed text-justify">
                   {service.fullDesc}
                 </p>
               </motion.div>
@@ -98,7 +96,7 @@ const ServiceDetailPage = () => {
               <div>
                 <div className="flex items-center gap-4 mb-8">
                   <div className="h-[1px] w-8 bg-[#A67C52]" />
-                  <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase blocks">
+                  <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase block">
                     ( HOW WE DO IT )
                   </span>
                 </div>
@@ -121,121 +119,127 @@ const ServiceDetailPage = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Benefits */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-[#15202B] rounded-[48px] p-10 md:p-16 text-white relative overflow-hidden group border border-[#A67C52]/20"
-              >
-                <div className="absolute inset-0 bg-linear-to-br from-[#A67C52]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-[1px] w-8 bg-[#A67C52]" />
-                  <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase">
-                    ( KEY BENEFITS )
-                  </span>
-                </div>
-                <h3 className="text-3xl md:text-5xl font-serif mb-12 text-white">
-                  What you'll gain from <br /><span className="text-[#A67C52] serif">this journey</span>
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
-                  {service.benefits.map((benefit, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.08 }}
-                      viewport={{ once: true }}
-                      className="flex gap-4 items-start"
-                    >
-                      <div className="mt-1 p-1 rounded-full bg-[#A67C52]/50 shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="text-white/80 font-normal serif text-lg">{benefit}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
             </div>
 
-            {/* ── Right Sidebar ── */}
-            <div className="lg:col-span-4 space-y-6 sticky top-32">
-              {/* Booking CTA */}
+            {/* ── Right Column (Sidebar) ── */}
+            <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-32">
               <motion.div
                 initial={{ opacity: 0, scale: 0.97 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="p-12 bg-white border border-[#A67C52]/10 rounded-[48px] shadow-3xl shadow-gray-200/40 space-y-10 text-center relative overflow-hidden group"
+                className="p-10 bg-white/80 backdrop-blur-xl border border-[#A67C52]/20 rounded-[48px] shadow-[0_30px_60px_-15px_rgba(21,32,43,0.1)] space-y-8 text-center relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-[#A67C52]/5 rounded-bl-[100px] transition-transform duration-700 group-hover:scale-150" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#A67C52]/10 rounded-bl-[120px] transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-[#A67C52]/5 rounded-tr-[80px]" />
                 
-                <div className="space-y-4">
-                  <h3 className="text-2xl md:text-3xl font-serif text-[#15202B]">
-                    Ready to <span className="text-[#A67C52] serif">Transform?</span>
+                <div className="space-y-4 relative z-10">
+                  <h3 className="text-3xl font-serif text-[#15202B]">
+                    Ready to <span className="text-[#A67C52] serif italic">Transform?</span>
                   </h3>
-                  <p className="text-black/50 text-sm font-normal serif">
-                    Your journey to a better self begins here.
+                  <p className="text-[#15202B]/60 text-sm font-normal serif leading-relaxed px-2">
+                    Start your healing journey with expert guidance today.
                   </p>
                 </div>
 
-                <div className="space-y-4 text-left bg-gray-50/50 rounded-[32px] p-8 border border-gray-100">
-
-                  <div className="flex items-center gap-4 text-black/70 serif">
-                    <ShieldCheck className="w-5 h-5 text-[#A67C52] shrink-0" />
-                    <span className="text-sm font-medium">100% Safe & Confidential</span>
+                <div className="space-y-4 text-left bg-[#15202B]/[0.02] rounded-[32px] p-7 border border-[#15202B]/5 relative z-10">
+                  <div className="flex items-center gap-4 text-[#15202B]/70 serif group/item cursor-default">
+                    <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center transition-transform group-hover/item:scale-110">
+                      <ShieldCheck className="w-4 h-4 text-[#A67C52]" />
+                    </div>
+                    <span className="text-[13px] font-medium tracking-tight">100% Safe & Confidential</span>
                   </div>
-                  <div className="flex items-center gap-4 text-black/70 serif">
-                    <Award className="w-5 h-5 text-[#A67C52] shrink-0" />
-                    <span className="text-sm font-medium">VHC Certified Therapists</span>
+                  <div className="flex items-center gap-4 text-[#15202B]/70 serif group/item cursor-default">
+                    <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center transition-transform group-hover/item:scale-110">
+                      <Award className="w-4 h-4 text-[#A67C52]" />
+                    </div>
+                    <span className="text-[13px] font-medium tracking-tight">IHA Certified Therapists</span>
                   </div>
                 </div>
 
                 <button 
                   onClick={() => setIsAppointmentModalOpen(true)}
-                  className="w-full py-6 bg-[#A67C52] text-white rounded-full font-medium text-xs tracking-[0.3em] uppercase hover:bg-[#15202B] transition-all duration-500 flex items-center justify-center gap-3 group shadow-2xl hover:shadow-[#A67C52]/20 transform hover:-translate-y-1 active:scale-95"
+                  className="w-full py-5 bg-[#A67C52] text-white rounded-full font-bold text-[10px] tracking-[0.3em] uppercase hover:bg-[#15202B] transition-all duration-700 flex items-center justify-center gap-3 group/btn shadow-[0_20px_40px_-10px_rgba(166,124,82,0.4)] hover:shadow-[#15202B]/30 transform hover:-translate-y-1 active:scale-95 relative z-10"
                 >
                   BOOK APPOINTMENT
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </motion.div>
-
-
             </div>
           </div>
+
+          {/* ── Key Benefits (Full Width Card) ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-24 bg-linear-to-br from-[#FEFDFB] via-white to-[#FDFBF9] rounded-[48px] p-10 md:p-14 border-2 border-[#A67C52]/5 shadow-[0_25px_60px_-15px_rgba(166,124,82,0.1)] relative overflow-hidden group text-center"
+          >
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#A67C52]/[0.02] rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-[#A67C52]/10 rounded-tl-[48px] pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-[#A67C52]/10 rounded-br-[48px] pointer-events-none" />
+            
+            <div className="relative z-10">
+              <div className="flex flex-col items-center gap-2 mb-10">
+                <span className="text-[#A67C52] text-[11px] font-bold tracking-[0.5em] uppercase px-4 py-1.5 bg-[#A67C52]/5 rounded-full">
+                  ( KEY BENEFITS )
+                </span>
+                <h3 className="text-3xl md:text-5xl font-serif text-[#15202B] leading-tight mt-4">
+                  What you'll gain from <span className="text-[#A67C52] italic font-medium">this transformation</span>
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-7 text-left max-w-6xl mx-auto px-4">
+                {service.benefits.map((benefit, idx) => (
+                  <motion.div key={idx} className="flex gap-4 items-center group/item">
+                    <div className="w-10 h-10 rounded-2xl bg-white shadow-sm flex items-center justify-center shrink-0 border border-gray-100 transition-all duration-500 group-hover/item:bg-[#A67C52] group-hover/item:border-[#A67C52] group-hover/item:shadow-lg">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#A67C52] group-hover/item:bg-white shadow-[0_0_8px_rgba(166,124,82,0.4)]" />
+                    </div>
+                    <span className="text-[#15202B]/80 font-normal serif text-[16px] leading-snug group-hover/item:text-[#15202B] transition-colors">{benefit}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ─── Other Services ─── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-linear-to-b from-gray-50/50 to-white">
         <div className="container mx-auto px-6 md:px-16 max-w-7xl">
-          <div className="text-center mb-12 space-y-3">
-            <span className="text-brand-orange text-[13px] font-medium tracking-[0.3em] uppercase">
-              ( EXPLORE MORE )
-            </span>
-            <h2 className="text-3xl md:text-4xl font-serif text-brand-blue">
-              Other Services
-            </h2>
+          <div className="flex items-center justify-center mb-16 text-center">
+            <div className="space-y-4">
+              <span className="text-[#A67C52] text-[11px] font-bold tracking-[0.4em] uppercase block">
+                ( EXPLORE MORE )
+              </span>
+              <h2 className="text-4xl md:text-5xl font-serif text-[#15202B]">
+                Other <span className="text-[#A67C52] italic">Services</span>
+              </h2>
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {servicesData
               .filter(s => s.id !== id)
               .map((s) => (
                 <div
                   key={s.id}
                   onClick={() => { navigate(`/services/${s.id}`); window.scrollTo(0, 0); }}
-                  className="group relative p-8 bg-white rounded-[32px] border border-gray-100 hover:border-[#A67C52]/30 hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden"
+                  className="group relative p-10 bg-white rounded-[40px] border border-gray-100 hover:border-[#A67C52]/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-700 cursor-pointer overflow-hidden shadow-sm"
                 >
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-[#A67C52]/5 rounded-bl-[40px] transition-transform duration-500 group-hover:scale-150" />
-                  <h4 className="text-xl font-serif text-[#15202B] mb-4 group-hover:text-[#A67C52] transition-colors">{s.title}</h4>
-                  <div className="flex items-center gap-2 text-[#A67C52] text-[10px] font-bold tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                    Learn More <ArrowRight className="w-4 h-4" />
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#A67C52]/5 rounded-bl-[60px] transition-transform duration-1000 group-hover:scale-150" />
+                  <div className="relative z-10 flex flex-col h-full justify-between">
+                    <div>
+                      <h4 className="text-2xl font-serif text-[#15202B] mb-6 group-hover:text-[#A67C52] transition-colors leading-tight">{s.title}</h4>
+                      <p className="text-black/40 text-sm serif line-clamp-2 mb-8">{s.subtitle}</p>
+                    </div>
+                    <div className="flex items-center gap-3 text-[#A67C52] text-[11px] font-bold tracking-[0.3em] uppercase group-hover:translate-x-2 transition-transform duration-500">
+                      LEARN MORE <ArrowRight className="w-5 h-5" />
+                    </div>
                   </div>
                 </div>
               ))}
           </div>
         </div>
       </section>
+
       <AppointmentModal 
         isOpen={isAppointmentModalOpen} 
         onClose={() => setIsAppointmentModalOpen(false)} 

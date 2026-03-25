@@ -62,52 +62,19 @@ const AboutPage = () => {
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            
-            {/* Content Left */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-10 order-2 lg:order-1"
-            >
-              <div className="space-y-6">
-                <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase block">
-                  ( THE FOUNDER )
-                </span>
-                <h2 className="text-4xl md:text-6xl font-serif text-brand-blue leading-tight">About Pooja</h2>
-                <div className="h-1.5 w-20 bg-[#A67C52]/20 rounded-full" />
-              </div>
-              <div className="space-y-6 text-black font-normal text-lg leading-relaxed tracking-tight">
-                <p>
-                  My work is rooted in the belief that many of the struggles we carry in adult life are connected to earlier emotional experiences and subconscious beliefs that were formed long ago.
-                </p>
-                <p>
-                  Over the years I have had the privilege of working with clients from many different backgrounds, each bringing their own unique story and inner world. What matters most to me is that each person who sits across from me feels safe, understood, and genuinely supported.
-                </p>
-                <div className="pt-6 border-t border-gray-100">
-                  <p className="text-brand-blue font-serif text-xl leading-relaxed">
-                    "Healing is not about forcing yourself to change. It is about understanding the deeper patterns that shaped you, meeting them with compassion, and creating space for something new to emerge."
-                  </p>
-                </div>
-                <p className="text-black/60 font-light">
-                  This is the heart of the work I do through Tranceform with Pooja.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Image Right */}
+            {/* Image Left */}
             <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              initial={{ opacity: 0, x: -40, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               whileHover={{ 
-                rotateY: -6,
+                rotateY: 6,
                 rotateX: 4,
                 scale: 1.02,
                 transition: { duration: 0.8, ease: "easeOut" }
               }}
               transition={{ duration: 1, ease: "easeOut" }}
               style={{ perspective: "1000px" }}
-              className="relative group max-w-[420px] mx-auto lg:mr-12 lg:ml-0 order-1 lg:order-2 cursor-pointer"
+              className="relative group max-w-[420px] mx-auto lg:ml-12 lg:mr-0 order-1 lg:order-1 cursor-pointer"
             >
               {/* Outer Glow Decor */}
               <div className="absolute -inset-6 bg-[#A67C52]/5 rounded-[60px] blur-2xl group-hover:bg-[#A67C52]/10 transition-colors duration-700" />
@@ -141,6 +108,46 @@ const AboutPage = () => {
                   <span className="text-[9px] tracking-[0.3em] uppercase opacity-70 mt-2 block">with Pooja</span>
                 </div>
               </motion.div>
+            </motion.div>
+
+            {/* Content Right */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-10 order-2 lg:order-2"
+            >
+              <div className="space-y-6">
+                <span className="text-[#A67C52] text-[13px] font-medium tracking-[0.4em] uppercase block">
+                  ( THE FOUNDER )
+                </span>
+                <h2 className="text-4xl md:text-6xl font-serif text-brand-blue leading-tight">About Pooja</h2>
+                <div className="h-1.5 w-20 bg-[#A67C52]/20 rounded-full" />
+              </div>
+              <div className="space-y-4 text-black font-normal text-lg leading-relaxed tracking-tight">
+                <p>
+                  My work is rooted in the belief that many of the struggles we carry in adult life are connected to earlier emotional experiences and subconscious beliefs that were formed long ago.
+                </p>
+                <p>
+                  Over the years I have had the privilege of working with clients from many different backgrounds, each bringing their own unique story and inner world. What matters most to me is that each person who sits across from me feels safe, understood, and genuinely supported.
+                </p>
+                <div className="pt-4 border-t border-gray-100 mt-2">
+                  <p className="text-brand-blue font-serif text-xl leading-relaxed">
+                    "Healing is not about forcing yourself to change. It is about understanding the deeper patterns that shaped you, meeting them with compassion, and creating space for something new to emerge."
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-gray-100 mt-2">
+                  <p className="text-[#15202B] font-medium text-xl md:text-2xl leading-snug">
+                    This is the heart of the work I do through
+                  </p>
+                  <div className="flex items-center gap-6 mt-2">
+                    <p className="text-[#A67C52] text-3xl md:text-5xl font-serif font-bold italic leading-none whitespace-nowrap">
+                      Tranceform with Pooja*
+                    </p>
+                    <div className="h-[1px] flex-grow bg-[#A67C52]/20 hidden md:block" />
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>

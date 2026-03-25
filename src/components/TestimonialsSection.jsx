@@ -135,7 +135,7 @@ const TestimonialsSection = () => {
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-serif text-brand-blue leading-tight">
-            <span className="text-[#B97758] font-medium">19+ Google reviews</span> from clients consulted & helped.
+            <span className="text-[#B97758] font-medium">Google reviews</span> from clients consulted & helped.
           </h2>
         </div>
 
