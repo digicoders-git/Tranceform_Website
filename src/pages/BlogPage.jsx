@@ -111,7 +111,7 @@ const BlogPage = () => {
 
       {/* ─── Featured Post ─── */}
       {activeCategory === 'All' && !searchQuery && (
-        <section className="py-20 bg-[#FAFAFA] overflow-hidden">
+        <section className="py-8 bg-[#FAFAFA] overflow-hidden">
           <div className="container mx-auto px-6 md:px-16 max-w-7xl">
             <div className="flex items-center gap-4 mb-10">
               <div className="h-[1.5px] w-10 bg-[#A67C52]/40" />
@@ -136,7 +136,7 @@ const BlogPage = () => {
                 <div className="absolute inset-0 bg-linear-to-r from-[#15202B]/30 to-transparent" />
               </div>
               {/* Content */}
-              <div className="p-10 md:p-20 flex flex-col justify-center space-y-8">
+              <div className="p-10 md:p-12 flex flex-col justify-center space-y-6">
                 <div className="flex items-center gap-4">
                   <span className="px-4 py-1.5 bg-[#A67C52]/10 text-[#A67C52] text-[10px] font-medium tracking-[0.2em] uppercase rounded-full border border-[#A67C52]/20">
                     {featuredPost.category}
@@ -145,7 +145,7 @@ const BlogPage = () => {
                     <Clock className="w-3.5 h-3.5" /> {featuredPost.readTime}
                   </span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-tight group-hover:text-[#A67C52] transition-colors tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-serif text-brand-blue leading-snug whitespace-pre-line group-hover:text-[#A67C52] transition-colors tracking-tight">
                   {featuredPost.title}
                 </h2>
                 <p className="text-black/70 font-normal text-lg leading-relaxed line-clamp-3">

@@ -91,16 +91,16 @@ const faqCategories = [
     icon: <ShieldCheck className="w-5 h-5" />,
     faqs: [
       {
-        question: "Are your hypnotherapists certified?",
-        answer: "Yes. All Tranceform hypnotherapists are fully certified members of recognised professional bodies, including the VHC (Vedic Hypnotherapy Council). They complete rigorous training in clinical hypnotherapy, ethics, and continuing professional development. Your safety and wellbeing are always our highest priority."
+        question: "Are you certified?",
+        answer: "Yes. I am a fully certified member of recognised professional bodies, including the VHC (Vedic Hypnotherapy Council). I have completed rigorous training in clinical hypnotherapy, ethics, and continuing professional development. Your safety and wellbeing are always my highest priority."
       },
       {
         question: "Is what I share in sessions kept confidential?",
-        answer: "Absolutely. Everything you share during your sessions is held in strict confidence. The only exceptions — which are required by professional ethical guidelines — are if there is a risk of serious harm to you or others. Our therapists adhere to the highest standards of professional confidentiality and discretion."
+        answer: "Absolutely. Everything you share during your sessions is held in strict confidence. The only exceptions — which are required by professional ethical guidelines — are if there is a risk of serious harm to you or others. I adhere to the highest standards of professional confidentiality and discretion."
       },
       {
         question: "Can hypnotherapy be harmful?",
-        answer: "When conducted by a trained, ethical professional, hypnotherapy is extremely safe. It does not involve any drugs, physical contact, or invasive procedures. In rare cases, individuals with certain conditions (such as active psychosis or very severe dissociative disorders) may need modified approaches, which our therapists are trained to identify and accommodate."
+        answer: "When conducted by a trained, ethical professional, hypnotherapy is extremely safe. It does not involve any drugs, physical contact, or invasive procedures. In rare cases, individuals with certain conditions (such as active psychosis or very severe dissociative disorders) may need modified approaches, which I am trained to identify and accommodate."
       },
       {
         question: "Is hypnotherapy suitable for children?",
@@ -119,7 +119,7 @@ const faqCategories = [
       },
       {
         question: "Do you offer free consultations?",
-        answer: "Yes. We offer a complimentary 15-minute discovery call for all new clients. This gives you the opportunity to speak with one of our therapists, ask any questions you may have, and determine whether hypnotherapy is the right path for you — completely free of charge and with no obligation to book."
+        answer: "Yes. We offer a complimentary 15-minute discovery call for all new clients. This gives you the opportunity to speak with me, ask any questions you may have, and determine whether hypnotherapy is the right path for you — completely free of charge and with no obligation to book."
       },
       {
         question: "What is your cancellation policy?",
@@ -127,7 +127,7 @@ const faqCategories = [
       },
       {
         question: "How do I book my first session?",
-        answer: "Booking is simple. You can use the 'Book Appointment' button on our website, email us at info@tranceform.com, or call us directly. We'll match you with the right therapist for your needs and schedule a time that suits you — including evenings and weekends."
+        answer: "Booking is simple. You can use the 'Book Appointment' button on our website, email us at info@tranceform.com, or call us directly. We'll find a time that suits you — including evenings and weekends."
       }
     ]
   }

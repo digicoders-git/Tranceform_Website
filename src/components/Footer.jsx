@@ -7,25 +7,6 @@ const Footer = () => {
   return (
     <footer className="bg-[#1E2A3A] text-white pt-16 pb-10">
       <div className="container mx-auto px-6 md:px-16 max-w-7xl">
-        {/* Top Newsletter / CTA Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10 mb-12">
-          <div className="max-w-xl">
-            <h3 className="text-white text-2xl font-serif mb-1">Join our community</h3>
-            <p className="text-white font-light text-[14px]">
-              Subscribe for insights on hypnotherapy, mental wellness, and exclusive offers.
-            </p>
-          </div>
-          <div className="flex w-full md:w-auto gap-2">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
-              className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-full w-full md:w-72 focus:outline-none focus:border-brand-orange transition-colors"
-            />
-            <button className="bg-brand-orange hover:bg-[#E68A2E] text-white px-8 py-3 rounded-full font-medium text-sm transition-all duration-300">
-              SUBSCRIBE
-            </button>
-          </div>
-        </div>
 
         {/* Main Links Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-12">

@@ -74,17 +74,10 @@ const ContactPage = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Clinic Location",
-      details: ["12 Harley Street", "London, W1G 9PF", "United Kingdom"],
+      details: ["UnionSpace Sukhumvit 61", "Bangkok, Thailand"],
       color: "text-[#A67C52]",
       bg: "bg-[#A67C52]/5"
     },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Opening Hours",
-      details: ["Mon - Fri: 9:00 AM - 8:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"],
-      color: "text-[#A67C52]",
-      bg: "bg-[#A67C52]/5"
-    }
   ];
 
   return (
@@ -168,7 +161,7 @@ const ContactPage = () => {
                 <div className="absolute inset-0 bg-linear-to-br from-[#A67C52]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                 <h4 className="text-2xl font-serif text-[#A67C52]">Free 15-Min Discovery Call</h4>
                 <p className="text-white/70 font-normal serif text-base leading-relaxed">
-                  Unsure if hypnotherapy is right for you? Speak directly with a therapist before booking.
+                  Unsure if hypnotherapy is right for you? Speak directly with me before booking.
                 </p>
                 <button className="flex items-center gap-3 text-white font-medium text-xs tracking-[0.3em] uppercase hover:text-[#A67C52] transition-all duration-300">
                   BOOK CALL <ArrowRight className="w-4 h-4 text-[#A67C52]" />

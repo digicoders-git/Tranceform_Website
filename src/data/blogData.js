@@ -1,19 +1,19 @@
 export const blogPosts = [
   {
-    id: "what-is-clinical-hypnotherapy",
-    title: "What Is Clinical Hypnotherapy And How Does It Work?",
+    id: "what-is-hypnotherapy",
+    title: "What Is Hypnotherapy?\nUnderstanding How It Works",
     category: "Hypnotherapy Basics",
     date: "March 10, 2026",
     readTime: "5 min read",
-    image: "/a1.jpg",
-    excerpt: "Clinical hypnotherapy is far more than the stage tricks you may have seen on television. It is a deeply evidence-based therapeutic tool that taps into the subconscious mind to create lasting change.",
+    image: "/images/a1.jpg",
+    excerpt: "Hypnotherapy is far more than the stage tricks you may have seen on television. It is a deeply evidence-based therapeutic tool that taps into the subconscious mind to create lasting change.",
     content: `
-      <p>Clinical hypnotherapy is a therapeutic technique that uses guided hypnosis to create a state of focused attention and heightened suggestibility. Unlike stage hypnosis, clinical hypnotherapy is carried out by trained professionals in a safe, structured setting with the client's full consent and participation.</p>
+      <p>Hypnotherapy is a therapeutic technique that uses guided hypnosis to create a state of focused attention and heightened suggestibility. Unlike stage hypnosis, hypnotherapy is carried out by trained professionals in a safe, structured setting with the client's full consent and participation.</p>
       <h2>What Happens During Hypnosis?</h2>
       <p>During a hypnotherapy session, your therapist guides you into a deeply relaxed, trance-like state. In this state, the critical conscious mind quiets down, allowing the therapist to communicate directly with your subconscious. It is in the subconscious where our habits, emotional patterns, fears, and automatic behaviours are stored.</p>
       <p>Contrary to popular belief, you cannot be made to do anything against your will during hypnosis. You are fully aware throughout the session and can emerge at any time you choose. Hypnosis is simply a state of deep, relaxed focus — much like being absorbed in a good book or daydreaming.</p>
       <h2>What Can It Treat?</h2>
-      <p>Clinical hypnotherapy has a strong evidence base for treating a wide range of conditions, including anxiety and stress, phobias, chronic pain, IBS, sleep disorders, unwanted habits like smoking, and much more. It works by helping the mind reframe negative associations and install new, healthier thought patterns.</p>
+      <p>Hypnotherapy has a strong evidence base for treating a wide range of conditions, including anxiety and stress, phobias, chronic pain, IBS, sleep disorders, unwanted habits like smoking, and much more. It works by helping the mind reframe negative associations and install new, healthier thought patterns.</p>
       <h2>How Many Sessions Does It Take?</h2>
       <p>Many clients experience significant improvement within 1-3 sessions, though more complex issues may require longer programmes. Your certified hypnotherapist will assess your unique situation and create a personalised plan tailored to your goals.</p>
     `

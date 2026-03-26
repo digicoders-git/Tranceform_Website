@@ -101,7 +101,7 @@ const PrivacyPage = () => {
         <p className="text-gray-600 font-light leading-relaxed">
           If you have any questions about this Privacy Policy, the practices of this site, or your dealings with Tranceform Hypnotherapy, please contact our Data Protection Officer at: <br/><br/>
           <strong className="text-brand-blue font-semibold">Email:</strong> privacy@tranceform.com<br/>
-          <strong className="text-brand-blue font-semibold">Address:</strong> 12 Harley Street, London, W1G 9PF
+          <strong className="text-brand-blue font-semibold">Address:</strong> UnionSpace Sukhumvit 61, Bangkok, Thailand
         </p>
       )
     }

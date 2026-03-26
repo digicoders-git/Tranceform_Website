@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import poojaImage from '../assets/222.png';
 import AboutSection from '../components/AboutSection';
 import AboutDiscovery from '../components/AboutDiscovery';
 import HowItWorks from '../components/HowItWorks';
@@ -83,7 +84,7 @@ const AboutPage = () => {
               
               <div className="relative rounded-[40px] overflow-hidden shadow-2xl ring-1 ring-black/5 bg-gray-50">
                 <img 
-                  src="/images/image3.png" 
+                  src={poojaImage} 
                   alt="Pooja - Transformed Mind" 
                   loading="lazy"
                   className="w-full h-[500px] object-cover object-top transition-transform duration-[1.5s] group-hover:scale-110"

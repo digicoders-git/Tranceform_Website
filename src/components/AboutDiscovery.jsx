@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Brain, Heart, Zap, ShieldCheck } from 'lucide-react';
 
 const AboutDiscovery = () => {
-  const [isVideoOpen, setIsVideoOpen] = React.useState(false);
 
 
 
@@ -110,14 +109,12 @@ const AboutDiscovery = () => {
         </div>
       </div>
  
-      {/* Floating Video/Image Card (Now smaller) */}
       <div className="container mx-auto px-6 md:px-12 max-w-2xl -mt-20 md:-mt-28 relative z-20">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          onClick={() => setIsVideoOpen(true)}
-          className="relative rounded-[40px] overflow-hidden shadow-3xl group cursor-pointer border-[8px] border-white ring-1 ring-black/5"
+          className="relative rounded-[40px] overflow-hidden shadow-3xl group border-[8px] border-white ring-1 ring-black/5"
         >
           <img 
             src="/images/image5.png" 
@@ -125,68 +122,9 @@ const AboutDiscovery = () => {
             loading="lazy"
             className="w-full h-[250px] md:h-[320px] object-cover transition-transform duration-[2000ms] group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-[#15202B]/20 flex items-center justify-center transition-colors group-hover:bg-[#15202B]/40">
-            <div className="relative">
-              {/* Pulsating Ripples */}
-              {[...Array(3)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ scale: 1, opacity: 0.5 }}
-                  animate={{ 
-                    scale: [1, 1.5, 2],
-                    opacity: [0.5, 0.3, 0]
-                  }}
-                  transition={{ 
-                    duration: 2, 
-                    repeat: Infinity, 
-                    delay: i * 0.6,
-                    ease: "easeOut"
-                  }}
-                  className="absolute inset-0 bg-white rounded-full"
-                />
-              ))}
-              
-              {/* Main Play Button */}
-              <motion.div 
-                whileHover={{ scale: 1.1 }}
-                className="relative w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-2xl z-10"
-              >
-                <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-[#A67C52] border-b-[8px] border-b-transparent ml-1" />
-              </motion.div>
-            </div>
-          </div>
         </motion.div>
       </div>
  
-      {/* Video Modal Overlay */}
-      {isVideoOpen && (
-        <div 
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
-          onClick={() => setIsVideoOpen(false)}
-        >
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="relative w-full max-w-6xl aspect-video rounded-[40px] overflow-hidden shadow-2xl bg-[#15202B] border border-white/10"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <iframe 
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/VhBl3dHT5SY?autoplay=1" 
-              title="Hypnotherapy Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            />
-            <button 
-              className="absolute top-6 right-6 text-white hover:bg-white hover:text-[#15202B] transition-all bg-white/10 rounded-full p-4 group"
-              onClick={() => setIsVideoOpen(false)}
-            >
-              <ShieldCheck className="w-8 h-8 rotate-45 group-hover:rotate-0 transition-transform" /> 
-            </button>
-          </motion.div>
-        </div>
-      )}
  
       {/* What a session feels like (Section 5) */}
       <div className="bg-white pt-16 pb-8 md:pt-24 md:pb-12 border-b border-gray-50 relative overflow-hidden">
