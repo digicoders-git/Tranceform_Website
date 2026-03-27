@@ -58,7 +58,7 @@ const Footer = () => {
             <div className="space-y-4 text-[14px] font-light">
               <div>
                 <span className="block text-white mb-0 font-medium text-[12px] uppercase tracking-wide opacity-50">Email</span>
-                <a href="mailto:info@tranceform.com" className="text-white hover:text-brand-orange transition-colors">info@tranceform.com</a>
+                <a href="mailto:gujralp@hotmail.com" className="text-white hover:text-brand-orange transition-colors">gujralp@hotmail.com</a>
               </div>
               <div>
                 <span className="block text-white mb-0 font-medium text-[12px] uppercase tracking-wide opacity-50">Phone</span>

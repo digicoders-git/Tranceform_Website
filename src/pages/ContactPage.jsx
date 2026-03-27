@@ -67,7 +67,7 @@ const ContactPage = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["hello@tranceform.com", "bookings@tranceform.com"],
+      details: ["gujralp@hotmail.com"],
       color: "text-[#A67C52]",
       bg: "bg-[#A67C52]/5"
     },

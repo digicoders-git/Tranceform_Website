@@ -29,7 +29,7 @@ const AboutDiscovery = () => {
       {/* Top Dark Section */}
       <div className="bg-[#15202B] pt-20 pb-28 md:pb-32 overflow-hidden relative">
         {/* Decorative Background Text (Restored to larger size) */}
-        <div className="absolute top-10 -right-10 text-[18rem] font-serif text-white/5 select-none pointer-events-none">
+        <div className="absolute top-10 -right-10 text-[18rem] font-serif text-white/5 select-none pointer-events-none hidden lg:block">
           Story
         </div>
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#A67C52]/5 rounded-full blur-[100px] pointer-events-none" />

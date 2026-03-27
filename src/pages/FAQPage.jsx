@@ -127,7 +127,7 @@ const faqCategories = [
       },
       {
         question: "How do I book my first session?",
-        answer: "Booking is simple. You can use the 'Book Appointment' button on our website, email us at info@tranceform.com, or call us directly. We'll find a time that suits you — including evenings and weekends."
+        answer: "Booking is simple. You can use the 'Book Appointment' button on our website, email us at gujralp@hotmail.com, or call us directly. We'll find a time that suits you — including evenings and weekends."
       }
     ]
   }

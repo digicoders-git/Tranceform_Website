@@ -151,6 +151,7 @@ const ServicesSlider = () => {
                 <img 
                   src={service.image} 
                   alt={service.title} 
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 
                 />
                 
