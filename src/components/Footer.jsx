@@ -66,7 +66,7 @@ const Footer = () => {
               </div>
               <div>
                 <span className="block text-white mb-0 font-medium text-[12px] uppercase tracking-wide opacity-50">Clinic</span>
-                <p className="text-white">UnionSpace Sukhumvit 61<br />Bangkok, Thailand</p>
+                <p className="text-white">30 Sukhumvit 61, Khwaeng Khlong Tan Nuea,<br />Watthana, Bangkok, Thailand 10110</p>
               </div>
             </div>
           </div>

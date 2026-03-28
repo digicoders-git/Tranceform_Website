@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle2, MessageCircle } from 'lucide-react';
 import Swal from 'sweetalert2';
 import API_URL from '../config';
 
@@ -61,20 +61,38 @@ const ContactPage = () => {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
       details: ["+66 89 779 8028"],
+      link: "tel:+66897798028",
       color: "text-[#A67C52]",
       bg: "bg-[#A67C52]/5"
+    },
+    {
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          className="w-6 h-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+      ),
+      title: "WhatsApp",
+      details: ["+66 89 779 8028"],
+      link: "https://wa.me/66897798028",
+      color: "text-[#25D366]",
+      bg: "bg-[#25D366]/5"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
       details: ["gujralp@hotmail.com"],
+      link: "mailto:gujralp@hotmail.com",
       color: "text-[#A67C52]",
       bg: "bg-[#A67C52]/5"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Clinic Location",
-      details: ["UnionSpace Sukhumvit 61", "Bangkok, Thailand"],
+      details: ["30 Sukhumvit 61,", "Khwaeng Khlong Tan Nuea,", "Watthana, Bangkok, Thailand 10110"],
       color: "text-[#A67C52]",
       bg: "bg-[#A67C52]/5"
     },
@@ -134,26 +152,38 @@ const ContactPage = () => {
                   We'd love to <br /><span className="text-[#A67C52] serif">hear from you</span>
                 </h2>
                 <p className="text-black/60 font-normal serif text-base leading-relaxed">
-                  Reach out to us using the form, or contact our clinic directly. We aim to respond to all enquiries within 24 hours.
+                  Reach out to me using the form or you can email, call or what’s app me.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
-                {contactInfo.map((info, idx) => (
-                  <div key={idx} className="space-y-5 group">
-                    <div className={`w-14 h-14 ${info.bg} ${info.color} rounded-2xl flex items-center justify-center border border-[#A67C52]/10 group-hover:bg-[#A67C52] group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-[#A67C52]/20`}>
-                      {info.icon}
+                {contactInfo.map((info, idx) => {
+                  const Content = (
+                    <div className="space-y-5 group h-full">
+                      <div className={`w-14 h-14 ${info.bg} ${info.color} rounded-2xl flex items-center justify-center border border-current/10 group-hover:bg-[#A67C52] group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-[#A67C52]/20`}>
+                        {info.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-serif text-[#15202B] text-lg mb-2">{info.title}</h4>
+                        {info.details.map((line, i) => (
+                          <p key={i} className="text-black/60 text-sm font-normal serif leading-relaxed">
+                            {line}
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-serif text-[#15202B] text-lg mb-2">{info.title}</h4>
-                      {info.details.map((line, i) => (
-                        <p key={i} className="text-black/60 text-sm font-normal serif leading-relaxed">
-                          {line}
-                        </p>
-                      ))}
+                  );
+
+                  return info.link ? (
+                    <a key={idx} href={info.link} target={info.link.startsWith('http') ? "_blank" : "_self"} rel={info.link.startsWith('http') ? "noopener noreferrer" : ""} className="block">
+                      {Content}
+                    </a>
+                  ) : (
+                    <div key={idx}>
+                      {Content}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Social or extra banner */}
